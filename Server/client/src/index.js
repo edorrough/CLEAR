@@ -9,8 +9,6 @@ import reduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducers from './reducers/rootReducer';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
-
 const store = createStore(
     rootReducers,
     composeWithDevTools(
