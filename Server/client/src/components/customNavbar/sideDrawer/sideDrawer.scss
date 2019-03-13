@@ -1,0 +1,115 @@
+.side-drawer {
+    height: 100%;
+    background-color: black;
+    box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 400px;
+    z-index: 200;
+    transform: translateX(-100%);
+
+    .drawer-header {
+        width: 100%;
+        padding-top: 20px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        .drawer-header-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                width: 15%;
+                align-self: center;
+            }
+            p {
+                text-align: center;
+                color: #FFF;
+                font-size: 15px;
+            }
+        }
+        
+    }
+}
+
+.side-drawer.open {
+    transform: translateX(0);
+    background-color: black;
+
+    .drawer-header {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        animation: left_to_right 4s ease;
+
+        .drawer-header-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                align-self: center;
+                img {
+                    margin: 0 auto;
+                    display: flex;
+                    width: 10%;
+                }
+            }
+            p {
+                text-align: center;
+                color: #FFF;
+            }
+        }
+    }
+}
+
+.side-drawer ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    animation: left_to_right 5s ease;
+    // animation-iteration-count: infinite;
+}
+
+.side-drawer li {
+    margin: 0.5rem 0;
+
+}
+
+.side-drawer li:hover {
+    margin: 0.5rem 0;
+}
+
+.side-drawer a {
+    text-decoration: none;
+    font-size: 3.2rem;
+    color: white;
+    transition: all 0.2s ease 0s;
+    font-family: Open sans-serif;
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+    color: #fa923f;
+}
+
+@keyframes left_to_right {
+    from {
+        margin-left: -100%;
+      }
+    to {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .side-drawer {
+        display: none;
+    }
+}

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const bodyParser = require('body-parser');
 
 require('./classModels/Users');
 
@@ -8,6 +9,10 @@ require('./classModels/Users');
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
 
 if (process.env.NODE_ENV === 'production') {
     // Express will server up production assets like main.css or main.js
@@ -23,3 +28,11 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT);
+
+// Sign up page and add user page
+// # department
+// # firstnma
+// # lastname
+// # emailadrre
+
+// # optional : phone

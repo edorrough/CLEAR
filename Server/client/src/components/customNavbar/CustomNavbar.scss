@@ -1,0 +1,193 @@
+.navbar {
+    width: 100%;
+    margin-bottom: 0;
+    height: 60px;
+    left: 0;
+    top: 0;
+
+    z-index: 100;
+    
+    position: sticky;
+    background-color: #CFB87C;
+
+    .navbar-navigation {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 2.5rem; // It won't inherit from its parent
+        background: transparent;
+
+        .spacer {
+            -webkit-flex: 1;  /* Safari 6.1+ */
+            -ms-flex: 1;  /* IE 10 */
+            flex: 1;
+        }
+
+        .navbar-logo-title a{
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+
+        .navbar-logo-title a:hover{
+            color: black;
+            height: 100%;
+        }
+
+        .navbar-navigation-items {
+            height: 100%;
+        }
+
+        .navbar-navigation-items ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+            
+        }
+
+        .navbar-navigation-items button {
+            padding: 0 0.5rem;
+            border: none;
+            background: transparent;
+            height: 100%;
+        }
+
+        .navbar-navigation-items a {
+            font-weight: 600;
+            padding: 0 1rem;
+            color: #FFFFFF;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+        }
+
+        .navbar-navigation-items button:hover {
+            text-decoration: none;
+            // background-color: #cfb87c;
+            color: #565A5C;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .navbar-navigation-change{
+        background: #333;
+        transition: background-color 1s ease-out;
+
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 2.5rem; // It won't inherit from its parent
+
+        // top: 0;
+
+        .spacer {
+            -webkit-flex: 1;  /* Safari 6.1+ */
+            -ms-flex: 1;  /* IE 10 */
+            flex: 1;
+        }
+
+        .navbar-logo-title {
+            font-size: 20px;
+            a {
+                color: #FFFFFF;
+            }
+        }
+
+        .navbar-logo-title a:hover{
+            color: #cfb87c;
+        }
+
+        .navbar-navigation-items ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+        }
+
+        .navbar-navigation-items button {
+            padding: 0 0.5rem;
+            border: none;
+            background: transparent;
+            height: 100%;
+        }
+
+        .navbar-navigation-items a {
+            line-height: 64px;
+            font-weight: 600;
+            padding: 0 1rem;
+            color: #FFFFFF;
+            height: 100%;
+        }
+
+        .navbar-navigation-items button:hover {
+            text-decoration: none;
+            // background-color: #cfb87c;
+            color: #565A5C;
+            
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        // display: none;
+
+        .navbar-navigation {
+
+
+            .navbar-navigation-items ul {
+                display: none;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .navbar-navigation-items {
+                display: none;
+            }
+
+            .navbar-toggle-button {
+                margin-right: 1rem;
+                // background: #333;
+            }
+        }
+
+        .navbar-navigation-change {
+            background: #333;
+            transition: background-color 1s ease-out;
+
+            .navbar-navigation-items {
+                display: none;
+            }
+
+            .navbar-toggle-button {
+
+                margin-right: 1rem;
+            }
+
+        }
+
+        
+    }
+
+    
+}
+
+@media (min-width: 769px) {
+    .navbar-toggle-button {
+        display: none;
+        margin-right: 1rem;
+    }
+    .navbar-logo-title {
+        margin-left: 0;
+    }
+}

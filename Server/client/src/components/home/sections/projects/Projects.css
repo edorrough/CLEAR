@@ -1,0 +1,56 @@
+.projects-container {
+  padding-top: 96px;
+  padding-bottom: 66px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #dee9fc; }
+  .projects-container h1 {
+    text-align: center;
+    font-family: Open sans-serif;
+    font-weight: 700;
+    color: #989ba0; }
+  .projects-container .projects-wrapper {
+    padding: 64px 2rem; }
+    .projects-container .projects-wrapper .ui.cards > .card > .image .again:hover {
+      animation: bounce 1s; }
+    .projects-container .projects-wrapper .more-info {
+      position: absolute;
+      text-align: center; }
+    .projects-container .projects-wrapper .ui.cards > .card .meta {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      text-overflow: ellipsis; }
+      .projects-container .projects-wrapper .ui.cards > .card .meta span {
+        position: relative;
+        display: block;
+        max-height: 7em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%; }
+      .projects-container .projects-wrapper .ui.cards > .card .meta span:hover {
+        max-height: 100%; }
+  .projects-container .project-learn-more {
+    text-align: center;
+    padding-top: 6%; }
+    .projects-container .project-learn-more .ui.teal.button {
+      font-size: 2.5rem;
+      border-radius: 25px;
+      box-shadow: 20px 20px 10px #888888; }
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); } }

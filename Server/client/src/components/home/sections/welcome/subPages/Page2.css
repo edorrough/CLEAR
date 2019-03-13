@@ -1,0 +1,85 @@
+.page2-container {
+  background-image: url("https://previews.123rf.com/images/lculig/lculig1504/lculig150400041/38911419-hand-writing-learn-linguistics-on-grey-background.jpg");
+  padding-top: 90px;
+  padding-bottom: 66px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
+  overflow: hidden;
+  height: 100%;
+  height: 100vh; }
+  .page2-container .arrows-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
+    .page2-container .arrows-navigation .left-arrow {
+      width: 5%;
+      background-color: transparent;
+      border: none; }
+      .page2-container .arrows-navigation .left-arrow img {
+        width: 100%;
+        height: 50px; }
+    .page2-container .arrows-navigation .right-arrow {
+      width: 5%;
+      background-color: transparent;
+      border: none; }
+      .page2-container .arrows-navigation .right-arrow img {
+        width: 100%;
+        height: 50px; }
+
+@media (max-width: 768px) {
+  .page2-container {
+    padding-top: 90px;
+    padding-bottom: 66px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: background-color 1s ease-out;
+    -webkit-transition: background-image 0.2s ease-in-out;
+    transition: background-image 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform .5s linear; }
+    .page2-container .arrows-navigation {
+      top: 60%; }
+      .page2-container .arrows-navigation .left-arrow {
+        width: 10%;
+        position: relative; }
+        .page2-container .arrows-navigation .left-arrow img {
+          width: 100%;
+          height: 50px; }
+      .page2-container .arrows-navigation .right-arrow {
+        width: 10%;
+        position: relative; }
+        .page2-container .arrows-navigation .right-arrow img {
+          width: 100%;
+          height: 50px; } }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .page2-container .arrows-navigation {
+    top: 80%; }
+    .page2-container .arrows-navigation .left-arrow {
+      width: 20%;
+      position: relative; }
+      .page2-container .arrows-navigation .left-arrow img {
+        width: 100%;
+        height: 50px; }
+    .page2-container .arrows-navigation .right-arrow {
+      width: 20%;
+      position: relative; }
+      .page2-container .arrows-navigation .right-arrow img {
+        width: 100%;
+        height: 50px; } }

@@ -1,0 +1,100 @@
+.meetPeople-container {
+  padding-top: 96px;
+  padding-bottom: 66px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #FFF; }
+  .meetPeople-container h1 {
+    text-align: center;
+    font-family: Open sans-serif; }
+  .meetPeople-container .meetPeople-wrapper {
+    padding: 64px 2.5% 64px 2.5%; }
+    .meetPeople-container .meetPeople-wrapper .ui.three.cards {
+      height: 100%; }
+    .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card {
+      background-color: #17a2b8;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      position: relative;
+      height: 100%; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column; }
+        .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .image {
+          margin: 0 auto;
+          backface-visibility: hidden; }
+          .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .image img {
+            width: unset;
+            border-radius: 100%;
+            background-color: #565A5C; }
+        .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .header {
+          backface-visibility: hidden;
+          font-size: 2rem;
+          text-align: center;
+          color: #FFF;
+          padding-top: 15px; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .content {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+        position: absolute;
+        backface-visibility: hidden; }
+    .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover {
+      transform: rotateY(180deg);
+      height: 100%; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .content:not(:hover) {
+        background-color: #17a2b8;
+        display: block; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .ui.cards > .card .meta:not(:hover) {
+        position: relative;
+        font-family: 'Merriweather'; }
+        .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .ui.cards > .card .meta:not(:hover) span {
+          position: relative;
+          height: 100%; }
+    .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .extra:not(:hover) {
+      background-color: dodgerblue;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column; }
+      .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .extra:not(:hover) a {
+        color: white;
+        font-family: 'Merriweather'; }
+    .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .image {
+      margin: 0 auto;
+      backface-visibility: hidden; }
+      .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .image img {
+        width: unset;
+        border-radius: 100%;
+        background-color: #565A5C; }
+    .meetPeople-container .meetPeople-wrapper span {
+      color: #FFF; }
+    .meetPeople-container .meetPeople-wrapper .register-button {
+      text-align: center;
+      padding-top: 10%;
+      margin: 0 auto; }
+      .meetPeople-container .meetPeople-wrapper .register-button .ui.teal.button {
+        font-size: 2rem;
+        border-radius: 25px;
+        box-shadow: 20px 20px 10px #888888; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .card-header {
+      position: absolute; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .card-header a {
+        top: 100%; }
+    .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .content {
+      transform: rotateY(180deg);
+      position: relative;
+      backface-visibility: hidden; } }
