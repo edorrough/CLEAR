@@ -1,0 +1,71 @@
+.userLogin-page {
+    // background-image: url(../../assets/loginTest.jpg) ;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    
+    // /* Center and scale the image nicely */
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+
+    height: 100%; 
+
+    .userLogin-content {
+        height: 100%;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        background-color: #E7E4E3;
+
+        .userLoginContentWrapper {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+
+            .userLoginFormWrapper {
+                border-radius: 50px;
+                width: 70%;
+                margin: 0 auto;
+                background-color: darkmagenta;
+                padding: 5% 0 5% 0;
+
+                .ui.form {
+
+                    .forgotPW {
+                        padding-bottom: 10px;
+                    }
+
+                    .btnForm {
+                        display: flex;
+                        justify-content: space-evenly;
+                    }
+                    a {
+                        color: #FFF;
+                    }
+                }
+
+            }
+
+            
+        }
+            
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .userLogin-page {
+
+        .userLogin-content {
+
+            .userLoginContentWrapper {
+                width: 100%;
+
+                .userLoginFormWrapper {
+                    width: 90%;
+                    // padding-bottom: 5%;
+                }
+            }
+        }
+    }
+}

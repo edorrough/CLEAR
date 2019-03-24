@@ -1,0 +1,130 @@
+.contact-page-container {
+    height: 100%;
+    width: 100%;
+    
+
+    .contact-page {
+        // display: flex;
+        // flex-direction: row;
+        height: 100%;
+
+        .contact {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+
+            .centeredLeft {
+                top: 50%;
+                left: 50%;
+                text-align: center;
+                width: 50%;
+    
+                background-image: url(../../assets/linkguisticContact.jpeg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                // position: relative;
+                padding: 30px 15px 0px 15px;
+                z-index: 1;
+    
+                .address-wrapper {
+                    display: flex;
+                    width: 70%;
+                    margin: 0 auto;
+                    flex-direction: column;
+
+                    .address-info {
+                        margin: 0 auto;
+                        color: white;
+                        font-size: 30px;
+                    }
+
+                    .address-content {
+                        padding-bottom: 20%;
+                        
+                        p {
+                            color: white;
+                        }
+                    }
+                }
+
+                .phone-info-wrapper {
+                    display: flex;
+                    width: 70%;
+                    margin: 0 auto;
+                    flex-direction: column;
+                    padding-bottom: 20%;
+
+                    .phone-info {
+                        color: white;
+                        margin: 0 auto;
+                        font-size: 30px;
+                    }
+                    p {
+                        color: #c2f9b6;
+                    }
+                }
+
+                .email-info-wrapper {
+                    display: flex;
+                    width: 70%;
+                    margin: 0 auto;
+                    flex-direction: column;
+                    padding-bottom: 20%;
+
+                    .email-info {
+                        color: white;
+                        margin: 0 auto;
+                        font-size: 30px;
+                    }
+                    p {
+                        color: #c2f9b6;
+                    }
+                }
+            }
+    
+            .centeredRight {
+                left: 50%;
+                text-align: center;
+                width: 50%;
+
+                .form-wrapper {
+                    padding: 10%;
+
+                    .ui.form .field .error-msg{
+                        color: red;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media(max-width: 768px) {
+    .contact-page-container {
+        height: 100%;
+        width: 100%;
+        
+    
+        .contact-page {
+            // display: flex;
+            // flex-direction: row;
+            height: 100%;
+            
+    
+            .contact {
+                display: flex;
+                flex-direction: column;
+
+                .centeredLeft {
+                    width: 100%;
+                }
+
+                .centeredRight {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

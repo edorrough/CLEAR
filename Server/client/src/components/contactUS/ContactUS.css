@@ -1,0 +1,79 @@
+.contact-page-container {
+  height: 100%;
+  width: 100%; }
+  .contact-page-container .contact-page {
+    height: 100%; }
+    .contact-page-container .contact-page .contact {
+      display: flex;
+      flex-direction: row;
+      height: 100%; }
+      .contact-page-container .contact-page .contact .centeredLeft {
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        width: 50%;
+        background-image: url(../../assets/linkguisticContact.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 30px 15px 0px 15px;
+        z-index: 1; }
+        .contact-page-container .contact-page .contact .centeredLeft .address-wrapper {
+          display: flex;
+          width: 70%;
+          margin: 0 auto;
+          flex-direction: column; }
+          .contact-page-container .contact-page .contact .centeredLeft .address-wrapper .address-info {
+            margin: 0 auto;
+            color: white;
+            font-size: 30px; }
+          .contact-page-container .contact-page .contact .centeredLeft .address-wrapper .address-content {
+            padding-bottom: 20%; }
+            .contact-page-container .contact-page .contact .centeredLeft .address-wrapper .address-content p {
+              color: white; }
+        .contact-page-container .contact-page .contact .centeredLeft .phone-info-wrapper {
+          display: flex;
+          width: 70%;
+          margin: 0 auto;
+          flex-direction: column;
+          padding-bottom: 20%; }
+          .contact-page-container .contact-page .contact .centeredLeft .phone-info-wrapper .phone-info {
+            color: white;
+            margin: 0 auto;
+            font-size: 30px; }
+          .contact-page-container .contact-page .contact .centeredLeft .phone-info-wrapper p {
+            color: #c2f9b6; }
+        .contact-page-container .contact-page .contact .centeredLeft .email-info-wrapper {
+          display: flex;
+          width: 70%;
+          margin: 0 auto;
+          flex-direction: column;
+          padding-bottom: 20%; }
+          .contact-page-container .contact-page .contact .centeredLeft .email-info-wrapper .email-info {
+            color: white;
+            margin: 0 auto;
+            font-size: 30px; }
+          .contact-page-container .contact-page .contact .centeredLeft .email-info-wrapper p {
+            color: #c2f9b6; }
+      .contact-page-container .contact-page .contact .centeredRight {
+        left: 50%;
+        text-align: center;
+        width: 50%; }
+        .contact-page-container .contact-page .contact .centeredRight .form-wrapper {
+          padding: 10%; }
+          .contact-page-container .contact-page .contact .centeredRight .form-wrapper .ui.form .field .error-msg {
+            color: red; }
+
+@media (max-width: 768px) {
+  .contact-page-container {
+    height: 100%;
+    width: 100%; }
+    .contact-page-container .contact-page {
+      height: 100%; }
+      .contact-page-container .contact-page .contact {
+        display: flex;
+        flex-direction: column; }
+        .contact-page-container .contact-page .contact .centeredLeft {
+          width: 100%; }
+        .contact-page-container .contact-page .contact .centeredRight {
+          width: 100%; } }

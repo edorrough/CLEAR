@@ -1,0 +1,30 @@
+.userLogin-page {
+  height: 100%; }
+  .userLogin-page .userLogin-content {
+    height: 100%;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    background-color: #E7E4E3; }
+    .userLogin-page .userLogin-content .userLoginContentWrapper {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center; }
+      .userLogin-page .userLogin-content .userLoginContentWrapper .userLoginFormWrapper {
+        border-radius: 50px;
+        width: 70%;
+        margin: 0 auto;
+        background-color: darkmagenta;
+        padding: 5% 0 5% 0; }
+        .userLogin-page .userLogin-content .userLoginContentWrapper .userLoginFormWrapper .ui.form .forgotPW {
+          padding-bottom: 10px; }
+        .userLogin-page .userLogin-content .userLoginContentWrapper .userLoginFormWrapper .ui.form .btnForm {
+          display: flex;
+          justify-content: space-evenly; }
+        .userLogin-page .userLogin-content .userLoginContentWrapper .userLoginFormWrapper .ui.form a {
+          color: #FFF; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .userLogin-page .userLogin-content .userLoginContentWrapper {
+    width: 100%; }
+    .userLogin-page .userLogin-content .userLoginContentWrapper .userLoginFormWrapper {
+      width: 90%; } }

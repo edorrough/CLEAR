@@ -6,17 +6,39 @@ const bodyParser = require('body-parser');
 require('./classModels/Users');
 
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+// const MongoClient = require('mongodb').MongoClient;
+// const client = new MongoClient(keys.mongoURI, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("clear").collection("admin");
+//   // perform actions on the collection object
+// //   client.close();
+// });
+
+
+// mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
+
+
+
+
+
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
+app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
+
+
+
+require('./routes/contactEmaily')(app);
+
+
 
 if (process.env.NODE_ENV === 'production') {
     // Express will server up production assets like main.css or main.js
     app.use(express.static('client/build'));
+
+    // mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
     
     const path = require('path');
     // Express serves up index.html if it doesn't recognize the route

@@ -9,6 +9,7 @@ const navPaths = [
     {   path: '/projects', main: "Projects" },
     {   path: '/our-educational-programs', main: "Education" },
     {   path: '/media-and-current-events', main: "Media and Current Events" },
+    {   path: '/user/login', main: "Login" },
     {   path: '/contact-us', main: "Contact us" }
 ]
     

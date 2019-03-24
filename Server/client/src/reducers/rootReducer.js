@@ -8,8 +8,10 @@ import { combineReducers } from 'redux';
 // import adminImageReducer from './adminImageReducer/adminImageReducer';
 // import faqsReducer from './faqsReducer/faqsReducer';
 // import nonOrgsReducer from './nonProfOrgsReducer/nonProfOrgsReducer';
+import contactReducer from './contactReducer/contactReducer';
 
 export default combineReducers({
+    contact: contactReducer
     // auth: authReducer,
     // userAuth: userAuthReducer,
     // users: usersReducer,

@@ -10,6 +10,9 @@ import Navbar from './customNavbar/CustomNavbar';
 import SideDrawer from './customNavbar/sideDrawer/sideDrawer';
 import Backdrop from './customNavbar/backDrop/backDrop';
 import Home from './home/Home';
+import UserLogin from './login/userLogin';
+import ContactUS from './contactUS/ContactUS';
+import NoMatch from './noMatch/NoMatch';
 import './App.css';
 
 class App extends Component {
@@ -89,6 +92,9 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Home}/>
 
+                            <Route path='/user/login' component={UserLogin} />
+                            <Route path='/contact-us' component={ContactUS} />
+                            <Route component={NoMatch} />
                         </Switch>
 
                     </div>
