@@ -37,14 +37,14 @@ const userSchema = new Schema({
         type: String,
         default: null
     },
-    artWorkImagesPath: {
-        type: Array,
-        default: null
-    },
     filePathNode :{
         type: Array,
         default: null
     },
+    isAdmin: {
+        type: Boolean,
+        defualt: false
+    }
 })
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('admins', userSchema);

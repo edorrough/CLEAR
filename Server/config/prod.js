@@ -7,7 +7,7 @@ module.exports = {
     mongoURI: process.env.MONGO_URI,
     cookieKey: process.env.COOKIE_KEY,
     // absoluteURI: 'https://fast-refuge-56600.herokuapp.com',
-    absoluteURI: 'https://enigmatic-taiga-20441.herokuapp.com',
+    // absoluteURI: 'https://enigmatic-taiga-20441.herokuapp.com',
     JWT_KEY: process.env.JWT_KEY,
     sendGridKey: process.env.SEND_GRID_KEY,
     redirectDomain: process.env.REDIRECT_DOMAIN,

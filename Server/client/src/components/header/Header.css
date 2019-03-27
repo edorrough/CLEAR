@@ -42,7 +42,8 @@
           font: inherit;
           vertical-align: baseline; }
           .header-wrapper .header-container-max .branding .branding-row span div {
-            font-size: 25px; }
+            font-size: 25px;
+            padding: 1% 0; }
           .header-wrapper .header-container-max .branding .branding-row span p {
             font-size: 12px;
             text-transform: uppercase; }

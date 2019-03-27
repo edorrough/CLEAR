@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types'; // ES6
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { Button } from 'react-bootstrap';
-// import { userSubmitSignin } from '../../actions/passwordIndex';
+import { userSubmitSignin } from '../../actions/authAction';
 import './Login.css';
 
 class userLogin extends Component {
     state = {
         email: '',
         password: '',
-        request: '',
+        request: null,
         errors: {},
         loading: false,
         done: false
@@ -56,7 +56,7 @@ class userLogin extends Component {
             .then(
                 () => {},
                 (err) => {
-                    // debugger
+                    debugger
                     console.log("err in userLogin: ", err);
                     if(err.response.status === 429) {
                         this.setState({ 
@@ -72,79 +72,78 @@ class userLogin extends Component {
     }
 
     render() {
-        const form = (
-            <div className="userLogin-content">
-
-                <div className="userLoginContentWrapper">
-
-                    <div className="userLoginFormWrapper">
-
-                    <h1>Department of Linguistic</h1>
-                    <div className="ui container">
-                        <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
-
-                            <div className={classnames('field', {error: !!this.state.errors.email })}>
-                                <label htmlFor="email">Email *</label>
-                                <input
-                                    name="email"
-                                    value={this.state.email || ''}
-                                    onChange={this.handleChange}
-                                    id="email"
-                                    placeholder="Enter email..."
-                                />
-                                <span className="error-msg-color">{this.state.errors.email}</span>
-                            </div>
-
-                            <div className={classnames('field', {error: !!this.state.errors.password })}>
-                                <label htmlFor="password">Password *</label>
-                                <input
-                                    name="password"
-                                    value={this.state.password || ''}
-                                    type="password"
-                                    onChange={this.handleChange}
-                                    id="password"
-                                    placeholder="Enter password..."
-                                />
-                                <span className="error-msg-color">{this.state.errors.password}</span>
-                            </div>
-
-                            <div className="forgotPW">
-                                <Link to="/user/passwd-forgot">
-                                    Forgot password
-                                </Link>
-                            </div>
-
-                            <div className="btnForm">
-
-                                <button className="ui primary button">
-                                    <Link to="/"> Cancel </Link>
-                                </button>
-
-                                <div className="forgot-btn">
-                                    <div className="field">
-                                        <button className="ui primary button">Login</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form>
-
-                    </div> 
-
-                    </div>
-
-                </div>
-            </div>
-        )
 
         return (
             <div className="userLogin-page">
-                {form}
+                <div className="userLogin-content">
+                    <div className="userLoginContentWrapper">
+                        <div className="userLoginFormWrapper">
+
+                            <h1>Department of Linguistic</h1>
+
+                            <span className="error-msg-color">{this.state.request ? this.state.request : ''}</span>
+
+                            <div className="ui container">
+                                <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
+
+                                    <div className={classnames('field', {error: !!this.state.errors.email })}>
+                                        <label htmlFor="email">Email *</label>
+                                        <input
+                                            name="email"
+                                            value={this.state.email || ''}
+                                            onChange={this.handleChange}
+                                            id="email"
+                                            placeholder="Enter email..."
+                                        />
+                                        <span className="error-msg-color">{this.state.errors.email}</span>
+                                    </div>
+
+                                    <div className={classnames('field', {error: !!this.state.errors.password })}>
+                                        <label htmlFor="password">Password *</label>
+                                        <input
+                                            name="password"
+                                            value={this.state.password || ''}
+                                            type="password"
+                                            onChange={this.handleChange}
+                                            id="password"
+                                            placeholder="Enter password..."
+                                        />
+                                        <span className="error-msg-color">{this.state.errors.password}</span>
+                                    </div>
+
+                                    <div className="forgotPW">
+                                        <Link to="/user/passwd-forgot">
+                                            Forgot password
+                                        </Link>
+                                    </div>
+
+                                    <div className="btnForm">
+
+                                        <button className="ui primary button">
+                                            <Link to="/"> Cancel </Link>
+                                        </button>
+
+                                        <div className="forgot-btn">
+                                            <div className="field">
+                                                <button className="ui primary button">Login</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
+userLogin.propTypes = {
+    userSubmitSignin: PropTypes.func
+}
+
 export default connect(null, {
-    // userSubmitSignin
+    userSubmitSignin
 })(userLogin);

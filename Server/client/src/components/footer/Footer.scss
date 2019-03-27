@@ -1,0 +1,123 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #fff;
+
+    // position: absolute;
+
+    // position: fixed; /* OldProperty */
+    // position: static;/* Updated Property */
+    // position: absolute;
+    position: relative;
+
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+
+    .site-infor-wrapper {
+        // padding: 40px 0 20px;
+        padding: 20px 0;
+        width: 95%;
+        margin: 0 auto;
+
+        .site-info {
+            display: flex;
+
+            
+            .site-info-content {
+                width: 66.66%;
+
+                .block-title {
+                    text-transform: none;
+                    color: #cfb87c;
+
+                    font-size: 110%;
+                    font-weight: 500;
+                }
+            }
+
+            .cu-footer {
+                width: 33.33%;
+
+                img {
+                    max-width: 300px;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .cu-boulder-title {
+                    color: #cfb87c;
+                }
+
+                span {
+                    display: flex;
+                    font-size: 85%;
+
+                    a {
+                        color: #cfb87c;
+                    }
+                    li {
+                        padding-right: 10px;
+                    }
+
+                    li:first-child {
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    // .footer .site-infor-wrapper .site-info {
+    //     display: unset;
+
+    //     .site-info-content {
+    //         width: 100%;
+    //         margin-bottom: 20px;
+    //     }
+
+    //     .cu-footer {
+    //         width: 100%;
+    //     }
+    // }
+
+    .footer {
+
+        .site-infor-wrapper {
+            width: 90%;
+
+
+            .site-info {
+                display: unset; 
+
+                .site-info-content {
+                    padding-bottom: 5%;
+                    width: 100%;
+
+                    p {
+                        
+                        padding-bottom: 5%;
+                    }
+                }
+
+                .cu-footer {
+                    width: 100%;
+
+                    span {
+                        display: flex;
+                        font-size: 85%;
+    
+                        li {
+                            padding-right: 5px;
+                        }
+    
+                        li:first-child {
+                            list-style-type: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

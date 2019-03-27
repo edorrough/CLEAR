@@ -9,9 +9,11 @@ import { combineReducers } from 'redux';
 // import faqsReducer from './faqsReducer/faqsReducer';
 // import nonOrgsReducer from './nonProfOrgsReducer/nonProfOrgsReducer';
 import contactReducer from './contactReducer/contactReducer';
+import userSigninReducer from './userSigninReducer/userSigninReducer';
 
 export default combineReducers({
-    contact: contactReducer
+    contact: contactReducer,
+    auth: userSigninReducer
     // auth: authReducer,
     // userAuth: userAuthReducer,
     // users: usersReducer,

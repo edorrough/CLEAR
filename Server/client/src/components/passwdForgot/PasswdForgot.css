@@ -1,0 +1,13 @@
+.passwd-forgot-page-container {
+  height: 100%;
+  width: 100%; }
+  .passwd-forgot-page-container .passwd-forgot-form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 60px 0; }
+    .passwd-forgot-page-container .passwd-forgot-form .error-msg {
+      color: red; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .passwd-forgot-page-container .passwd-forgot-form {
+    width: 100%; } }

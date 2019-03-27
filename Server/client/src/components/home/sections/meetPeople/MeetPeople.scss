@@ -59,10 +59,12 @@
 
                 .header {
                     backface-visibility: hidden;
-                    font-size: 2rem;
+                    font-size: 1.2rem;
                     text-align: center;
                     color: #FFF;
-                    padding-top: 15px;
+                    // padding-top: 15px;
+                    padding: 15px 0;
+                    font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important;
                 }
 
             }
@@ -120,6 +122,8 @@
             a {
                 color: white;
                 font-family: 'Merriweather';
+                font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+
             }
         }
 

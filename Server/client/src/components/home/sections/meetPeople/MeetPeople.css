@@ -36,10 +36,11 @@
             background-color: #565A5C; }
         .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .header {
           backface-visibility: hidden;
-          font-size: 2rem;
+          font-size: 1.2rem;
           text-align: center;
           color: #FFF;
-          padding-top: 15px; }
+          padding: 15px 0;
+          font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important; }
       .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .content {
         background-color: dodgerblue;
         color: white;
@@ -65,7 +66,8 @@
       flex-direction: column; }
       .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .extra:not(:hover) a {
         color: white;
-        font-family: 'Merriweather'; }
+        font-family: 'Merriweather';
+        font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important; }
     .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .image {
       margin: 0 auto;
       backface-visibility: hidden; }

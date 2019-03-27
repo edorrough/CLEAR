@@ -6,19 +6,21 @@ const bodyParser = require('body-parser');
 require('./classModels/Users');
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const client = new MongoClient(keys.mongoURI, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("clear").collection("admin");
-//   // perform actions on the collection object
-// //   client.close();
-// });
 
-
-// mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
-
-
-
+mongoose.connect(keys.mongoURI, { 
+    useNewUrlParser: true 
+})
+.then(() => {
+    // console.log(result)
+    // server.start()
+},
+(err) => {
+    console.log("err in connecting Mongo: ", err)
+})
+const db = mongoose.connection;
+db.once('open', () => {
+    console.log('Connected to Mongo');
+})
 
 
 
@@ -26,11 +28,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
+
+
+// app.enable("trust proxy"); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
 
 
 
 require('./routes/contactEmaily')(app);
+require('./routes/userLogin')(app, db)
 
 
 
