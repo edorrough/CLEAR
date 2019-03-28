@@ -1,11 +1,13 @@
 import setAuthorizationToken from '../utils/setAuthorizationToken';
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
+import jwtDecode from 'jwt-decode';
 export const FORGOT_PASSWORD_SUBMIT = 'forgot_password';
 export const USER_LOGIN = 'user_login';
 export const SUCCESSFULLY_CHANGE_PASSWORD = 'change_password';
+export const AUTH_FAILED = 'login_failed';
 
 function handleResponse(response) {
+    debugger
     if(response.ok) {
         return response.json()
 
@@ -32,14 +34,26 @@ export const logout = () => {
     }
 }
 
+export const failedLogin = (user) => {
+    return {
+        type: AUTH_FAILED,
+        user
+    }
+}
+
 export const userSubmitSignin = (userData) => {
     return dispatch => {
         return axios.post('/api/login', userData)
+        // .then(handleResponse)
         .then(res => {
             const token = res.data.token;
             localStorage.setItem('jwtToken', token);
             setAuthorizationToken(token);
-            dispatch(setCurrentUser(jwt.decode(token))) ;
+            dispatch(setCurrentUser(jwtDecode(token))) ;
+        })
+        .catch(error => {
+            // console.log(error.response.data)
+            dispatch(failedLogin(error.response.data))
         })
     }
 }

@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'; // ES6
 import { 
   BrowserRouter as Router, 
   Route,
-  Switch,
-  Redirect
+  Switch
 } from 'react-router-dom';
 
 import Header from '../components/header/Header';
@@ -19,25 +18,19 @@ import PasswdForgot from './passwdForgot/PasswdForgot';
 import ResetPasswd from './resetPasswd/ResetPasswd';
 import ContactUS from './contactUS/ContactUS';
 import NoMatch from './noMatch/NoMatch';
+
 import './App.css';
 
 import Projects from './projects/Projects';
 
 
 import { connect } from 'react-redux';
-import AdminApp  from './AdminApp/AdminApp'
+import AdminApp  from './AdminApp/AdminApp';
 
+// import AuthenticateRoute from '../utils/AuthenticateRoute';
 
-function AuthenticatedRoute({ component: Component, authenticated, ...rest}) {
-    return (
-        <Route
-            {...rest}
-            render={(props) => authenticated === true ? 
-            <Component {...props} {...rest} /> : 
-            <Redirect to="/user/login" />}
-        />
-    )
-}
+import AuthenticatedRoute from '../utils/authenticatedRoute';
+import FlashMessagesList from './flash/FlashMessagesList';
 
 class App extends Component {
     constructor(props) {
@@ -48,7 +41,6 @@ class App extends Component {
             scrollTop: 0,
             sideDrawerOpen: false,
             authenticated: false,
-            // status: 'admin'
         }
     }
 
@@ -85,7 +77,7 @@ class App extends Component {
 
     scrollToTop = (e) => {
         e.preventDefault();
-        console.log("he")
+
         window.scrollTo(0, 0)
     }
 
@@ -99,9 +91,6 @@ class App extends Component {
         }
 
         if(isAuthenticated) {
-            // if(this.props.user[0].Administrator) {
-            //     return <AdminApp token={this.props.user[0].token}/>
-            // }
             return <AdminApp/>
         }
         
@@ -112,7 +101,6 @@ class App extends Component {
                 ref={this.myRef}
                 onScroll={this.onScroll}
               >
-
                 <Router>
                     <div className="App-container">
                         <Header />
@@ -121,21 +109,23 @@ class App extends Component {
                             scrollYvalue={this.state.scrollTop}
                             drawerClickHandler={this.drawerToggleClickHandler}
                         />
+                        
                         <SideDrawer show={this.state.sideDrawerOpen} />
                         {backdrop}
+                        <FlashMessagesList />
 
                         <Switch>
                             <Route exact path="/" component={Home}/>
 
-
-                            {/* <Route path='/projects' component={Projects} /> */}
-                            <AuthenticatedRoute 
-                                exact 
+                            {/* new2: working */}
+                            {/* <AuthenticatedRoute 
                                 path="/projects" 
-                                component={Projects} 
-                                authenticated={this.state.authenticated}
-                            />
-                            {/* <Route path='/projects' component={Projects} /> */}
+                                component={Projects}
+                                isAuthenticated={isAuthenticated}
+                            /> */}
+
+                            {/* Completely Working */}
+                            <Route path="/projects" component={AuthenticatedRoute(Projects)} />
 
 
 
@@ -161,7 +151,7 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state in App.js: ", state)
+    // console.log("state in App.js: ", state)
     return {
         auth: state.auth
     }

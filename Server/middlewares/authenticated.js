@@ -8,14 +8,15 @@ module.exports = function(req, res, next) {
     if(authorizationHeader) {
         token = authorizationHeader.split(' ')[1];
     }
-    console.log(token)
+    // console.log(token)
     if(token) {
         jwt.verify(token, keys.JWT_KEY, (err, decoded) => {
             if(err) {
                 res.status(401).json({ errors: { global: 'Failed to authenticate' }})
             } else {
-                // console.log(decoded)
+                console.log("decode in authenticated.js: ", decoded)
                 req.currentUser = decoded;
+                req.userId = decoded.id
                 next();
             }
 

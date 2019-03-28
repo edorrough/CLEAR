@@ -2,7 +2,8 @@
 import {
     FORGOT_PASSWORD_SUBMIT,
     SUCCESSFULLY_CHANGE_PASSWORD,
-    USER_LOGIN
+    USER_LOGIN,
+    AUTH_FAILED
 } from '../../actions/authAction';
 import isEmpty from 'lodash/isEmpty';
 
@@ -34,6 +35,12 @@ export default function(state = initialState, action = {}) {
             return {
                 ...state,
                 message: action.userData
+            }
+
+        case AUTH_FAILED:
+            return {
+                ...state,
+                user: action.user
             }
         default:
             return state;

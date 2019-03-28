@@ -10,7 +10,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducers from './reducers/rootReducer';
 import setAuthorizationToken from './utils/setAuthorizationToken';
 import { setCurrentUser } from './actions/authAction';
-import jwt from 'jsonwebtoken';
+import jwtDecode from 'jwt-decode';
 import './index.css';
 
 const store = createStore(
@@ -22,7 +22,7 @@ const store = createStore(
 
 if(localStorage.jwtToken) { 
     setAuthorizationToken(localStorage.jwtToken);
-    store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)))
+    store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)))
 }
 
 ReactDOM.render(

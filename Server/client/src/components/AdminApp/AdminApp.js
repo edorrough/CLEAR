@@ -3,6 +3,7 @@ import BackDrop from './components/backDrop/BackDrop';
 import Toolbar from './components/toolBar/Toolbar';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import UsersPage from './components/users/UsersPage';
+import FlashMessagesList from '../flash/FlashMessagesList';
 
 import {
     BrowserRouter as Router,
@@ -56,7 +57,7 @@ class AdminApp extends Component {
                         <Toolbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
                         <SideDrawer show={this.state.sideDrawerOpen} />
                         {backDrop}
-
+                        <FlashMessagesList />
                         
                         {routes.map((route) => (
                             <AuthenticatedRoute

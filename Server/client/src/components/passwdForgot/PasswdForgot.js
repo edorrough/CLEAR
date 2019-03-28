@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { forgotPasswdSubmit } from '../../actions/authAction';
+import { addFlashMessages } from '../../actions/flashMessages';
+
 import './PasswdForgot.css';
 
 class PasswdForgot extends Component {
@@ -9,7 +11,6 @@ class PasswdForgot extends Component {
         email: '',
         secret_code: '',
         errors: {},
-        returnMsg: null,
         loading: false,
         done: false
     }
@@ -50,10 +51,13 @@ class PasswdForgot extends Component {
 
             this.props.forgotPasswdSubmit({ email, secret_code })
                 .then(
-                    (msg) => { 
+                    (msg) => {
+                        this.props.addFlashMessages({
+                            type: 'success',
+                            text: 'You have successful performed this action. Check your email'
+                        })
                         this.setState({ 
                             done: true,
-                            returnMsg: msg.pwdResetData.message
                         })
                     },
                     (err) => {
@@ -71,6 +75,8 @@ class PasswdForgot extends Component {
                 <div className="ui container">
 
                     <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
+
+                    {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
 
                         <div className={classnames('field', { error: !!this.state.errors.email })}>
                             <label htmlFor="email">Email *</label>
@@ -108,12 +114,13 @@ class PasswdForgot extends Component {
 
         return (
             <div className="passwd-forgot-page-container">
-                {this.state.done ? <div>{this.state.returnMsg}</div> : form }
+                {this.state.done ? '' : form }
             </div>
         )
     }
 }
 
 export default connect(null, {
-    forgotPasswdSubmit
+    forgotPasswdSubmit,
+    addFlashMessages
 })(PasswdForgot)

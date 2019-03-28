@@ -10,10 +10,12 @@ import { combineReducers } from 'redux';
 // import nonOrgsReducer from './nonProfOrgsReducer/nonProfOrgsReducer';
 import contactReducer from './contactReducer/contactReducer';
 import userSigninReducer from './userSigninReducer/userSigninReducer';
+import flashMessagesReducer from './flashMessages/flashMessages';
 
 export default combineReducers({
     contact: contactReducer,
-    auth: userSigninReducer
+    auth: userSigninReducer,
+    flashMessage: flashMessagesReducer
     // auth: authReducer,
     // userAuth: userAuthReducer,
     // users: usersReducer,

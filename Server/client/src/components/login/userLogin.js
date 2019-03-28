@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { userSubmitSignin } from '../../actions/authAction';
+import { addFlashMessages } from '../../actions/flashMessages';
 import './Login.css';
 
 class userLogin extends Component {
@@ -54,17 +55,25 @@ class userLogin extends Component {
                 password 
             })
             .then(
-                () => {},
+                () => {
+                    this.props.addFlashMessages({
+                        type: 'success',
+                        text: 'You have successfully logged in, welcome.'
+                    });
+                    this.setState({ 
+                        done: true,
+                    })
+                },
                 (err) => {
-                    debugger
-                    console.log("err in userLogin: ", err);
+                    console.log("err in userLogin: ", err.response);
+                    // debugger
                     if(err.response.status === 429) {
                         this.setState({ 
                             request: err.response.statusText + ', please try again later',
                             loading: false 
                         })
                     } else {
-                        err.response.json().then(({errors}) => this.setState({ errors, loading: false }))
+                        err.response.json().then(({ errors }) => this.setState({ errors, loading: false }))
                     }
                 }
             );
@@ -82,6 +91,11 @@ class userLogin extends Component {
                             <h1>Department of Linguistic</h1>
 
                             <span className="error-msg-color">{this.state.request ? this.state.request : ''}</span>
+                            {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
+                                {this.props.user.errors ? 
+                                <div className="ui negative message">
+                                    <p>{this.props.user.errors.global}</p>
+                                </div> : ''}
 
                             <div className="ui container">
                                 <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
@@ -141,9 +155,17 @@ class userLogin extends Component {
 }
 
 userLogin.propTypes = {
-    userSubmitSignin: PropTypes.func
+    userSubmitSignin: PropTypes.func,
+    addFlashMessages: PropTypes.func
 }
 
-export default connect(null, {
-    userSubmitSignin
+const mapStateToProps = (state) => {
+    return {
+        user: state.auth.user
+    }
+}
+
+export default connect(mapStateToProps, {
+    userSubmitSignin,
+    addFlashMessages
 })(userLogin);

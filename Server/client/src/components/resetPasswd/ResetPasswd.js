@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { resetPasswdSubmit } from '../../actions/authAction';
+import { addFlashMessages } from '../../actions/flashMessages';
 import './ResetPassword.css';
 
 class ResetPasswd extends Component {
@@ -61,9 +62,13 @@ class ResetPasswd extends Component {
                 token
             })
             .then((msg) => {
+                this.props.addFlashMessages({
+                    type: 'success',
+                    text: 'You have successful changed your password. Click the bottom below to login'
+                });
                 this.setState({ 
                     done: true,
-                    successMSG: msg.userData.message
+                    // successMSG: msg.userData.message
                 })
             },
             (err) => {
@@ -149,5 +154,6 @@ class ResetPasswd extends Component {
 }
 
 export default connect(null, {
-    resetPasswdSubmit
+    resetPasswdSubmit,
+    addFlashMessages
 })(ResetPasswd);
