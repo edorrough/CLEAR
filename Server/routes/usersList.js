@@ -153,7 +153,8 @@ module.exports = (app, db) => {
                                             'You account: \n\n' + email + '\n\n' +
                                             'Please click on the follwoing link, or paste this into your browser to complete the process: \n\n' +
         
-                                            keys.HTTP_NAME + req.headers.host + '/admins/first-login/' + token + '\n\n',
+                                            // keys.HTTP_NAME + req.headers.host + '/admins/firsttime-login/' + token + '\n\n',
+                                            keys.HTTP_NAME + req.headers.host + '/user/first-login/' + token + '\n\n',
                                         };
         
                                         smtpTransport.sendMail(mailOptions, (err, info) => {
@@ -165,7 +166,6 @@ module.exports = (app, db) => {
                                                 // console.log('Message sent: %s', JSON.stringify(info, null, 4));
                                                 // console.log('Message URL: %s', nodemailer.getTestMessageUrl(info))
         
-                                                // console.log("adminResult: ", adminResult.ops[0]);
                                                 res.status(200).json({ admin: adminResult.ops[0] });
                                                 try{
                                                     fs.unlinkSync(req.file.path)
@@ -266,7 +266,7 @@ module.exports = (app, db) => {
                                     'You account: \n\n' + email + '\n\n' +
                                     'Please click on the follwoing link, or paste this into your browser to complete the process: \n\n' +
 
-                                    keys.HTTP_NAME + req.headers.host + '/admins/first-login/' + token + '\n\n',
+                                    keys.HTTP_NAME + req.headers.host + '/user/first-login/' + token + '\n\n',
                                 };
 
                                 smtpTransport.sendMail(mailOptions, (err, info) => {
@@ -357,16 +357,20 @@ module.exports = (app, db) => {
     }); // end fetchAdmin
 
     app.delete('/api/admins/:_id', (req, res) => {
+
         db.collection('admins').findOneAndDelete(
             { _id: new mongoose.Types.ObjectId(req.params._id) },
             (err, admin) => {
-                cloudinary.uploader.destroy(admin.value.public_id, (result, err) => {
-                    console.log("result in delete /api/admins/:_id of cloudinary destroy: ", result)
-                    if(err) {
-                        console.log("err in cloudinary delete: ", err)
-                        return res.status(500).json({ errors: { global: err } });
-                    }
-                });
+
+                if(admin.value.public_id) {
+                    cloudinary.uploader.destroy(admin.value.public_id, (result, err) => {
+                        console.log("result in delete /api/admins/:_id of cloudinary destroy: ", result)
+                        if(err) {
+                            console.log("err in cloudinary delete: ", err)
+                            return res.status(500).json({ errors: { global: err } });
+                        }
+                    });
+                }
 
                 if(err) {
                     console.log("err in findOneAndDelete: ", err)
@@ -376,5 +380,6 @@ module.exports = (app, db) => {
                 }
             }
         )
+
     });
 }

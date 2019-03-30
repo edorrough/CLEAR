@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import NoImage from '../../../../../assets/NoImage.jpg';
 
 const UserCard = ({ admin, deleteAdmin }) => {
     return (
         <div className="ui card">
             <div className="image">
-                <img src={admin.adminImagePath ? admin.adminImagePath : 'NoImage'} alt={admin.adminImagePathAlt} />
+                <img src={admin.adminImagePath ? admin.adminImagePath : NoImage} alt={admin.adminImagePathAlt} />
 
             </div>
             

@@ -4,7 +4,7 @@ const keys = require('../config/keys');
 module.exports = function(req, res, next) {
     const authorizationHeader = req.headers['authorization'];
     let token;
-
+    
     if(authorizationHeader) {
         token = authorizationHeader.split(' ')[1];
     }

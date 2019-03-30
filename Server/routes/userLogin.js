@@ -393,6 +393,82 @@ module.exports = (app, db) => {
 
     });
 
+    app.post('/api/login-firsttime/:token', (req, res) => {
+    // app.post('/api/login-firsttime', authenticated, (req, res) => {
+        const { password, passwordConfirm, token } = req.body;
+
+        if(password !== passwordConfirm) {
+            return res.status(400).json({ errors: { global: 'Password mismatch' }});
+        } else {
+            const { errors, isValid } = validation(req.body);
+            if(isValid) {
+                
+                bcrypt.hash(password, 12, (err, hash) => {
+                    if(err) {
+                        console.log("bcrypt error in /api/login-firsttime/:token")
+                        return res.status(500).json({ error: { global: err } });
+                    } else {
+
+                        db.collection('admins').findOneAndUpdate(
+                            { resetPasswordToken: token, resetPasswordExpires: { $gt: Date.now() }},
+                            { $set: {
+                                password: hash,
+                                resetPasswordToken: undefined,
+                                resetPasswordExpires: undefined
+                                }
+                            },
+                            { returnOriginal: false },
+                            (err, user) => {
+                                if(err) {
+                                    return res.status(500).json({ error: { global: err } });
+                                } else {
+    
+                                    const smtpTransport = nodemailer.createTransport({
+                                        service: 'Gmail', 
+                                        auth: {
+                                            type: 'OAuth2',
+                                            user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                            clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
+                                            clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
+                                            refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
+                                            accessToken: keys.GOOGLE_EMAIL_ACCESS_TOKEN,
+                                        },
+                                    });
+                                    var mailOptions = {
+                                        // to: user.email,
+                                        to: 'chch6597@colorado.edu',
+                                        from: keys.KEVIN_EMAIL,
+                                        subject: 'Re: Successfully changed your password',
+                                        text: 'Hello, ' + user.value.firstname + ' ' + user.value.lastname + '\n\n' +
+                                            'This is a confirmation that the password for your account ' + user.value.email + ' for the Clear has just been changed.\n' +
+                                            'Please do not reply directly this email.\n'
+                                    };
+                    
+                                    smtpTransport.sendMail(mailOptions, (err, info) => {
+                                        if (err) {
+                                            console.log('err: ', err)
+                                            return res.status(500).json({ errors: err})
+                                        }
+                                        else {                
+                                            // res.status(200).json({ user: user.value })
+                                            res.status(200).json({ message: 'Successful changed your password' })
+                                            done(err, 'done');
+                                        }
+                                    });
+    
+                                }
+                            }
+                        )
+                    }
+                });
+
+            } else {
+                console.log("errors in inValid: ", errors )
+                return res.status(400).json({ errors });
+            }
+        }
+    });
+
     // app.get('/api/logout', (req, res, next) => {
     //     if (req.session) {
     //         // delete session object

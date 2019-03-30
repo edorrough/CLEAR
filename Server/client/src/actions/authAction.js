@@ -1,13 +1,16 @@
 import setAuthorizationToken from '../utils/setAuthorizationToken';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
+import history from '../components/history/history';
+
 export const FORGOT_PASSWORD_SUBMIT = 'forgot_password';
 export const USER_LOGIN = 'user_login';
 export const SUCCESSFULLY_CHANGE_PASSWORD = 'change_password';
 export const AUTH_FAILED = 'login_failed';
+export const USER_LOGGED = 'user_logged';
 
 function handleResponse(response) {
-    debugger
+    // debugger
     if(response.ok) {
         return response.json()
 
@@ -31,6 +34,7 @@ export const logout = () => {
         localStorage.removeItem('jwtToken');
         setAuthorizationToken(false);
         dispatch(setCurrentUser({}))
+        history.push('/')
     }
 }
 
@@ -56,6 +60,41 @@ export const userSubmitSignin = (userData) => {
             dispatch(failedLogin(error.response.data))
         })
     }
+}
+
+export const LoggedFirstTime = (user) => {
+    return {
+        type: USER_LOGGED,
+        user
+    }
+}
+
+export const firstTimeLogin = (user) => {
+    return dispatch => {
+        return fetch(`/api/login-firsttime/${user.token}`, {
+            method: 'post',
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(handleResponse)
+        .then(user => dispatch(LoggedFirstTime(user)))
+    }
+    // return dispatch => {
+    //     return axios.post('/api/login-firsttime', user)
+    //     .then(res => {
+    //         const token = res.data.token;
+    //         debugger
+    //         localStorage.setItem('jwtToken', token);
+    //         setAuthorizationToken(token);
+    //         dispatch(setCurrentUser(jwtDecode(token))) ;
+    //     })
+    //     .catch(error => {
+    //         debugger
+    //         dispatch(failedLogin(error.response.data))
+    //     })
+    // }
 }
 
 const passwdReset = (pwdResetData) => {

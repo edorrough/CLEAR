@@ -14,10 +14,12 @@ import SideDrawer from './customNavbar/sideDrawer/sideDrawer';
 import Backdrop from './customNavbar/backDrop/backDrop';
 import Home from './home/Home';
 import UserLogin from './login/userLogin';
+import LoginFirstTime from './loginFirstTime/LoginFirstTime';
 import PasswdForgot from './passwdForgot/PasswdForgot';
 import ResetPasswd from './resetPasswd/ResetPasswd';
 import ContactUS from './contactUS/ContactUS';
 import NoMatch from './noMatch/NoMatch';
+import history from './history/history';
 
 import './App.css';
 
@@ -101,7 +103,7 @@ class App extends Component {
                 ref={this.myRef}
                 onScroll={this.onScroll}
               >
-                <Router>
+                <Router history={history}>
                     <div className="App-container">
 
                         <Header />
@@ -133,7 +135,7 @@ class App extends Component {
                             {/* <Route path="/projects" component={AuthenticatedRoute(Projects)} /> */}
                             <Route path="/projects" component={Projects} />
 
-
+                            <Route path="/user/first-login/:token" component={LoginFirstTime} />
 
                             <Route path="/user/passwd-forgot" component={PasswdForgot} />
                             <Route path="/user/login" component={UserLogin} />

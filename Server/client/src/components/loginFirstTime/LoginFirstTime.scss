@@ -1,0 +1,34 @@
+.loginFirstTime-page {
+    height: 100%;
+
+    .loginFirstTime-container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: lightgreen;
+
+        .loginFirstTime-wrapper {
+            width: 80%;
+            margin: 0 auto;
+            padding: 70px 0;
+        }
+
+    }
+
+
+    .error-msg {
+        color: red;
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .loginFirstTime-page {
+
+        .loginFirstTime-container {
+
+
+
+        }
+    }
+
+}
