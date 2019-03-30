@@ -10,14 +10,14 @@ const UsersNav = props => (
                 <NavLink 
                     className="item" 
                     activeClassName="active" 
-                    to="/users/current-user"
+                    to="/admins/current-admins"
                 >
                     User List
                 </NavLink>
                 <NavLink 
                     className="item" 
                     activeClassName="active" 
-                    to="/users/AddNewUsers"
+                    to="/admins/users/AddNewAdmins"
                 >
                     Add New User
                 </NavLink>

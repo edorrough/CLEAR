@@ -1,33 +1,46 @@
-// import React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import UserCard from './userCard/UserCard';
 import { connect } from 'react-redux';
+import { deleteAdmin } from '../../../../actions/userCRUDaction';
 
-const usersList = ({ adminsList }) => {
-    debugger
-    // const emptyMessage = (
-    //     <p>There is no user in your collection</p>
-    // )
+const UsersList = ({ admins, deleteAdmin }) => {
 
-    // const allAdminsList = () => {
-    //     return (
-    //         <div>
-    //             {adminsList}
-    //         </div>
-    //     )
-    // }
+    const emptyMessage = (
+        <p>There is no user in your collection</p>
+    )
 
+    const adminsList = (admins, deleteAdmin) => {
+        return (
+            <div className="ui container">
+                <div className="ui four stackable cards">
+                    {admins.map(admin => <UserCard 
+                                            admin={admin} 
+                                            key={admin._id} 
+                                            deleteAdmin={deleteAdmin} 
+                                        />)}
+                </div>
+            </div>
+        )
+    }
+    return (
+        <div className="userlist-page">
+            {admins.length === 0 ? emptyMessage : adminsList(admins, deleteAdmin)}
+        </div>
+    )
 }
 
-usersList.propTypes = {
-    adminsList: PropTypes.array.isRequired
+UsersList.propTypes = {
+    admins: PropTypes.array.isRequired,
+    deleteAdmin: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
     return {
-        adminsList: state
+        admins: state.admins
     }
 }
 
 export default connect(mapStateToProps, {
-
-})(usersList)
+    deleteAdmin
+})(UsersList)

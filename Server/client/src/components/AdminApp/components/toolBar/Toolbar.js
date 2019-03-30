@@ -25,9 +25,9 @@ class Toolbar extends Component {
                     <div className="spacer" />
                     <div className="toolbar_navigation-items">
                         <ul>
-                            <li><Link to="/">Dashboard</Link></li>
-                            <li><Link to="/users">Users and Images</Link></li>
-                            <li><Link to="/todosList">Todo</Link></li>
+                            <li><Link to="/admins">Dashboard</Link></li>
+                            <li><Link to="/admins/users">Users and Images</Link></li>
+                            <li><Link to="/admins/todosList">Todo</Link></li>
                             {/* <li><a href="/api/logout" onClick={this.logout.bind(this)}>Log out</a></li> */}
                             <li><a href="/#" onClick={this.logout.bind(this)}>Log out</a></li>
                         </ul>
@@ -37,8 +37,6 @@ class Toolbar extends Component {
         )
     }
 }
-
-// export default toolbar;
 
 export default connect(null, {
     logout

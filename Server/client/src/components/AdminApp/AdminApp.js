@@ -4,34 +4,25 @@ import Toolbar from './components/toolBar/Toolbar';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import UsersPage from './components/users/UsersPage';
 import FlashMessagesList from '../flash/FlashMessagesList';
-
+import AuthenticatedRoute from './components/utils/AuthenticatedRoute';
+import { connect } from 'react-redux';
+import { logout } from '../../actions/authAction';
 import {
     BrowserRouter as Router,
-    Route,
-    Redirect
 } from 'react-router-dom';
 
-function AuthenticatedRoute({ component: Component, authenticated, ...rest}) {
-    return (
-        <Route
-            {...rest}
-            render={(props) => authenticated === true ? 
-            <Component {...props} {...rest} /> : 
-            <Redirect to="/user/login" />}
-        />
-    )
-}
 
+const Dashboard = () => <div>Dashboard</div>
+const TodosPage = () => <div>Todos</div>
 const routes = [
-    {   path: '/', exact: true, main: () => <div>Dashboard!</div> },
-    {   path: '/users', exact: true, main: () => <UsersPage />},
-    {   path: '/todosList', exact: true, main: () => <div></div> },
+    {   path: '/admins', exact: true, main: () => <Dashboard /> },
+    {   path: '/admins/users', exact: true, main: () => <UsersPage />},
+    {   path: '/admins/todosList', exact: true, main: () => <TodosPage /> },
 ]
 
 class AdminApp extends Component {
     state = {
         sideDrawerOpen: false,
-        authenticated: true
     }
 
     drawerToggleClickHandler = () => {
@@ -55,7 +46,10 @@ class AdminApp extends Component {
                 <Router>
                     <div className="admin-app-wrapper">
                         <Toolbar drawerToggleClickHandler={this.drawerToggleClickHandler} />
-                        <SideDrawer show={this.state.sideDrawerOpen} />
+                        <SideDrawer 
+                            show={this.state.sideDrawerOpen} 
+                            logout={this.props.logout}
+                        />
                         {backDrop}
                         <FlashMessagesList />
                         
@@ -65,15 +59,10 @@ class AdminApp extends Component {
                                 key={route.path}
                                 path={route.path}
                                 component={route.main}
-                                authenticated={this.state.authenticated}
+                                isAuthenticated={this.props.isAuthenticated}
                             />
-                            // <Route
-                            //     key={route.path}
-                            //     path={route.path}
-                            //     exact={route.exact}
-                            //     component={route.main}
-                            // ></Route>
                         ))}
+
                     </div>
                 </Router>
             </div>
@@ -81,4 +70,6 @@ class AdminApp extends Component {
     }
 }
 
-export default AdminApp;
+export default connect(null, {
+    logout
+})(AdminApp);

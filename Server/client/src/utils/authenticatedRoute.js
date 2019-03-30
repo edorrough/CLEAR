@@ -17,6 +17,7 @@ import PropTypes from 'prop-types'; // ES6
 // }
 
 // Working
+// const AuthenticatedRoute = ({ component: Component, ...rest}) => {
 const AuthenticatedRoute = ({ component: Component, ...rest}) => {
     class AuthenticatedRoute extends React.Component {
         componentWillMount() {

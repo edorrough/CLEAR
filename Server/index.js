@@ -35,16 +35,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 require('./routes/contactEmaily')(app);
-require('./routes/userLogin')(app, db)
-
+require('./routes/userLogin')(app, db);
+require('./routes/usersList')(app, db);
 
 
 if (process.env.NODE_ENV === 'production') {
     // Express will server up production assets like main.css or main.js
     app.use(express.static('client/build'));
 
-    // mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
-    
     const path = require('path');
     // Express serves up index.html if it doesn't recognize the route
     app.get('*', (req, res) => { // Catch the rest
@@ -63,3 +61,9 @@ app.listen(PORT);
 // # emailadrre
 
 // # optional : phone
+
+
+// "engines": {
+//     "node": "8.1.1",
+//     "npm": "5.0.3"
+//   },

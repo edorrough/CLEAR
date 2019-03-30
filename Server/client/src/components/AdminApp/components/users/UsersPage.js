@@ -1,40 +1,61 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';s
+import PropTypes from 'prop-types';
 import UsersPageNav from './UsersPageNav';
 import UsersForm from './usersForms/UsersForm';
 import CurrentUsers from './UsersList';
+import AuthenticatedRoute from '../utils/AuthenticatedRoute';
+import { connect } from 'react-redux';
+import { fetchAdmins } from '../../../../actions/userCRUDaction'
+
 import {
-    BrowserRouter as Router,
-    Route,
+    BrowserRouter as Router
 } from 'react-router-dom';
 
 const routes = [
-    { path: '/users/current-user', exact: true, main: () => <CurrentUsers /> },
-    { path: '/users/AddNewUsers', exact: true, main: () => <UsersForm /> },
-    { path: '/user/:_id', exact: true, main: (routerProps) => <UsersForm params={routerProps.match.params._id}/> },
-
+    { path: '/admins/current-admins', exact: true, main: () => <CurrentUsers /> },
+    { path: '/admins/users/AddNewAdmins', exact: true, main: () => <UsersForm /> },
+    { path: '/admins/users/AddNewAdmins/:_id', exact: true, main: (routerProps) => <UsersForm params={routerProps.match.params}/> },
 ]
 
-export default class UsersPage extends Component {
+class UsersPage extends Component {
+    componentDidMount() {
+        this.props.fetchAdmins();
+    }
 
     render() {
+        const { isAuthenticated } = this.props.auth;
+
         return (
             <Router>
                 <div className="users-page">
                     <UsersPageNav />
 
-
                     {routes.map((route) => (
-                        <Route
+                        <AuthenticatedRoute 
                             key={route.path}
                             path={route.path}
                             exact={route.exact}
                             component={route.main}
-                        >
-                        </Route>
+                            isAuthenticated={isAuthenticated}
+                        />
+
                     ))}
                 </div>
             </Router>
         )
     }
 }
+
+UsersPage.propTypes = {
+    fetchAdmins: PropTypes.func
+}
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps, {
+    fetchAdmins
+})(UsersPage)

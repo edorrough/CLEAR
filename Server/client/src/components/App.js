@@ -29,7 +29,7 @@ import AdminApp  from './AdminApp/AdminApp';
 
 // import AuthenticateRoute from '../utils/AuthenticateRoute';
 
-import AuthenticatedRoute from '../utils/authenticatedRoute';
+// import AuthenticatedRoute from '../utils/authenticatedRoute';
 import FlashMessagesList from './flash/FlashMessagesList';
 
 class App extends Component {
@@ -91,7 +91,7 @@ class App extends Component {
         }
 
         if(isAuthenticated) {
-            return <AdminApp/>
+            return <AdminApp isAuthenticated={isAuthenticated} />
         }
         
 
@@ -103,6 +103,7 @@ class App extends Component {
               >
                 <Router>
                     <div className="App-container">
+
                         <Header />
 
                         <Navbar 
@@ -114,8 +115,12 @@ class App extends Component {
                         {backdrop}
                         <FlashMessagesList />
 
+
+
                         <Switch>
                             <Route exact path="/" component={Home}/>
+
+
 
                             {/* new2: working */}
                             {/* <AuthenticatedRoute 
@@ -125,12 +130,12 @@ class App extends Component {
                             /> */}
 
                             {/* Completely Working */}
-                            <Route path="/projects" component={AuthenticatedRoute(Projects)} />
+                            {/* <Route path="/projects" component={AuthenticatedRoute(Projects)} /> */}
+                            <Route path="/projects" component={Projects} />
 
 
 
                             <Route path="/user/passwd-forgot" component={PasswdForgot} />
-
                             <Route path="/user/login" component={UserLogin} />
                             <Route path="/recover/passwd_reset/:token" component={ResetPasswd} />
 

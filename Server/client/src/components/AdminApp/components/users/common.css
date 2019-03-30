@@ -1,0 +1,14 @@
+.users-page {
+  height: 100%; }
+  .users-page .navbar-container {
+    padding-top: 5%; }
+  .users-page .usersForm-page .userForm-page-container {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto; }
+    .users-page .usersForm-page .userForm-page-container span {
+      color: red; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .users-page .usersForm-page .userForm-page-container {
+    width: 95%; } }
