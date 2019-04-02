@@ -27,8 +27,7 @@ class Toolbar extends Component {
                         <ul>
                             <li><Link to="/admins">Dashboard</Link></li>
                             <li><Link to="/admins/users">Users and Images</Link></li>
-                            <li><Link to="/admins/todosList">Todo</Link></li>
-                            {/* <li><a href="/api/logout" onClick={this.logout.bind(this)}>Log out</a></li> */}
+                            <li><Link to="/admins/scheduler">Scheduler</Link></li>
                             <li><a href="/#" onClick={this.logout.bind(this)}>Log out</a></li>
                         </ul>
                     </div>

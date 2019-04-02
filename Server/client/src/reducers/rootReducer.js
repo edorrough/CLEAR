@@ -12,12 +12,15 @@ import contactReducer from './contactReducer/contactReducer';
 import userSigninReducer from './userSigninReducer/userSigninReducer';
 import flashMessagesReducer from './flashMessages/flashMessages';
 import adminsList from './adminReducer/adminReducer';
+import eventsSchedulersList from './schedulersReducer/EventsSchedulerReducers';
 
 export default combineReducers({
     contact: contactReducer,
     auth: userSigninReducer,
     flashMessage: flashMessagesReducer,
-    admins: adminsList
+    admins: adminsList,
+    events: eventsSchedulersList
+    
     // auth: authReducer,
     // userAuth: userAuthReducer,
     // users: usersReducer,

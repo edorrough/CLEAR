@@ -5,6 +5,7 @@ import SideDrawer from './components/sideDrawer/SideDrawer';
 import UsersPage from './components/users/UsersPage';
 import FlashMessagesList from '../flash/FlashMessagesList';
 import AuthenticatedRoute from './components/utils/AuthenticatedRoute';
+import Scheduler from './components/schedulers/Schedulers';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/authAction';
 import {
@@ -13,11 +14,11 @@ import {
 
 
 const Dashboard = () => <div>Dashboard</div>
-const TodosPage = () => <div>Todos</div>
+
 const routes = [
     {   path: '/admins', exact: true, main: () => <Dashboard /> },
     {   path: '/admins/users', exact: true, main: () => <UsersPage />},
-    {   path: '/admins/todosList', exact: true, main: () => <TodosPage /> },
+    {   path: '/admins/scheduler', exact: true, main: () => <Scheduler /> },
 ]
 
 class AdminApp extends Component {

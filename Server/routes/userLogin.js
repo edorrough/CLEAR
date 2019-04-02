@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const keys = require('../config/keys');
 const Admins = require('../classModels/Users');
 const rateLimit = require("express-rate-limit");
+const request = require('request');
 
 const signinLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour window
@@ -395,13 +396,29 @@ module.exports = (app, db) => {
 
     app.post('/api/login-firsttime/:token', (req, res) => {
     // app.post('/api/login-firsttime', authenticated, (req, res) => {
-        const { password, passwordConfirm, token } = req.body;
+        const { password, passwordConfirm, token, recaptcha } = req.body;
 
         if(password !== passwordConfirm) {
             return res.status(400).json({ errors: { global: 'Password mismatch' }});
         } else {
             const { errors, isValid } = validation(req.body);
             if(isValid) {
+
+                const secreyKey = keys.RECAPTCHA_SECRET_KEY;
+                const verifyURL = `https://www.google.com/recaptcha/api/siteverify?secret=
+                    ${secreyKey}&response=${recaptcha}&remoteip=
+                    ${req.connection.remoteAddress}`;
+
+                request(verifyURL, (err, response, body) => {
+                    body = JSON.parse(body);
+                    // console.log("body: ", body)
+        
+                    if(!body.success) {
+                        return res.status(400).json({ 
+                            errors: { global: err }
+                        });
+                    }
+                });
                 
                 bcrypt.hash(password, 12, (err, hash) => {
                     if(err) {

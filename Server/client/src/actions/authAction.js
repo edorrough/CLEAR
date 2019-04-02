@@ -70,6 +70,7 @@ export const LoggedFirstTime = (user) => {
 }
 
 export const firstTimeLogin = (user) => {
+    debugger
     return dispatch => {
         return fetch(`/api/login-firsttime/${user.token}`, {
             method: 'post',

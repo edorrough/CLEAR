@@ -1,0 +1,16 @@
+.scheduler-page {
+  height: 100%; }
+  .scheduler-page .navbar-container {
+    padding: 5% 0; }
+  .scheduler-page .scheduler-list-page .finished {
+    text-decoration: line-through;
+    color: red; }
+  .scheduler-page .scheduler-list-page i.icon {
+    font-size: 20px;
+    margin: 0 1rem; }
+  .scheduler-page .error-msg {
+    color: red; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .scheduler-page .scheduler-list-page i.icon {
+    font-size: 30px; } }

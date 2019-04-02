@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require('./routes/contactEmaily')(app);
 require('./routes/userLogin')(app, db);
 require('./routes/usersList')(app, db);
-
+require('./routes/eventsScheduler')(app, db);
 
 if (process.env.NODE_ENV === 'production') {
     // Express will server up production assets like main.css or main.js

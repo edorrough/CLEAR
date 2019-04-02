@@ -5,6 +5,7 @@ import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
 import { firstTimeLogin } from '../../actions/authAction';
 import { addFlashMessages } from '../../actions/flashMessages';
+import ReCAPTCHA from "react-google-recaptcha";
 import './LoginFirstTime.css';
 
 class LoginFirstTime extends Component {
@@ -14,6 +15,7 @@ class LoginFirstTime extends Component {
         passwordRequirement: '',
         token: this.props.match.params.token ? this.props.match.params.token : '',
         loading: false,
+        recaptcha: '',
         done: false,
         errors: {}
     }
@@ -34,6 +36,11 @@ class LoginFirstTime extends Component {
         }
     }
 
+    renderRecaptcha = value => {
+        console.log("value: ", value)
+        this.setState({ recaptcha: value })
+    }
+
     passwordChecking = (value) => {
         return value && /^(?=[A-Z])(?=.*?[0-9])(?=.*?[^\w\s]).+$/.test(value)   
     }
@@ -46,18 +53,20 @@ class LoginFirstTime extends Component {
         if(this.state.passwordConfirm === '')  errors.passwordConfirm = 'Connot be empty';
         if(!this.passwordChecking(this.state.password)) errors.passwordRequirement = 'Passwords must at least 8 characters, include one capital letter, one number, and one special character like: +@?=*$.';
         if(this.state.password !== this.state.passwordConfirm) errors.mismatch = 'Passwords mismatch';
+        if(this.state.recaptcha === '') errors.recaptcha = 'Recaptcha cannot be empty';
 
         this.setState({ errors });
         const isValid = Object.keys(errors).length === 0;
 
         if(isValid) {
-            const { password, passwordConfirm, token } = this.state;
+            const { password, passwordConfirm, token, recaptcha } = this.state;
             this.setState({ loading: true });
 
             this.props.firstTimeLogin({
                 password,
                 passwordConfirm,
-                token
+                token,
+                recaptcha
             })
             .then(
                 () => { 
@@ -70,7 +79,7 @@ class LoginFirstTime extends Component {
                     }) 
                 },
                 (err) => {
-                    debugger
+                    // debugger
                     console.log("err in FirstTimeLogin: ", err);
                     err.response.json().then(({ errors }) => this.setState({ errors, loading: false }))
                 }
@@ -80,10 +89,6 @@ class LoginFirstTime extends Component {
     }
 
     render() {
-        
-        console.log(this.state.token)
-        // debugger
-
         const form = (
             <div className="loginFirstTime-container">
                 <div className="loginFirstTime-wrapper">
@@ -121,6 +126,14 @@ class LoginFirstTime extends Component {
 
                                 <span className="error-msg">{this.state.errors.mismatch}</span>
                                 <span className="error-msg">{this.state.errors.passwordRequirement}</span>                                
+
+                                <ReCAPTCHA
+                                    // style={{ display: "inline-block" }}
+                                    sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                                    name="recaptcha" 
+                                    onChange={this.renderRecaptcha}
+                                    value={this.state.recaptcha}
+                                />
 
                                 <div className="btn">
                                     <div className="field">

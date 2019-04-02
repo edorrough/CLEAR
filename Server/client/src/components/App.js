@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'; // ES6
 
 import { 
-  BrowserRouter as Router, 
+  Router, 
   Route,
   Switch
 } from 'react-router-dom';
