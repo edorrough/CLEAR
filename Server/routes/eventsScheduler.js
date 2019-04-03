@@ -31,8 +31,7 @@ module.exports = (app, db) => {
     });
 
     app.put('/api/events/:_id', (req, res) => {
-        const { errors, isValid } = validate(req.body);  
-        // console.log(req.body)
+        const { errors, isValid } = validate(req.body);
         if(isValid) {
             let { title, note, eventDone } = req.body;
             if(eventDone === 'true') {

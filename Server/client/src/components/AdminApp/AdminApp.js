@@ -4,6 +4,7 @@ import Toolbar from './components/toolBar/Toolbar';
 import SideDrawer from './components/sideDrawer/SideDrawer';
 import UsersPage from './components/users/UsersPage';
 import FlashMessagesList from '../flash/FlashMessagesList';
+import EmailyList from './components/emailyList/EmailListPage';
 import AuthenticatedRoute from './components/utils/AuthenticatedRoute';
 import Scheduler from './components/schedulers/Schedulers';
 import { connect } from 'react-redux';
@@ -15,9 +16,11 @@ import {
 
 const Dashboard = () => <div>Dashboard</div>
 
+
 const routes = [
     {   path: '/admins', exact: true, main: () => <Dashboard /> },
-    {   path: '/admins/users', exact: true, main: () => <UsersPage />},
+    {   path: '/admins/users', exact: true, main: () => <UsersPage /> },
+    {   path: '/admins/emailyList', exact: true, main: () => <EmailyList /> },
     {   path: '/admins/scheduler', exact: true, main: () => <Scheduler /> },
 ]
 

@@ -173,7 +173,7 @@ module.exports = (app, db) => {
                                                 catch(err) {
                                                     console.log("error in delete picture: ", err)
                                                 }
-                                                done(err, 'done');
+                                                done('done');
                                             }
                                         });
 

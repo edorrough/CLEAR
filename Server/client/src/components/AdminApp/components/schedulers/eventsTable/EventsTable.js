@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default function EventsTable({ event, deleteEvent }) {
-    // debugger
     return (
         <tr>
             <td className={event.eventDone ? 'finished' : 'notFinished'}>{event.title}</td>

@@ -1,0 +1,190 @@
+const cron = require('node-cron');
+const nodemailer = require('nodemailer');
+const mongoose = require('mongoose');
+const keys = require('../config/keys');
+
+function validate(data) {
+    let errors = {};
+   
+    if(data.firstname === '') errors.firstname = 'Cannot be empty';
+    if(data.lastname === '') errors.lastname = 'Cannot be empty';
+    if(data.email === '') errors.email = "Email address cannot be empty";
+
+    const isValid = Object.keys(errors).length === 0;
+
+    return { errors, isValid };
+}
+
+module.exports = (app, db) => {
+    // second(optional), minute, hour, day of month, month, day of week
+    cron.schedule('0 */1 * * * *', () => {
+    // cron.schedule('* * * * * *', () => {
+    // cron.schedule("* * * * Sunday", () => {
+        console.log("Every 1 minutes");
+
+        // db.collection('users').find({}).toArray((err, users) => {
+        //     if(err) {
+        //         console.log("err in emailyScheduler of users collection: ", users)
+        //     } else {
+
+        //         if(users.length === 0) {
+        //             const smtpTransport = nodemailer.createTransport({
+        //                 service: 'Gmail', 
+        //                 auth: {
+        //                     type: 'OAuth2',
+        //                     user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+        //                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
+        //                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
+        //                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
+        //                     accessToken: keys.GOOGLE_EMAIL_ACCESS_TOKEN,
+        //                 },
+        //             });
+    
+        //             const mailOptions = {
+        //                 // from: keys.KEVIN_EMAIL,
+        //                 from: 'chch6597@colorado.edu',
+        //                 // to: keys.KEVIN_EMAIL,
+        //                 to: 'chch6597@colorado.edu',
+        //                 subject: 'The Clear: you have no pending user',
+        //                 text: 'This email is to inform you that there is no user to inform.'
+        //             };
+    
+        //             smtpTransport.sendMail(mailOptions, (err, success) => {
+        //                 if (err) {
+        //                     console.log("err: ", err)
+        //                     return res.status(500).json({ errors: { global: 'Something went wrong' }});
+        //                 } else {
+        //                     res.json({ success })
+        //                     console.log("send email to Kevin")
+        //                     done('done');
+        //                 }
+        //             })
+
+        //         } else {
+        //             const emailList = users.map(user => user.email);
+        //             console.log(emailList.length)
+        //             var today = new Date();
+
+        //             db.collection('events').find({}).toArray((err, events) => {
+        //                 if(err) {
+        //                     console.log("err in event scheduler of users collection in emailyScheduler: ", users)
+    
+        //                 } else {
+        //                     // res.json({ success })
+        //                     console.log("send")
+        //                     // done(err, 'done');
+        //                 }
+    
+        //             });
+
+
+        //         }
+
+        //     }
+        // })
+
+        
+    });
+
+
+    app.get('/api/users/emailsList', (req, res) => {
+        db.collection('users').find({}).toArray((err, users) => {
+            if(err) {
+                res.status(500).json({ errors: { global: 'Something went wrong' }})
+            } else {
+                res.status(200).json({ users })
+            }
+        });
+    });
+
+    app.get('/api/users/emailsList/:_id', (req, res) => {
+        db.collection('users').findOne({ _id: new mongoose.Types.ObjectId(req.params._id)}, (err, user) => {
+            if(err) throw err;
+
+            return res.status(200).json({ user })
+        })
+    });
+
+    app.post('/api/user/emailsList', (req, res) => {
+        const { errors, isValid } = validate(req.body);
+
+        if(isValid) {
+            const {
+                firstname,
+                lastname,
+                email,
+                notes
+            } = req.body;
+
+            const today = new Date();
+            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            const dateTime = date+' '+time;
+
+            db.collection('users').insertOne({
+                firstname,
+                lastname,
+                notes,
+                email,
+                createDate: dateTime
+            }, (err, user) => {
+                if(err) {
+                    return res.status(500).json({ errors: { global: 'Something went wrong in database' }});
+                } else {
+                    res.status(200).json({ user: user.ops[0] });
+                }
+            })
+
+        } else {
+            return res.status(500).json({ errors })
+        }
+    });
+
+    app.put('/api/user/emailsList/:_id', (req, res) => {
+        const { errors, isValid } = validate(req.body);
+        if(isValid) {
+            let { firstname, lastname, email, notes } = req.body;
+
+            db.collection('users').findOneAndUpdate(
+                { _id: new mongoose.Types.ObjectId(req.params._id) },
+                { $set: {
+                    firstname,
+                    lastname,
+                    email,
+                    notes
+                    },
+                },
+                { returnOriginal: false }, // This is important
+                ( err, newUserResult ) => {
+                    // console.log("result in db.collection: ", result)
+                    if(err) {
+                        return res.status(500).json({ errors: { global: err } });
+                    } else {
+                        res.status(200).json({
+                            user: newUserResult.value
+                        })
+                    }
+                }
+            )
+
+        } else {
+            return res.status(400).json({ errors })
+        }
+    });
+
+    app.delete('/api/user/emailsList/:_id', (req, res) => {
+        db.collection('users').findOneAndDelete(
+            { _id: new mongoose.Types.ObjectId(req.params._id) },
+            (err, user) => {
+                
+                if(err) {
+                    console.log("err in findOneAndDelete: ", err)
+                    return res.status(500).json({ errors: { global: err } });
+                } else {
+                    res.status(200).json({ message: 'successful' });
+                }
+            }
+        )
+    });
+
+}

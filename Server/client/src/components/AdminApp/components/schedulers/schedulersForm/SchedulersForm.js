@@ -20,7 +20,6 @@ class SchedulersForm extends Component {
     }
 
     componentWillReceiveProps = (nextProps) => {
-        debugger
         this.setState({
             _id: nextProps.event._id,
             title: nextProps.event.title,
@@ -64,19 +63,6 @@ class SchedulersForm extends Component {
         if(isValid) {
             const { _id, title, note, eventDone } = this.state;
 
-            // if(eventDone === 'false') {
-            //     this.setState({ 
-            //         loading: true,
-            //         eventDone: false
-            //     });
-            // } else {
-            //     this.setState({ 
-            //         loading: true,
-            //         eventDone: true
-            //     });
-            // }
-
-            debugger
             if(_id) {
                 this.props.updateEvent({
                     _id,
