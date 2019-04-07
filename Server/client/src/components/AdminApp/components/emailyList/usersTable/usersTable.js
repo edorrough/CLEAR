@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function UsersTable({ user, deleteUser }) {
+    // debugger
     return (
         <tr>
             <td>{user.firstname}</td>
@@ -14,7 +15,7 @@ export default function UsersTable({ user, deleteUser }) {
                 <Link to={`/admins/users/AddNewUserOnList/${user._id}`}><i className="pencil alternate icon"></i></Link>
                 <i className="trash alternate icon" onClick={() => deleteUser(user._id)}></i>
             </td>
-            <td>{user.note}</td>
+            <td>{user.notes}</td>
         </tr>
     )
 }

@@ -86,11 +86,14 @@ module.exports = (app, db) => {
             const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             const dateTime = date+' '+time;
 
+            const compareDate = today.setDate(today.getDate());
+
             db.collection('events').insertOne({
                 title,
                 note,
                 eventDone,
-                createDate: dateTime
+                createDate: dateTime,
+                comparedDate: compareDate
             }, (err, result) => {
                 if(err) {
                     return res.status(500).json({ errors: { global: 'Something went wrong in database' }});
