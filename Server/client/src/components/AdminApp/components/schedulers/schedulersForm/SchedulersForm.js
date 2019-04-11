@@ -5,15 +5,23 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { addFlashMessages } from '../../../../../actions/flashMessages';
 import { saveEvent, fetchEvent, updateEvent } from '../../../../../actions/eventsSchedulersAction';
+import Calendar from "../../../../calendar/calendar";
+
+const style = {
+    position: "relative",
+    margin: "50px auto"
+}
 
 class SchedulersForm extends Component {
     state = {
         _id: this.props.event ? this.props.event._id : null,
         title: this.props.event ? this.props.event.title : '',
         note: this.props.event ? this.props.event.note : '',
-        // eventDone: this.props.event ? this.props.event.eventDone: false,
         eventDone: this.props.event ? this.props.event.eventDone: 'false',
         eventErrorMsg: '',
+
+        day: '',
+
         loading: false,
         done: false,
         errors: {}
@@ -103,7 +111,16 @@ class SchedulersForm extends Component {
         }
     }
 
+    onDayClick = (e, day) => {
+        // console.log(month)
+        console.log(day)
+        // console.log(typeof(day))
+        
+    }
+
     render() {
+        const { day } = this.state;
+
         const form = (
             <div className="schedulers-form-container">
                 <div className="ui container">
@@ -143,8 +160,17 @@ class SchedulersForm extends Component {
                                 <span className="error-msg">{this.state.errors.eventErrorMsg}</span>
                             </div>
 
+                            {/* <Calendar style={style} width="302px" onDayClick={(e, day) => this.onDayClick(e, day)} /> */}
+
+                            <Calendar 
+                                style={style} 
+                                width="302px" 
+                                onDayClick={(e, day) => this.onDayClick(e, day)} 
+                                
+                            />
+
                             <div className={classnames('field', { error: !!this.state.errors.note })}>
-                                <label htmlFor="firstname">note *</label>
+                                <label htmlFor="firstname">Note *</label>
                                 <textarea
                                     id="note"
                                     value={this.state.note}

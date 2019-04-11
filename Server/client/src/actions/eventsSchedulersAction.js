@@ -56,18 +56,19 @@ export function eventSaved(event) {
 }
 
 export function saveEvent(event) {
+    debugger
 
-    return dispatch => {
-        return fetch('/api/events', {
-            method: 'post',
-            body: JSON.stringify(event),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(handleResponse)
-        .then(data => dispatch(eventSaved(data.event)))
-    }
+    // return dispatch => {
+    //     return fetch('/api/events', {
+    //         method: 'post',
+    //         body: JSON.stringify(event),
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         }
+    //     })
+    //     .then(handleResponse)
+    //     .then(data => dispatch(eventSaved(data.event)))
+    // }
 }
 
 export function eventUpdated(event) {

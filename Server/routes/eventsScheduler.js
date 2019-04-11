@@ -93,6 +93,7 @@ module.exports = (app, db) => {
                 note,
                 eventDone,
                 createDate: dateTime,
+                ISOdate: today,
                 comparedDate: compareDate
             }, (err, result) => {
                 if(err) {
