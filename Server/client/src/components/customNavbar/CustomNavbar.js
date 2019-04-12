@@ -12,17 +12,16 @@ const navPaths = [
     {   path: '/user/login', main: "Login" },
     {   path: '/contact-us', main: "Contact us" }
 ]
-    
+
 const CustomNavbar = props => {
     return (
         // <header className= { props.location.pathname === "/" || props.location.pathname === "/contact-us" ? 'navbar' : ""} >
         <header className ='navbar' >
             <nav className={props.scrollYvalue > 761 || props.scrollYvalue > 568 || props.scrollYvalue > 120 ? 'navbar-navigation-change' : 'navbar-navigation'}>
-                
+
                 <div className="navbar-logo-title">
                     <Link to="/">
                         <i className="home icon"></i>
-                        The Clear
                     </Link>
                 </div>
 
