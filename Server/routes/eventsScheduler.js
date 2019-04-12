@@ -6,6 +6,8 @@ const validate = (data) => {
 
     if(data.title === '') errors.title = 'Title cannot be empty';
     if(data.note === '') errors.note = 'Note cannot be empty';
+    if(data.startDate === '') errors.startDate = "Start date cannot be empty";
+    if(data.endDate === '') errors.endDate = "End date cannot be empty";
 
     const isValid = Object.keys(errors).length === 0;
     return { errors, isValid};
@@ -67,13 +69,16 @@ module.exports = (app, db) => {
     });
 
     app.post('/api/events', (req, res) => {
+        console.log(req.body)
 
         const { errors, isValid } = validate(req.body);            
         if(isValid) {
             let {
                 title,
                 note,
-                eventDone
+                eventDone,
+                startDate,
+                endDate
             } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
@@ -82,18 +87,19 @@ module.exports = (app, db) => {
             }
 
             const today = new Date();
-            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            const dateTime = date+' '+time;
+        //     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        //     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        //     const dateTime = date+' '+time;
 
             const compareDate = today.setDate(today.getDate());
 
             db.collection('events').insertOne({
                 title,
-                note,
+                desc: note,
                 eventDone,
-                createDate: dateTime,
-                ISOdate: today,
+                // createDate: dateTime,
+                start: startDate,
+                end: endDate,
                 comparedDate: compareDate
             }, (err, result) => {
                 if(err) {

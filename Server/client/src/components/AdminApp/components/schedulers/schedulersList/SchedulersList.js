@@ -4,6 +4,12 @@ import EventsTable from '../eventsTable/EventsTable';
 import { connect } from 'react-redux';
 import { deleteEvent } from '../../../../../actions/eventsSchedulersAction';
 
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+moment.locale('en-GB');
+const localizer = BigCalendar.momentLocalizer(moment)
+
 const SchedulersList = ({ events, deleteEvent }) => {
 
     const emptyMessage = (
@@ -33,6 +39,17 @@ const SchedulersList = ({ events, deleteEvent }) => {
                                 />)}
                     </tbody>
                 </table>
+                <BigCalendar
+                    events={events}
+                    localizer={localizer}
+                    defaultView={BigCalendar.Views.DAY}
+                    views={['day', 'work_week', 'month']}
+                    step={60}
+                    // defaultDate={new Date(2018, 0, 29)}
+                    // resources={resourceMap}
+                    // resourceIdAccessor="resourceId"
+                    // resourceTitleAccessor="resourceTitle"
+                    />
             </div>
         )
     }

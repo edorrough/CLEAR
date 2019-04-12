@@ -5,22 +5,37 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { addFlashMessages } from '../../../../../actions/flashMessages';
 import { saveEvent, fetchEvent, updateEvent } from '../../../../../actions/eventsSchedulersAction';
-import Calendar from "../../../../calendar/calendar";
-
-const style = {
-    position: "relative",
-    margin: "50px auto"
-}
+// import Calendar from '../../../../calendar/calendar';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 class SchedulersForm extends Component {
     state = {
         _id: this.props.event ? this.props.event._id : null,
         title: this.props.event ? this.props.event.title : '',
         note: this.props.event ? this.props.event.note : '',
+        // eventDone: this.props.event ? this.props.event.eventDone: false,
         eventDone: this.props.event ? this.props.event.eventDone: 'false',
         eventErrorMsg: '',
 
+
+
+        month: '',
         day: '',
+
+        startDateTime: '',
+        endDateTime: '',
+
+
+
+
+        startDate: new Date(),
+        endDate: new Date(),
+        showMonthDropdown: true,
+        value: '',
+        dateFormat: "MMMM d, yyyy h:mm aa",
+        allDay: 'false',
+
 
         loading: false,
         done: false,
@@ -64,12 +79,14 @@ class SchedulersForm extends Component {
         if(this.state.title === '') errors.title = 'Title cannot be empty';
         if(this.state.note === '') errors.note = 'Note cannot be empty';
         if(this.state.eventDone === '') errors.eventErrorMsg = 'Is it finisheded?';
+        if(this.state.startDate === '') errors.startDate = 'Start date cannot be empty';
+        if(this.state.endDate === '') errors.endDate = 'End date cannot be empty';
 
         this.setState({ errors })
         const isValid = Object.keys(errors).length === 0;
 
         if(isValid) {
-            const { _id, title, note, eventDone } = this.state;
+            const { _id, title, note, eventDone, startDate, endDate, allDay } = this.state;
 
             if(_id) {
                 this.props.updateEvent({
@@ -94,7 +111,10 @@ class SchedulersForm extends Component {
                 this.props.saveEvent({
                     title,
                     note,
-                    eventDone
+                    eventDone,
+                    startDate,
+                    endDate,
+                    allDay
                 })
                 .then( () => {
                     this.props.addFlashMessages({
@@ -111,15 +131,20 @@ class SchedulersForm extends Component {
         }
     }
 
-    onDayClick = (e, day) => {
-        // console.log(month)
-        console.log(day)
-        // console.log(typeof(day))
-        
+    // onDayClick = (e, day) => {
+    //     console.log(day)
+    // }
+
+    handleStartDateChange = (date) => {
+        this.setState({ startDate: date });
+    }
+
+    handleEndDateChange = (date) => {
+        this.setState({ endDate: date });
     }
 
     render() {
-        const { day } = this.state;
+        console.log(this.state.startDate)
 
         const form = (
             <div className="schedulers-form-container">
@@ -144,6 +169,77 @@ class SchedulersForm extends Component {
                                 <span className="error-msg">{this.state.errors.title}</span>
                             </div>
 
+                            <div className="two fields">
+
+                                <div className={classnames('field', { error: !!this.state.errors.startDateTime })}>
+
+                                    <label>Start Time *</label>
+                                    <DatePicker
+                                        selected={this.state.startDate}
+                                        selectsStart
+                                        startDate={this.state.startDate}
+                                        endDate={this.state.endDate}
+                                        onChange={this.handleStartDateChange}
+                                        timeIntervals={15}
+                                        dateFormat={this.state.dateFormat}
+                                        showTimeSelect
+                                        showMonthDropdown={this.state.showMonthDropdown}
+                                    />
+                                </div>
+
+                                <div className={classnames('field', { error: !!this.state.errors.endDateTime })}>
+
+                                    <label>End Time *</label>
+                                    <DatePicker
+                                        selected={this.state.endDate}
+                                        selectsEnd
+                                        startDate={this.state.startDate}
+                                        endDate={this.state.endDate}
+                                        onChange={this.handleEndDateChange}
+                                        timeIntervals={15}
+                                        dateFormat={this.state.dateFormat}
+                                        showMonthDropdown={this.state.showMonthDropdown}
+                                        showTimeSelect
+                                    />
+                                </div>
+                            </div>
+
+                            
+
+                            {/* <div className="field">
+                                <label htmlFor="start">Start Date</label>
+                                <input 
+                                    id="start"
+                                    type="date" 
+                                    value={this.state.start}
+                                    name="start"
+                                    onChange={this.handleStartDateChange}
+                                />
+                                <label htmlFor="end">End Date</label>
+                                <input
+                                    id="end"
+                                    type="date"
+                                    value={this.state.end}
+                                    name="end"
+                                    onChange={this.handleEndDateChange}
+                                />
+                            </div> */}
+
+                            <div className="field">
+                                <label htmlFor="allday">Is it all day event?</label>
+                                <select
+                                    className="ui fluid search dropdown"
+                                    onChange={this.handleChange}
+                                    name="allday"
+                                    id="allday"
+                                    value={this.state.allDay}
+                                >
+                                    <option value=""></option>
+                                    <option value="false">No</option>
+                                    <option value="true">Yes</option>
+                                </select>
+                            </div>
+
                             <div className="field">
                                 <label htmlFor="eventDone">Is it finished?</label>
                                 <select 
@@ -160,17 +256,14 @@ class SchedulersForm extends Component {
                                 <span className="error-msg">{this.state.errors.eventErrorMsg}</span>
                             </div>
 
-                            {/* <Calendar style={style} width="302px" onDayClick={(e, day) => this.onDayClick(e, day)} /> */}
 
-                            <Calendar 
-                                style={style} 
-                                width="302px" 
-                                onDayClick={(e, day) => this.onDayClick(e, day)} 
-                                
-                            />
+
+                            {/* <Calendar
+                                onDayClick={this.onDayClick(this.state.month, this.state.day)}
+                            /> */}
 
                             <div className={classnames('field', { error: !!this.state.errors.note })}>
-                                <label htmlFor="firstname">Note *</label>
+                                <label htmlFor="firstname">note *</label>
                                 <textarea
                                     id="note"
                                     value={this.state.note}
