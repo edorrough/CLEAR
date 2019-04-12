@@ -8,7 +8,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
 
-    height: 100%;
+    height: 81vh;
     // height: 590px;
 
     /* Center and scale the image nicely */
@@ -25,7 +25,7 @@
     -webkit-transition: -webkit-transform .5s linear;
 
 
-   
+
     .arrows-navigation {
         position: absolute;
         top: 50%;
@@ -48,7 +48,7 @@
             width: 5%;
             background-color: transparent;
             border: none;
-            
+
             img {
                 width: 100%;
                 height: 50px;
@@ -80,29 +80,15 @@
             padding: 2%;
             margin-right: 8%;
             width: 50%;
+            font-family: Open sans-serif;
             text-align: center;
 
             h1 {
                 font-size: 5rem;
-                // font-family: rob
                 padding-bottom: 10%;
-            }
-
-            h2 {
-                padding-top: 15%;
-                font-family: "Arvo", "Times New Roman", Times, serif;
-                font-weight: 700;
-                color: #FFF;
             }
             h3 {
                 padding-top: 15%;
-            }
-
-            .ui.teal.button {
-                font-size: 3rem;
-                border-radius: 25px;
-                box-shadow: 20px 20px 10px #888888;
-
             }
         }
     }
@@ -111,30 +97,6 @@
 
 @media(max-width: 768px) {
     .page1-container {
-
-        .arrows-navigation {
-            top: 60%;
-    
-            .left-arrow {
-                width: 10%;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 50px;
-                }
-            }
-            .right-arrow {
-                width: 10%;
-                // background-color: transparent;
-                // border: none;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 50px;
-                }
-            }
-
-        }
 
         .content {
             display: flex;
@@ -156,17 +118,17 @@
                 margin-right: 8%;
                 width: 100%;
                 text-align: center;
-    
+
                 h1 {
                     font-size: 5rem;
                     padding-bottom: 10%;
-                    color: #652aed;
+                    color: white;
                 }
                 h3 {
                     padding-top: 15%;
-                    color: #652aed;
+                    color: white;
                 }
-    
+
                 .ui.teal.button {
                     font-size: 3rem;
                 }
@@ -179,29 +141,6 @@
 
 @media(min-width: 320px) and (max-width: 767px) {
     .page1-container {
-
-        .arrows-navigation {
-            top: 80%;
-            
-    
-            .left-arrow {
-                width: 20%;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 50px;
-                }
-            }
-            .right-arrow {
-                width: 20%;
-                position: relative;
-                img {
-                    width: 100%;
-                    height: 50px;
-                }
-            }
-
-        }
 
         .content {
 
@@ -220,17 +159,17 @@
                 margin-right: 8%;
                 width: 100%;
                 text-align: center;
-    
+
                 h1 {
                     font-size: 5rem;
                     padding-bottom: 10%;
-                    color: #652aed;
+                    color: white;
                 }
                 h3 {
                     padding-top: 15%;
-                    color: #652aed;
+                    color: white;
                 }
-    
+
                 .ui.teal.button {
                     font-size: 3rem;
                 }

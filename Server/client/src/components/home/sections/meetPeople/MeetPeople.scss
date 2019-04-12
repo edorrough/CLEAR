@@ -1,7 +1,7 @@
 .meetPeople-container {
     // background-image: url(../../../../assets/testHome_whales.jpg);
-    padding-top: 96px;
-    padding-bottom: 66px;
+    padding-top: 3em;
+    padding-bottom: 3em;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -14,11 +14,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    background-color: #FFF;
+    background-color: #F6F6F6;
 
     h1 {
         text-align: center;
         font-family: Open sans-serif;
+        text-decoration: underline;
+        text-decoration-color: #CFB87C;
     }
 
     .meetPeople-wrapper {
@@ -29,14 +31,12 @@
         }
 
         .ui.three.cards>.card {
-            background-color: #17a2b8;
+            background-color: #CFB87C;
             transition: transform 0.8s;
             transform-style: preserve-3d;
 
             position: relative;
             height: 100%;
-
-            
 
             .card-header {
                 width: 100%;
@@ -44,87 +44,67 @@
                 justify-content: center;
                 flex-direction: column;
 
-                
-
                 .image {
-                    margin: 0 auto;
+                    margin: 1em auto;
                     backface-visibility: hidden;
 
                     img {
                         width: unset;
                         border-radius: 100%;
-                        background-color: #565A5C;
+                        background-color: #CFB87C;
                     }
                 }
 
                 .header {
                     backface-visibility: hidden;
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                     text-align: center;
                     color: #FFF;
-                    // padding-top: 15px;
-                    padding: 15px 0;
-                    font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+                    padding-top: 15px;
                 }
 
             }
 
             .content {
-                background-color: dodgerblue;
-                color: white;
+                background-color: #565A5C;
+                color: black;
+                font-size: 1em;
                 transform: rotateY(180deg);
                 position: absolute;
-
+                height: 100%;
                 // display: none;
 
                 backface-visibility: hidden;
             }
+            .extra {
+              flex-direction: column;
+              a {
+                color: #CFB87C;
+              }
+            }
         }
-
-        
 
         .ui.three.cards>.card:hover {
             transform: rotateY(180deg);
             height: 100%;
             // position: relative;
-
+            .header {
+              visibility: hidden;
+            }
             .content:not(:hover) {
-                background-color: #17a2b8;
+                background-color: #565A5C;
                 display: block;
             }
-
-            // .extra:not(:hover) {
-            //     position: relative;
-            //     width: 50%;
-            // }
 
             .ui.cards>.card .meta:not(:hover) {
                 position: relative;
                 font-family: 'Merriweather';
-
-
                 span {
                     position: relative;
                     height: 100%;
                 }
             }
 
-        }
-
-        .ui.cards>.card>.extra:not(:hover) {
-            background-color: dodgerblue;
-            
-            backface-visibility: hidden;
-            display: flex;
-            flex-direction: column;
-
-            
-            a {
-                color: white;
-                font-family: 'Merriweather';
-                font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important;
-
-            }
         }
 
         .ui.cards>.card>.image {
@@ -148,10 +128,29 @@
             margin: 0 auto;
 
             .ui.teal.button {
-                font-size: 2rem;
-                border-radius: 25px;
-                box-shadow: 20px 20px 10px #888888;
-            }
+              font-size: 1.5rem;
+              border-radius: 25px;
+              background-color: #000;
+
+              display: inline-block;
+              vertical-align: middle;
+              transform: translateZ(0);
+
+              -moz-osx-font-smoothing: grayscale;
+              transition-duration: 0.3s;
+              transition-property: transform;
+
+              -moz-transition: all .2s ease-in;
+              -o-transition: all .2s ease-in;
+              -webkit-transition: all .2s ease-in;
+              transition: all .2s ease-in;
+          }
+          .ui.teal.button:hover,
+          .ui.teal.button:focus,
+          .ui.teal.button:active {
+            transform: scale(1.04);
+            background-color: #565A5C;
+          }
         }
 
     }
@@ -180,6 +179,7 @@
                 .content {
                     transform: rotateY(180deg);
                     position: relative;
+                    height: 100%;
                     backface-visibility: hidden;
                 }
             }

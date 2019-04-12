@@ -1,8 +1,8 @@
 .projects-container {
     // background-image: url('../../../../assets/linkguisticContact.jpeg');
 
-    padding-top: 96px;
-    padding-bottom: 66px;
+    padding-top: 3em;
+    padding-bottom: 3em;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -15,23 +15,23 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    background-color: #dee9fc;
+    background-color: #FFF;
 
     h1{
         text-align: center;
         // font-family: 'Lato','Helvetica Neue',Arial,Helvetica,sans-serif;
         font-family: Open sans-serif;
         // font-family: si
-        font-weight: 700;
-        color: #989ba0;
+        text-decoration: underline;
+        text-decoration-color: #CFB87C;
     }
 
     .projects-wrapper {
         // padding: 64px 2.5% 64px 2.5%;
         padding: 64px 2rem;
-        
 
-        .ui.cards>.card>.image {            
+
+        .ui.cards>.card>.image {
 
             .again:hover {
 
@@ -40,7 +40,7 @@
                 animation: bounce 1s;
             }
         }
-        
+
         .more-info {
             position: absolute;
 
@@ -62,7 +62,7 @@
 
                 position: relative;
                 display: block;
-                max-height: 7em; 
+                max-height: 7em;
                 text-overflow: ellipsis;
                 overflow:hidden;
                 width: 100%;
@@ -75,18 +75,47 @@
         }
 
     }
+    .project-about {
+      p {
+        margin: 4em;
+        width: 80%;
+        border-left: 5px solid #CFB87C;
+        background-color: #F6F6F6;
+        padding: 1em;
+        margin-bottom: 1em;
+        font-size: 1.5rem;
+      }
+    }
 
     .project-learn-more {
-        text-align: center;
-        padding-top: 6%;
+      text-align: center;
+      padding-top: 3em;
 
-        .ui.teal.button {
-            font-size: 2.5rem;
-            border-radius: 25px;
-            box-shadow: 20px 20px 10px #888888;
+      .ui.teal.button {
+          font-size: 1.5rem;
+          border-radius: 25px;
+          background-color: #000;
 
-        }
-        
+          display: inline-block;
+          vertical-align: middle;
+          transform: translateZ(0);
+
+          -moz-osx-font-smoothing: grayscale;
+          transition-duration: 0.3s;
+          transition-property: transform;
+
+          -moz-transition: all .2s ease-in;
+          -o-transition: all .2s ease-in;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+      }
+      .ui.teal.button:hover,
+      .ui.teal.button:focus,
+      .ui.teal.button:active {
+        transform: scale(1.04);
+        background-color: #565A5C;
+      }
+
     }
 }
 

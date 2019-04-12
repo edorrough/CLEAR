@@ -1,6 +1,6 @@
 .meetPeople-container {
-  padding-top: 96px;
-  padding-bottom: 66px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,16 +8,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #FFF; }
+  background-color: #F6F6F6; }
   .meetPeople-container h1 {
     text-align: center;
-    font-family: Open sans-serif; }
+    font-family: Open sans-serif;
+    text-decoration: underline;
+    text-decoration-color: #CFB87C; }
   .meetPeople-container .meetPeople-wrapper {
     padding: 64px 2.5% 64px 2.5%; }
     .meetPeople-container .meetPeople-wrapper .ui.three.cards {
       height: 100%; }
     .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card {
-      background-color: #17a2b8;
+      background-color: #CFB87C;
       transition: transform 0.8s;
       transform-style: preserve-3d;
       position: relative;
@@ -28,30 +30,37 @@
         justify-content: center;
         flex-direction: column; }
         .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .image {
-          margin: 0 auto;
+          margin: 1em auto;
           backface-visibility: hidden; }
           .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .image img {
             width: unset;
             border-radius: 100%;
-            background-color: #565A5C; }
+            background-color: #CFB87C; }
         .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .card-header .header {
           backface-visibility: hidden;
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           text-align: center;
           color: #FFF;
-          padding: 15px 0;
-          font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important; }
+          padding-top: 15px; }
       .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .content {
-        background-color: dodgerblue;
-        color: white;
+        background-color: #565A5C;
+        color: black;
+        font-size: 1em;
         transform: rotateY(180deg);
         position: absolute;
+        height: 100%;
         backface-visibility: hidden; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .extra {
+        flex-direction: column; }
+        .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .extra a {
+          color: #CFB87C; }
     .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover {
       transform: rotateY(180deg);
       height: 100%; }
+      .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .header {
+        visibility: hidden; }
       .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .content:not(:hover) {
-        background-color: #17a2b8;
+        background-color: #565A5C;
         display: block; }
       .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .ui.cards > .card .meta:not(:hover) {
         position: relative;
@@ -59,15 +68,6 @@
         .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .ui.cards > .card .meta:not(:hover) span {
           position: relative;
           height: 100%; }
-    .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .extra:not(:hover) {
-      background-color: dodgerblue;
-      backface-visibility: hidden;
-      display: flex;
-      flex-direction: column; }
-      .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .extra:not(:hover) a {
-        color: white;
-        font-family: 'Merriweather';
-        font-family: "Neue Helvetica W01","Helvetica Neue",Helvetica,Arial,sans-serif !important; }
     .meetPeople-container .meetPeople-wrapper .ui.cards > .card > .image {
       margin: 0 auto;
       backface-visibility: hidden; }
@@ -82,9 +82,24 @@
       padding-top: 10%;
       margin: 0 auto; }
       .meetPeople-container .meetPeople-wrapper .register-button .ui.teal.button {
-        font-size: 2rem;
+        font-size: 1.5rem;
         border-radius: 25px;
-        box-shadow: 20px 20px 10px #888888; }
+        background-color: #000;
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateZ(0);
+        -moz-osx-font-smoothing: grayscale;
+        transition-duration: 0.3s;
+        transition-property: transform;
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in; }
+      .meetPeople-container .meetPeople-wrapper .register-button .ui.teal.button:hover,
+      .meetPeople-container .meetPeople-wrapper .register-button .ui.teal.button:focus,
+      .meetPeople-container .meetPeople-wrapper .register-button .ui.teal.button:active {
+        transform: scale(1.04);
+        background-color: #565A5C; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover {
@@ -99,4 +114,5 @@
     .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover .content {
       transform: rotateY(180deg);
       position: relative;
+      height: 100%;
       backface-visibility: hidden; } }
