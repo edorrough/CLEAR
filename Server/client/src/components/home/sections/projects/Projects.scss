@@ -119,6 +119,11 @@
     }
 }
 
+@media(min-width: 0px) and (max-width: 455px) {
+  .project-about {
+    width: 100%;
+  }
+}
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		-webkit-transform: translateY(0);
