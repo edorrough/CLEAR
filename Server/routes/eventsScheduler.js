@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-
 const validate = (data) => {
     let errors = {};
 
@@ -35,7 +34,7 @@ module.exports = (app, db) => {
     app.put('/api/events/:_id', (req, res) => {
         const { errors, isValid } = validate(req.body);
         if(isValid) {
-            let { title, note, eventDone } = req.body;
+            let { title, desc, eventDone, startDate, endDate, allDay } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
             } else {
@@ -46,8 +45,11 @@ module.exports = (app, db) => {
                 { _id: new mongoose.Types.ObjectId(req.params._id) },
                 { $set: {
                     title,
-                    note,
-                    eventDone
+                    desc,
+                    eventDone,
+                    startDate,
+                    endDate,
+                    allDay
                     },
                 },
                 { returnOriginal: false }, // This is important
@@ -69,37 +71,46 @@ module.exports = (app, db) => {
     });
 
     app.post('/api/events', (req, res) => {
-        console.log(req.body)
-
         const { errors, isValid } = validate(req.body);            
         if(isValid) {
             let {
                 title,
-                note,
+                desc,
                 eventDone,
                 startDate,
-                endDate
+                endDate,
+                allDay
             } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
             } else {
                 eventDone = false
             }
+            if(allDay === 'false') {
+                allDay = false
+            } else {
+                allDay = true
+            }
 
+            let startDateParse = new Date(startDate)
+            let theStart = new Date(startDateParse.getFullYear(), startDateParse.getMonth(), startDateParse.getDate() ,
+                            startDateParse.getHours() - 6, startDateParse.getMinutes(), startDateParse.getSeconds() )
+
+            let endDateParse = new Date(endDate)
+            let theEnd = new Date(endDateParse.getFullYear(), endDateParse.getMonth(), endDateParse.getDate() ,
+                            endDateParse.getHours() - 6, endDateParse.getMinutes(), endDateParse.getSeconds() )
+        
             const today = new Date();
-        //     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-        //     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        //     const dateTime = date+' '+time;
-
             const compareDate = today.setDate(today.getDate());
 
             db.collection('events').insertOne({
                 title,
-                desc: note,
+                desc,
                 eventDone,
                 // createDate: dateTime,
-                start: startDate,
-                end: endDate,
+                start: theStart,
+                end: theEnd,
+                allDay,
                 comparedDate: compareDate
             }, (err, result) => {
                 if(err) {

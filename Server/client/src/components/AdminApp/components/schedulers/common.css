@@ -8,6 +8,8 @@
   .scheduler-page .scheduler-list-page i.icon {
     font-size: 20px;
     margin: 0 1rem; }
+  .scheduler-page .scheduler-list-page .rbc-month-view {
+    height: 700px; }
   .scheduler-page .error-msg {
     color: red; }
 

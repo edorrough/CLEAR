@@ -13,7 +13,7 @@ class SchedulersForm extends Component {
     state = {
         _id: this.props.event ? this.props.event._id : null,
         title: this.props.event ? this.props.event.title : '',
-        note: this.props.event ? this.props.event.note : '',
+        desc: this.props.event ? this.props.event.desc : '',
         // eventDone: this.props.event ? this.props.event.eventDone: false,
         eventDone: this.props.event ? this.props.event.eventDone: 'false',
         eventErrorMsg: '',
@@ -25,9 +25,6 @@ class SchedulersForm extends Component {
 
         startDateTime: '',
         endDateTime: '',
-
-
-
 
         startDate: new Date(),
         endDate: new Date(),
@@ -46,7 +43,7 @@ class SchedulersForm extends Component {
         this.setState({
             _id: nextProps.event._id,
             title: nextProps.event.title,
-            notes: nextProps.event.notes,
+            desc: nextProps.event.desc,
             eventDone: nextProps.event.eventDone
         })
     }
@@ -77,7 +74,7 @@ class SchedulersForm extends Component {
 
         let errors = {}
         if(this.state.title === '') errors.title = 'Title cannot be empty';
-        if(this.state.note === '') errors.note = 'Note cannot be empty';
+        if(this.state.desc === '') errors.desc = 'Note cannot be empty';
         if(this.state.eventDone === '') errors.eventErrorMsg = 'Is it finisheded?';
         if(this.state.startDate === '') errors.startDate = 'Start date cannot be empty';
         if(this.state.endDate === '') errors.endDate = 'End date cannot be empty';
@@ -86,14 +83,17 @@ class SchedulersForm extends Component {
         const isValid = Object.keys(errors).length === 0;
 
         if(isValid) {
-            const { _id, title, note, eventDone, startDate, endDate, allDay } = this.state;
+            const { _id, title, desc, eventDone, startDate, endDate, allDay } = this.state;
 
             if(_id) {
                 this.props.updateEvent({
                     _id,
                     title,
-                    note,
-                    eventDone
+                    desc,
+                    eventDone,
+                    startDate,
+                    endDate,
+                    allDay
                 })
                 .then( () => {
                     this.props.addFlashMessages({
@@ -110,7 +110,7 @@ class SchedulersForm extends Component {
 
                 this.props.saveEvent({
                     title,
-                    note,
+                    desc,
                     eventDone,
                     startDate,
                     endDate,
@@ -131,11 +131,8 @@ class SchedulersForm extends Component {
         }
     }
 
-    // onDayClick = (e, day) => {
-    //     console.log(day)
-    // }
-
     handleStartDateChange = (date) => {
+        console.log(typeof(date))
         this.setState({ startDate: date });
     }
 
@@ -144,7 +141,7 @@ class SchedulersForm extends Component {
     }
 
     render() {
-        console.log(this.state.startDate)
+        // console.log(this.state.startDate)
 
         const form = (
             <div className="schedulers-form-container">
@@ -204,8 +201,6 @@ class SchedulersForm extends Component {
                                 </div>
                             </div>
 
-                            
-
                             {/* <div className="field">
                                 <label htmlFor="start">Start Date</label>
                                 <input 
@@ -262,15 +257,15 @@ class SchedulersForm extends Component {
                                 onDayClick={this.onDayClick(this.state.month, this.state.day)}
                             /> */}
 
-                            <div className={classnames('field', { error: !!this.state.errors.note })}>
-                                <label htmlFor="firstname">note *</label>
+                            <div className={classnames('field', { error: !!this.state.errors.desc })}>
+                                <label htmlFor="firstname">desc *</label>
                                 <textarea
-                                    id="note"
-                                    value={this.state.note}
-                                    name="note"
+                                    id="desc"
+                                    value={this.state.desc}
+                                    name="desc"
                                     onChange={this.handleChange}
                                 />
-                                <span className="error-msg">{this.state.errors.note}</span>
+                                <span className="error-msg">{this.state.errors.desc}</span>
                             </div>
 
                             <div className="field">

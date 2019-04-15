@@ -18,14 +18,16 @@ function validate(data) {
 
 module.exports = (app, db) => {
     // second(optional), minute, hour, day of month, month, day of week
+    // Every second
+    // cron.schedule("* * * * * *", () => {
+    // Every Minute
     // cron.schedule('0 */1 * * * *', () => {
+    // Every 3 seconds
     // cron.schedule('*/3 * * * * *', () => {
-    cron.schedule("* 0 13 * * Sunday", () => {
-        console.log("Every 1 minutes");
+    // Every 1 PM on Sunday
+    cron.schedule("0 13 * * Monday", () => {
+        // console.log("Every 1 minutes");
         let today = new Date();
-        // const nextweek = today.setDate(today.getSeconds() + 7);
-
-        // console.log(nextweek)
 
         db.collection('events').find({ comparedDate: { $gt: today.getSeconds() + 7 }}).toArray((err, events) => {
             console.log(events)
@@ -92,7 +94,7 @@ module.exports = (app, db) => {
                                 // from: keys.KEVIN_EMAIL,
                                 from: 'chch6597@colorado.edu',
                                 // to: keys.KEVIN_EMAIL,
-                            //  to: 'chch6597@colorado.edu',
+                                // to: 'chch6597@colorado.edu',
                                 to: emailsList,
                                 subject: 'The Clear, Re: The next coming up events in next 7 days!',
                                 html: emailsListTemplate(users, events)

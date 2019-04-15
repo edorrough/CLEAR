@@ -56,8 +56,6 @@ export function eventSaved(event) {
 }
 
 export function saveEvent(event) {
-    // debugger
-
     return dispatch => {
         return fetch('/api/events', {
             method: 'post',
