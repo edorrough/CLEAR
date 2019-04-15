@@ -5,7 +5,7 @@ import './CustomNavbar.css';
 import { withRouter } from 'react-router-dom';
 
 const navPaths = [
-    {   path: '/people/faculty', main: "People" },
+    {   path: '/people', main: "People" },
     {   path: '/projects', main: "Projects" },
     {   path: '/our-educational-programs', main: "Education" },
     {   path: '/media-and-current-events', main: "Media and Current Events" },

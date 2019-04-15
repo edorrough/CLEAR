@@ -24,7 +24,7 @@ import history from './history/history';
 import './App.css';
 
 import Projects from './projects/Projects';
-
+import People from '../components/people/People';
 
 import { connect } from 'react-redux';
 import AdminApp  from './AdminApp/AdminApp';
@@ -121,7 +121,7 @@ class App extends Component {
 
                         <Switch>
                             <Route exact path="/" component={Home}/>
-
+							<Route path="/people" component={People} />
 
 
                             {/* new2: working */}

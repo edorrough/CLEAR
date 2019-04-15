@@ -1,0 +1,207 @@
+#people-wrapper{
+	width: 90%;
+	margin: auto;
+	height: auto;
+	display: block;
+}
+
+.padding{
+	display: block;
+	height: 700px;
+}
+
+hr.divider{
+  margin: 0em;
+}
+
+img.pfp {
+display: block;
+}
+ 
+.tab {
+  float: left;
+  border-top: 1px solid #ccc;
+  background-color: #white;
+  width: 25%;
+}
+
+.tab button {
+  display: block;
+  background-color: white;
+  color: #565A5C;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+.tab button:hover {
+  color: black;
+  background-color: #A2A4A3;
+}
+
+.tab button.active:hover {
+  color: black;
+  background-color: #CFB87C; 
+}
+
+.tab button.active {
+  color: black;
+  background-color: #CFB87C;
+}
+
+.tab-details {
+  height: 700px;
+  overflow-y: auto;
+  float: left;
+  padding: 12px;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  width: 70%;
+  display: none;
+  
+}
+
+.back-to-top-button {
+  display: none;
+  text-align: center;
+}
+
+.back-to-top-button button{
+  background-color: white;
+  color: #565A5C;
+  padding: 22px 16px;
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 15px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica;
+}
+
+.back-to-top-button button:hover{
+  color: black;
+  background-color: #CFB87C;
+}
+
+.normal-display {
+	display: block;
+}
+
+.mobile-display {
+	display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .normal-display {
+		display: none;
+	}
+
+  .mobile-subdisplay{
+	display: block;
+	position: relative;
+	left: 15%;
+	}
+
+  .mobile-display {
+		display: block;
+		position: sticky;
+		top: 20px;
+		width: 24%;
+		float: right;
+	}
+	
+  .tab button{
+		font-size: 9pt;
+		padding: 1px;
+		height: 48px;
+		text-align: center;
+		border-left: 1px solid #ccc;
+	}
+	
+  .tab-details {
+		width: 83%;
+		float: none;
+		overflow-y: unset;
+		height: unset;
+	}
+  
+  .tab {
+    width: 100%;
+  }
+  
+  .back-to-top-button {
+    display: block;
+  }
+  
+  .padding{
+	display: none;
+  }
+  
+}
+
+.person-view-mode-teaser.terminal{
+	border-bottom:none !important;
+	}
+
+
+
+
+.person-view-mode-teaser{
+	border-bottom:1px solid rgba(0,0,0,0.12) !important;
+	margin-bottom:20px;
+	padding-bottom:20px;
+	}
+
+.person-view-mode-teaser h2.node-title{
+	font-size:140%;
+	font-weight:600;
+	}
+
+.person-view-mode-teaser img.image-thumbnail,.person-view-mode-teaser img.image-small_thumbnail{
+		float:right;
+		margin:0 0 20px 20px;
+		width:100px;
+		height:auto;}
+		
+.person-departments{
+	text-transform:uppercase;
+	font-size:85%;
+	font-family:Arial,Helvetica,sans-serif;
+	}
+
+.person-job-titles{
+	font-size:110%;
+	}
+
+.people-bio{
+	padding-top:10px;
+	}
+	
+.person-view-mode-teaser-contact,.person-view-mode-embed-contact{
+	padding-top:20px;
+	}
+	
+.person-contact-info-item{
+	white-space:nowrap;
+	}
+
+@media (max-width:480px){
+	.person-view-mode-teaser-contact .person-contact-info-item{
+		display:block;
+		font-size:85%;
+	}
+	.person-view-mode-teaser-contact .person-contact-separator{
+		display:none;
+		}
+}
