@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 // import ReactPlayer from 'react-player'
 
 // import ReactTooltip from 'react-tooltip'
-// import RightArrow from '../../../../../assets/right-arrow.gif';
-// import LeftArrow from '../../../../../assets/left-arrow.gif';
 
 import './Page1.css';
 
