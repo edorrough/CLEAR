@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './introduction.css';
 
 const Introduction = () => (
@@ -19,4 +18,3 @@ const Introduction = () => (
 )   
 
 export default Introduction;
-

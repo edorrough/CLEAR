@@ -62,5 +62,35 @@ export default () => {
                 }
             ]            
         },
+        {
+            content_header: 'CLASIC Graduate Program',
+            content_header_link: 'https://www.colorado.edu/linguistics/graduate-program/computational-linguistics-clasic-ms',
+            content_content: "The Departments of Linguistics and Computer Science have teamed up to jointly offer an interdisciplinary degree, the Computational Linguistics, Analytics, Search and Informatics Professional Master’s Degree (CLASIC), approved by the University of Colorado Board of Regents in April 2016. CLASIC, a stand-alone Professional Master of Science degree, provides students with a solid foundation in both linguistics and computer science graduate course work as well as several courses focused on date-driven linguistics, computational linguistics, and information processing.",
+            previews: [
+                {
+                    preview_img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555536209/education_page/ics_placeholder.jpg",
+                    preview_title: "CLASIC Graduate Information",
+                    preview_alt: "CLASIC Graduate Information",
+                    preview_footer: "CLASIC",
+                    preview_content: "For more information, visit their site",
+                    preview_link: "https://www.colorado.edu/linguistics/graduate-program/computational-linguistics-clasic-ms",
+                }
+            ]            
+        },
+        {
+            content_header: 'CLASIC Graduate Program',
+            content_header_link: 'https://www.colorado.edu/linguistics/graduate-program/computational-linguistics-clasic-ms',
+            content_content: "The Departments of Linguistics and Computer Science have teamed up to jointly offer an interdisciplinary degree, the Computational Linguistics, Analytics, Search and Informatics Professional Master’s Degree (CLASIC), approved by the University of Colorado Board of Regents in April 2016. CLASIC, a stand-alone Professional Master of Science degree, provides students with a solid foundation in both linguistics and computer science graduate course work as well as several courses focused on date-driven linguistics, computational linguistics, and information processing.",
+            previews: [
+                {
+                    preview_img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555536209/education_page/ics_placeholder.jpg",
+                    preview_title: "CLASIC Graduate Information",
+                    preview_alt: "CLASIC Graduate Information",
+                    preview_footer: "CLASIC",
+                    preview_content: "For more information, visit their site",
+                    preview_link: "https://www.colorado.edu/linguistics/graduate-program/computational-linguistics-clasic-ms",
+                }
+            ]            
+        },
     ]
 }
