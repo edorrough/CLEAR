@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { Button } from 'react-bootstrap';
-
 import ReactTooltip from 'react-tooltip'
 import RightArrow from '../../../../../assets/right-arrow.gif';
 import LeftArrow from '../../../../../assets/left-arrow.gif';

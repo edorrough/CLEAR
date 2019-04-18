@@ -1,0 +1,27 @@
+#education-wrapper {
+  height: 100%; }
+  #education-wrapper .programRows .education-grid-row {
+    display: flex;
+    flex-direction: row;
+    margin: 5% 0; }
+    #education-wrapper .programRows .education-grid-row .education-content-left {
+      width: 50%; }
+      #education-wrapper .programRows .education-grid-row .education-content-left .content-header a {
+        color: black;
+        text-decoration: underline;
+        text-decoration-color: #CFB87C; }
+      #education-wrapper .programRows .education-grid-row .education-content-left .content-header a:hover {
+        text-decoration-color: steelblue; }
+    #education-wrapper .programRows .education-grid-row .education-imgs-right {
+      width: 50%; }
+      #education-wrapper .programRows .education-grid-row .education-imgs-right .ui.two.cards > .card {
+        -webkit-transition: .5s;
+        /* Chrome */
+        transition: .5s;
+        /* CSS3 */
+        -moz-transitions: .5s;
+        /* Firefox */
+        -o-transitions: .5s;
+        /* Opera */
+        -ms-tansistions: .5s;
+        /* IE */ }

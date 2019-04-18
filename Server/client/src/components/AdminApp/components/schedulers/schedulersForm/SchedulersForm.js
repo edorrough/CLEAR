@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 import classnames from 'classnames';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addFlashMessages } from '../../../../../actions/flashMessages';
 import { saveEvent, fetchEvent, updateEvent } from '../../../../../actions/eventsSchedulersAction';
-// import Calendar from '../../../../calendar/calendar';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -14,25 +13,19 @@ class SchedulersForm extends Component {
         _id: this.props.event ? this.props.event._id : null,
         title: this.props.event ? this.props.event.title : '',
         desc: this.props.event ? this.props.event.desc : '',
-        // eventDone: this.props.event ? this.props.event.eventDone: false,
         eventDone: this.props.event ? this.props.event.eventDone: 'false',
         eventErrorMsg: '',
-
-
-
         month: '',
         day: '',
-
-        startDateTime: '',
-        endDateTime: '',
-
+        // startDateTime: '',
+        // endDateTime: '',
         startDate: new Date(),
         endDate: new Date(),
         showMonthDropdown: true,
         value: '',
         dateFormat: "MMMM d, yyyy h:mm aa",
-        allDay: 'false',
-
+        allDay: this.props.event ? this.props.event.allDay: 'false',
+        location: this.props.event ? this.props.event.location: '',
 
         loading: false,
         done: false,
@@ -40,11 +33,16 @@ class SchedulersForm extends Component {
     }
 
     componentWillReceiveProps = (nextProps) => {
+        debugger
         this.setState({
             _id: nextProps.event._id,
             title: nextProps.event.title,
             desc: nextProps.event.desc,
-            eventDone: nextProps.event.eventDone
+            eventDone: nextProps.event.eventDone,
+            allDay: nextProps.event.allDay,
+            location: nextProps.event.location,
+            startDate: new Date(nextProps.event.start),
+            endDate: new Date(nextProps.event.end)
         })
     }
 
@@ -55,6 +53,8 @@ class SchedulersForm extends Component {
     }
 
     handleChange = (e) => {
+
+        console.log(e.target.value)
         if(!!this.state.errors[e.target.name]) {
 
             let errors = Object.assign({}, this.state.errors);
@@ -78,12 +78,13 @@ class SchedulersForm extends Component {
         if(this.state.eventDone === '') errors.eventErrorMsg = 'Is it finisheded?';
         if(this.state.startDate === '') errors.startDate = 'Start date cannot be empty';
         if(this.state.endDate === '') errors.endDate = 'End date cannot be empty';
+        if(this.state.location === '') errors.location = 'Location cannot be empty';
 
         this.setState({ errors })
         const isValid = Object.keys(errors).length === 0;
 
         if(isValid) {
-            const { _id, title, desc, eventDone, startDate, endDate, allDay } = this.state;
+            const { _id, title, desc, eventDone, startDate, endDate, allDay, location } = this.state;
 
             if(_id) {
                 this.props.updateEvent({
@@ -93,7 +94,8 @@ class SchedulersForm extends Component {
                     eventDone,
                     startDate,
                     endDate,
-                    allDay
+                    allDay,
+                    location
                 })
                 .then( () => {
                     this.props.addFlashMessages({
@@ -114,7 +116,8 @@ class SchedulersForm extends Component {
                     eventDone,
                     startDate,
                     endDate,
-                    allDay
+                    allDay,
+                    location
                 })
                 .then( () => {
                     this.props.addFlashMessages({
@@ -132,7 +135,6 @@ class SchedulersForm extends Component {
     }
 
     handleStartDateChange = (date) => {
-        console.log(typeof(date))
         this.setState({ startDate: date });
     }
 
@@ -141,11 +143,11 @@ class SchedulersForm extends Component {
     }
 
     render() {
-        // console.log(this.state.startDate)
 
         const form = (
             <div className="schedulers-form-container">
-                <div className="ui container">
+                {/* <div className="ui container"> */}
+                <div className="schedulers-form-wrapper">
 
                     <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
                         <div className="ui raised segment">
@@ -201,38 +203,31 @@ class SchedulersForm extends Component {
                                 </div>
                             </div>
 
-                            {/* <div className="field">
-                                <label htmlFor="start">Start Date</label>
-                                <input 
-                                    id="start"
-                                    type="date" 
-                                    value={this.state.start}
-                                    name="start"
-                                    onChange={this.handleStartDateChange}
-                                />
-                                <label htmlFor="end">End Date</label>
+                            <div className={classnames('field', { error: !!this.state.errors.location })}>
+                                <label htmlFor="location">Location *</label>
                                 <input
-                                    id="end"
-                                    type="date"
-                                    value={this.state.end}
-                                    name="end"
-                                    onChange={this.handleEndDateChange}
+                                    id="location"
+                                    value={this.state.location}
+                                    name="location"
+                                    onChange={this.handleChange}
                                 />
-                            </div> */}
+                                <span className="error-msg">{this.state.errors.location}</span>
+                            </div>
 
                             <div className="field">
-                                <label htmlFor="allday">Is it all day event?</label>
+                                <label htmlFor="allDay">Is it all day event?</label>
                                 <select
                                     className="ui fluid search dropdown"
                                     onChange={this.handleChange}
-                                    name="allday"
-                                    id="allday"
+                                    name="allDay"
+                                    id="allDay"
                                     value={this.state.allDay}
                                 >
                                     <option value=""></option>
                                     <option value="false">No</option>
                                     <option value="true">Yes</option>
                                 </select>
+                                <span className="error-msg">{this.state.errors.allDay}</span>
                             </div>
 
                             <div className="field">
@@ -258,7 +253,7 @@ class SchedulersForm extends Component {
                             /> */}
 
                             <div className={classnames('field', { error: !!this.state.errors.desc })}>
-                                <label htmlFor="firstname">desc *</label>
+                                <label htmlFor="firstname">Description *</label>
                                 <textarea
                                     id="desc"
                                     value={this.state.desc}

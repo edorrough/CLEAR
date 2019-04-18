@@ -10,7 +10,6 @@ export const AUTH_FAILED = 'login_failed';
 export const USER_LOGGED = 'user_logged';
 
 function handleResponse(response) {
-    // debugger
     if(response.ok) {
         return response.json()
 
@@ -48,7 +47,6 @@ export const failedLogin = (user) => {
 export const userSubmitSignin = (userData) => {
     return dispatch => {
         return axios.post('/api/login', userData)
-        // .then(handleResponse)
         .then(res => {
             const token = res.data.token;
             localStorage.setItem('jwtToken', token);
@@ -56,7 +54,6 @@ export const userSubmitSignin = (userData) => {
             dispatch(setCurrentUser(jwtDecode(token))) ;
         })
         .catch(error => {
-            // console.log(error.response.data)
             dispatch(failedLogin(error.response.data))
         })
     }

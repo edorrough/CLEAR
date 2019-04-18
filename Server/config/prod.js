@@ -12,7 +12,8 @@ module.exports = {
     GOOGLE_EMAIL_CLIENT_SECRET: process.env.GOOGLE_EMAIL_CLIENT_SECRET,
     GOOGLE_EMAIL_REFRESH_TOKEN: process.env.GOOGLE_EMAIL_REFRESH_TOKEN,
     ADMIN_SECRET_CODE: process.env.ADMIN_SECRET_CODE,
-    KEVIN_EMAIL: process.env.KEVIN_EMAIL,
+    // KEVIN_EMAIL: process.env.KEVIN_EMAIL,
+    KEVIN_GMAIL: process.env.KEVIN_GMAIL,
 
 
     HTTP_NAME: process.env.HTTP_NAME,

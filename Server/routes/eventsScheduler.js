@@ -34,12 +34,40 @@ module.exports = (app, db) => {
     app.put('/api/events/:_id', (req, res) => {
         const { errors, isValid } = validate(req.body);
         if(isValid) {
-            let { title, desc, eventDone, startDate, endDate, allDay } = req.body;
+            let { 
+                title,
+                desc,
+                eventDone,
+                startDate,
+                endDate,
+                allDay,
+                location
+            } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
             } else {
                 eventDone = false
             }
+            if(allDay === 'false') {
+                allDay = false
+            } else {
+                allDay = true
+            }
+
+            let startDateParse = new Date(startDate)
+            let theStartDate = startDateParse.getFullYear() + '-' + (startDateParse.getMonth()+1) +'-'+ startDateParse.getDate();
+            let theStartTime = startDateParse.getHours() + ':' + (startDateParse.getMinutes() < 10 ? '0': '') + startDateParse.getMinutes();
+            let ampm = startDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theStartDateTime = theStartDate + ' & ' + theStartTime + ' ' + ampm;
+
+            let endDateParse = new Date(endDate)
+            let theEndDate = endDateParse.getFullYear() + '-' + (endDateParse.getMonth() + 1) + '-' + endDateParse.getDate();
+            let theEndTime = endDateParse.getHours() + ':' + (endDateParse.getMinutes() < 10 ? '0' : '' ) + endDateParse.getMinutes();
+            let AMPM = endDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theEndDateTime = theEndDate + ' & ' + theEndTime + ' ' + AMPM;
+        
+            const today = new Date();
+            const compareDate = today.setDate(today.getDate());
 
             db.collection('events').findOneAndUpdate(
                 { _id: new mongoose.Types.ObjectId(req.params._id) },
@@ -47,9 +75,13 @@ module.exports = (app, db) => {
                     title,
                     desc,
                     eventDone,
-                    startDate,
-                    endDate,
-                    allDay
+                    showStartTime: theStartDateTime,
+                    showEndTime: theEndDateTime,
+                    start: startDate,
+                    end: endDate,
+                    allDay,
+                    location,
+                    comparedDate: compareDate
                     },
                 },
                 { returnOriginal: false }, // This is important
@@ -79,7 +111,8 @@ module.exports = (app, db) => {
                 eventDone,
                 startDate,
                 endDate,
-                allDay
+                allDay,
+                location
             } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
@@ -93,12 +126,16 @@ module.exports = (app, db) => {
             }
 
             let startDateParse = new Date(startDate)
-            let theStart = new Date(startDateParse.getFullYear(), startDateParse.getMonth(), startDateParse.getDate() ,
-                            startDateParse.getHours() - 6, startDateParse.getMinutes(), startDateParse.getSeconds() )
+            let theStartDate = startDateParse.getFullYear() + '-' + (startDateParse.getMonth()+1) +'-'+ startDateParse.getDate();
+            let theStartTime = startDateParse.getHours() + ':' + (startDateParse.getMinutes() < 10 ? '0': '') + startDateParse.getMinutes();
+            let ampm = startDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theStartDateTime = theStartDate + ' & ' + theStartTime + ' ' + ampm;
 
             let endDateParse = new Date(endDate)
-            let theEnd = new Date(endDateParse.getFullYear(), endDateParse.getMonth(), endDateParse.getDate() ,
-                            endDateParse.getHours() - 6, endDateParse.getMinutes(), endDateParse.getSeconds() )
+            let theEndDate = endDateParse.getFullYear() + '-' + (endDateParse.getMonth() + 1) + '-' + endDateParse.getDate();
+            let theEndTime = endDateParse.getHours() + ':' + (endDateParse.getMinutes() < 10 ? '0' : '' ) + endDateParse.getMinutes();
+            let AMPM = endDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theEndDateTime = theEndDate + ' & ' + theEndTime + ' ' + AMPM;
         
             const today = new Date();
             const compareDate = today.setDate(today.getDate());
@@ -107,10 +144,12 @@ module.exports = (app, db) => {
                 title,
                 desc,
                 eventDone,
-                // createDate: dateTime,
-                start: theStart,
-                end: theEnd,
+                showStartTime: theStartDateTime,
+                showEndTime: theEndDateTime,
+                start: startDate,
+                end: endDate,
                 allDay,
+                location,
                 comparedDate: compareDate
             }, (err, result) => {
                 if(err) {

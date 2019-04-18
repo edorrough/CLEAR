@@ -11,7 +11,7 @@ const signinLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour window
     max: 2, // start blocking after 5 requests
     message:
-      "Too many accounts created from this IP, please try again after an hour"
+      "Too many threads created from this IP, please try again after an hour"
 });
 
 const emailFormatChecking = (value) => {
@@ -27,7 +27,6 @@ const validation = (data) => {
     }
     if(data.password === '') errors.password = "Password cannot be empty";
     if(data.passwordConfirm === '') errors.passwordConfirm = "Password Confirmation cannot be empty";
-    // if(data.password !== data.passwordConfirm) errors.passwordMismatch = "Passwords mistatch";
 
     const isValid = Object.keys(errors).length === 0;
 
@@ -36,7 +35,6 @@ const validation = (data) => {
 
 module.exports = (app, db) => {
     app.post('/api/login', signinLimiter, (req, res) => {
-    // app.post('/api/login', (req, res) => {
         const { errors, isValid } = validation(req.body)
 
         if(isValid) {
@@ -51,7 +49,6 @@ module.exports = (app, db) => {
                         errors: { global : 'There is no user attached with this email address'}
                     })
                 } else {
-                    // console.log("admin: ", admin)
                     bcrypt.compare(req.body.password, admin.password, (err, result) => {
                         if(err) {
                             console.log("bcrypt error")
@@ -60,14 +57,11 @@ module.exports = (app, db) => {
                             });
                         }
                         if(result) {
-                            // console.log("result: ", result)
                             if(admin.isAdmin) {
                                 const token = jwt.sign({
                                     email: admin.email,
-
                                     userId: admin._id
                                     }, 
-                                    // process.env.JWT_KEY,
                                     keys.JWT_KEY,
                                     {
                                         expiresIn: "1h"
@@ -77,7 +71,6 @@ module.exports = (app, db) => {
                                     message: 'Admin Auth Successful',
                                     token: token,
                                     Administrator: admin.isAdmin
-                                    // admin
                                 })
                             }
 
@@ -145,7 +138,7 @@ module.exports = (app, db) => {
                                                 service: 'Gmail', 
                                                 auth: {
                                                     type: 'OAuth2',
-                                                    user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -153,9 +146,8 @@ module.exports = (app, db) => {
                                                 },
                                             });
                                             var mailOptions = {
-                                                // to: admin.email,
-                                                to: 'chch6597@colorado.edu',
-                                                from: keys.EMAIL_FROM,
+                                                to: admin.email,
+                                                from: keys.KEVIN_GMAIL,
                                                 subject: 'Re: Successfully changed your password',
                                                 text: 'Hello, ' + admin.firstname + ' ' + admin.lastname + '\n\n' +
                                                     'This is a confirmation that the password for your account ' + admin.email + ' for the Clear has just been changed.\n' +
@@ -232,7 +224,6 @@ module.exports = (app, db) => {
                             try {
                                 admin.save()
                                     .then(result => {
-                                        // console.log("result: " + result);
                                         if(!result) {
                                             return res.status(500).json({ errors: { global: "Something went wrong. Contact the administrator" }})
                                         } else {
@@ -246,7 +237,7 @@ module.exports = (app, db) => {
                                                 service: 'Gmail', 
                                                 auth: {
                                                     type: 'OAuth2',
-                                                    user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -254,9 +245,8 @@ module.exports = (app, db) => {
                                                 },
                                             });
                                             var mailOptions = {
-                                                // to: admin.email,
-                                                to: 'chch6597@colorado.edu',
-                                                from: keys.KEVIN_EMAIL,
+                                                to: admin.email,
+                                                from: keys.KEVIN_GMAIL,
                                                 subject: 'Re: The Clear Password Reset',
                                                 text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                                                 'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
@@ -339,7 +329,7 @@ module.exports = (app, db) => {
                                             service: 'Gmail', 
                                             auth: {
                                                 type: 'OAuth2',
-                                                user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                                user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                                 clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                                 clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                                 refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -347,9 +337,8 @@ module.exports = (app, db) => {
                                             },
                                         });
                                         var mailOptions = {
-                                            // to: admin.email,
-                                            to: 'chch6597@colorado.edu',
-                                            from: keys.KEVIN_EMAIL,
+                                            to: admin.email,
+                                            from: keys.KEVIN_GMAIL,
                                             subject: 'Re: The Clear Password Reset',
                                             text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                                             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
@@ -414,6 +403,7 @@ module.exports = (app, db) => {
                     // console.log("body: ", body)
         
                     if(!body.success) {
+                        console.log('reqcapcha not working')
                         return res.status(400).json({ 
                             errors: { global: err }
                         });
@@ -436,6 +426,7 @@ module.exports = (app, db) => {
                             },
                             { returnOriginal: false },
                             (err, user) => {
+                                console.log("user: ", user)
                                 if(err) {
                                     return res.status(500).json({ error: { global: err } });
                                 } else {
@@ -444,7 +435,7 @@ module.exports = (app, db) => {
                                         service: 'Gmail', 
                                         auth: {
                                             type: 'OAuth2',
-                                            user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                            user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                             clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                             clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                             refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -452,9 +443,8 @@ module.exports = (app, db) => {
                                         },
                                     });
                                     var mailOptions = {
-                                        // to: user.email,
-                                        to: 'chch6597@colorado.edu',
-                                        from: keys.KEVIN_EMAIL,
+                                        from: keys.KEVIN_GMAIL,
+                                        to: user.value.email,
                                         subject: 'Re: Successfully changed your password',
                                         text: 'Hello, ' + user.value.firstname + ' ' + user.value.lastname + '\n\n' +
                                             'This is a confirmation that the password for your account ' + user.value.email + ' for the Clear has just been changed.\n' +
@@ -485,18 +475,4 @@ module.exports = (app, db) => {
             }
         }
     });
-
-    // app.get('/api/logout', (req, res, next) => {
-    //     if (req.session) {
-    //         // delete session object
-    //         req.session.destroy(function(err) {
-    //             if(err) {
-    //                 return next(err);
-    //             } else {
-    //                 return res.redirect('/');
-    //             }
-    //         });
-    //     }
-    // });
-
 }

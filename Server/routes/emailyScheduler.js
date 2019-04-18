@@ -24,8 +24,8 @@ module.exports = (app, db) => {
     // cron.schedule('0 */1 * * * *', () => {
     // Every 3 seconds
     // cron.schedule('*/3 * * * * *', () => {
-    // Every 1 PM on Sunday
-    cron.schedule("0 13 * * Monday", () => {
+    // Every 1 PM on Sunday, Note: I coded as 1PM but it send emails at 7 AM but I think it's fine
+    cron.schedule("0 13 * * Sunday", () => {
         // console.log("Every 1 minutes");
         let today = new Date();
 
@@ -45,7 +45,7 @@ module.exports = (app, db) => {
                                 service: 'Gmail', 
                                 auth: {
                                     type: 'OAuth2',
-                                    user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -54,12 +54,10 @@ module.exports = (app, db) => {
                             });
 
                             const mailOptions = {
-                                // from: keys.KEVIN_EMAIL,
-                                from: 'chch6597@colorado.edu',
-                                // to: keys.KEVIN_EMAIL,
-                                to: 'chch6597@colorado.edu',
+                                from: keys.KEVIN_GMAIL,
+                                to: keys.KEVIN_GMAIL,
                                 subject: 'The Clear: you have no users in the collection to send events',
-                                text: 'This email is to inform you that there is no user to inform events.'
+                                text: 'This email is to inform you that there is no user to inform events for next 7 days.'
                             };
 
                             smtpTransport.sendMail(mailOptions, (err, success) => {
@@ -82,7 +80,7 @@ module.exports = (app, db) => {
                                 service: 'Gmail', 
                                 auth: {
                                     type: 'OAuth2',
-                                    user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -91,10 +89,7 @@ module.exports = (app, db) => {
                             });
 
                             const mailOptions = {
-                                // from: keys.KEVIN_EMAIL,
-                                from: 'chch6597@colorado.edu',
-                                // to: keys.KEVIN_EMAIL,
-                                // to: 'chch6597@colorado.edu',
+                                from: keys.KEVIN_GMAIL,
                                 to: emailsList,
                                 subject: 'The Clear, Re: The next coming up events in next 7 days!',
                                 html: emailsListTemplate(users, events)
@@ -110,19 +105,11 @@ module.exports = (app, db) => {
                                     done('done');
                                 }
                             })
-
                         }
-
                     }
-
-
                 });
-
             }
-
         });
-
-        
     });
 
 

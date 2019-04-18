@@ -1,0 +1,29 @@
+.public-calender {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5%;
+
+    .rbc-calendar {
+
+        .rbc-month-view {
+            height: 680px;
+        }
+    }
+    
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+    .public-calender {
+
+        .rbc-calendar {
+            .rbc-btn-group {
+                white-space: unset;
+            }
+
+            .rbc-month-view {
+                height: 480px;
+            }
+        }
+
+    }
+}

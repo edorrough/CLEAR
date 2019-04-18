@@ -9,6 +9,7 @@ import './Login.css';
 
 class userLogin extends Component {
     state = {
+        loginTooOften: 'Too many threads created from this IP, please try again after an hour',
         email: '',
         password: '',
         request: null,
@@ -66,7 +67,7 @@ class userLogin extends Component {
                 },
                 (err) => {
                     console.log("err in userLogin: ", err.response);
-                    // debugger
+                    debugger
                     if(err.response.status === 429) {
                         this.setState({ 
                             request: err.response.statusText + ', please try again later',
@@ -89,6 +90,7 @@ class userLogin extends Component {
                         <div className="userLoginFormWrapper">
 
                             <h1>Department of Linguistic</h1>
+                            {this.props.user === this.state.loginTooOften ? <p className="error-msg-color">{this.props.user}</p> : ''}
 
                             <span className="error-msg-color">{this.state.request ? this.state.request : ''}</span>
                             {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
@@ -160,6 +162,7 @@ userLogin.propTypes = {
 }
 
 const mapStateToProps = (state) => {
+    // debugger
     return {
         user: state.auth.user
     }

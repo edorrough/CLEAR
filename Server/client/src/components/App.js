@@ -20,7 +20,7 @@ import ResetPasswd from './resetPasswd/ResetPasswd';
 import ContactUS from './contactUS/ContactUS';
 import NoMatch from './noMatch/NoMatch';
 import history from './history/history';
-
+import Education from './education/Education';
 import './App.css';
 
 import Projects from './projects/Projects';
@@ -134,7 +134,7 @@ class App extends Component {
                             {/* Completely Working */}
                             {/* <Route path="/projects" component={AuthenticatedRoute(Projects)} /> */}
                             <Route path="/projects" component={Projects} />
-
+                            <Route path="/education" component={Education} />
                             <Route path="/user/first-login/:token" component={LoginFirstTime} />
 
                             <Route path="/user/passwd-forgot" component={PasswdForgot} />

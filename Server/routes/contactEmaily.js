@@ -41,7 +41,7 @@ module.exports = (app) => {
                 service: 'Gmail', 
                 auth: {
                     type: 'OAuth2',
-                    user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -49,8 +49,7 @@ module.exports = (app) => {
                 },
             });
             var mailOptions = {
-                to: 'chch6597@colorado.edu',
-                // to: 'kevin.stowe@colorado.edu',
+                to: keys.KEVIN_GMAIL,
                 from: email,
                 subject: 'Re: Query from ' + firstname + lastname,
                 html: contactTemplate(firstname, lastname, email, message, phoneNum)

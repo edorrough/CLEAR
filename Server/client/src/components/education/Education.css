@@ -1,0 +1,21 @@
+#education-wrapper {
+  height: 100%;
+  font-size: 18px;
+  margin-left: 0;
+  margin-right: auto; }
+
+@media (min-width: 0px) and (max-width: 799px) {
+  .education-grid-row {
+    display: inline-block;
+    width: 100%; }
+  .education-content-left {
+    float: none;
+    text-align: center; } }
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .education-grid-row {
+    display: inline-block;
+    width: 100%; }
+  .education-content-left {
+    padding: 24px;
+    float: none; } }

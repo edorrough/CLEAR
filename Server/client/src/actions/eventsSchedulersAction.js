@@ -48,7 +48,6 @@ export function fetchEvents() {
 }
 
 export function eventSaved(event) {
-
     return {
         type: EVENT_SAVED,
         event
@@ -70,7 +69,6 @@ export function saveEvent(event) {
 }
 
 export function eventUpdated(event) {
-
     return {
         type: EVENT_UPDATED,
         event
