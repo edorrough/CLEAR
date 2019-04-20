@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import Person from './PersonBio.js';
 import { faculty, admins, researchStaff, formerResearchStaff, students, alumni, postDocs } from './PeopleList.js';
 
@@ -44,7 +43,7 @@ class People extends Component {
     render() {
         return(
             <div id="people-wrapper">
-            
+                
                 {/* Dummy div used as a scroll target. */}
                 <div id="dummy" style={{ position:"relative", top: -100 }} ref={(e) => { this.pageTop = e; }} />
             
@@ -97,6 +96,7 @@ class People extends Component {
                 */}
                 
                 {/* Faculty */}
+                {/* The inline style in this section is necessary to open this tab when the page first loads.*/}
                 <div id="faculty-section" className="tab-details" style={{display : 'block'}}>
                     <div className="people-list-wrapper-teaser">
                     

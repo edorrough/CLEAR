@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 //formats the information about a person into html.
 const Person = ({individual}) => {
@@ -70,5 +69,5 @@ const Person = ({individual}) => {
 }   
 
 
-export default withRouter(Person);
+export default Person;
 
