@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Person from './PersonBio.js';
-//import Navbar from '../customNavbar/CustomNavbar';
 
 import './people.css';
 
@@ -997,12 +996,5 @@ class People extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    // debugger
-    return { 
-        auth: state.auth,
-        // usersList: state.users
-    }
-}
 
-export default connect(mapStateToProps)(People);
+export default People;
