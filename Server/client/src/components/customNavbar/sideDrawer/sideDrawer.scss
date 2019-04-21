@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 70%;
+    width: 75%;
     max-width: 400px;
     z-index: 200;
     transform: translateX(-100%);
@@ -38,6 +38,7 @@
 .side-drawer.open {
     transform: translateX(0);
     background-color: black;
+    width: 80%;
 
     .drawer-header {
         width: 100%;
@@ -51,6 +52,7 @@
             flex-direction: column;
 
             a {
+                font-size: 30px;
                 align-self: center;
                 img {
                     margin: 0 auto;
@@ -64,6 +66,8 @@
             }
         }
     }
+
+
 }
 
 .side-drawer ul {
@@ -75,12 +79,12 @@
 
     animation: left_to_right 5s ease;
     // animation-iteration-count: infinite;
-}
-
-.side-drawer li {
-    margin: 1.5rem 0;
 
 }
+
+// .side-drawer li {
+//     margin: 1rem 0;
+// }
 
 .side-drawer li:hover {
     margin: 0.5rem 0;
@@ -111,5 +115,15 @@
 @media (min-width: 769px) {
     .side-drawer {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-drawer a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: white;
+        transition: all 0.2s ease 0s;
+        font-family: Open sans-serif;
     }
 }

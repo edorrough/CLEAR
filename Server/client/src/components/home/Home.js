@@ -135,7 +135,7 @@ class Home extends Component {
 
 Home.propTypes = {
     auth: PropTypes.object,
-    events: PropTypes.func,
+    events: PropTypes.array,
     fetchEvents: PropTypes.func
 }
 

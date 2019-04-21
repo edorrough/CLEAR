@@ -21,12 +21,14 @@ import ContactUS from './contactUS/ContactUS';
 import NoMatch from './noMatch/NoMatch';
 import history from './history/history';
 import Education from './education/Education';
+import Events from './events/EventsPage';
 import './App.css';
 
 import Projects from './projects/Projects';
 
 
 import { connect } from 'react-redux';
+import { addFlashMessages } from '../actions/flashMessages';
 import AdminApp  from './AdminApp/AdminApp';
 
 // import AuthenticateRoute from '../utils/AuthenticateRoute';
@@ -49,7 +51,11 @@ class App extends Component {
     componentDidMount() {
       // this.props.fetchUser();
       // this.showMsg();
-      window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.handleScroll);
+        this.props.addFlashMessages({
+            type: 'info',
+            text: 'For better experience, we suggest you broswer this website with Google Chrome'
+        });
     };
 
     handleScroll = () => {
@@ -135,6 +141,7 @@ class App extends Component {
                             {/* <Route path="/projects" component={AuthenticatedRoute(Projects)} /> */}
                             <Route path="/projects" component={Projects} />
                             <Route path="/education" component={Education} />
+                            <Route path="/media-and-current-events" component={Events}/>
                             <Route path="/user/first-login/:token" component={LoginFirstTime} />
 
                             <Route path="/user/passwd-forgot" component={PasswdForgot} />
@@ -158,12 +165,11 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-    // console.log("state in App.js: ", state)
     return {
         auth: state.auth
     }
 }
 
 export default connect(mapStateToProps, {
-
+    addFlashMessages
 })(App)

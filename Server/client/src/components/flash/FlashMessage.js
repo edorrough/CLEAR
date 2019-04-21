@@ -12,11 +12,11 @@ class FlashMessage extends Component {
     }
     render() {
         const { type, text } = this.props.message;
-        // const { type, text } = this.props.message;
         return (
             <div className={classnames('alert', {
                 'alert-success' : type === 'success',
-                'alert-danger' : type === 'error'
+                'alert-danger' : type === 'error',
+                'alert-info' : type === 'info'
             })}>
                 <button 
                     className="close"

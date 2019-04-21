@@ -51,7 +51,7 @@ module.exports = (app) => {
             var mailOptions = {
                 to: keys.KEVIN_GMAIL,
                 from: email,
-                subject: 'Re: Query from ' + firstname + lastname,
+                subject: 'Re: Query from ' + firstname + ' ' + lastname,
                 html: contactTemplate(firstname, lastname, email, message, phoneNum)
             };
 

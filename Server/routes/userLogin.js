@@ -426,7 +426,6 @@ module.exports = (app, db) => {
                             },
                             { returnOriginal: false },
                             (err, user) => {
-                                console.log("user: ", user)
                                 if(err) {
                                     return res.status(500).json({ error: { global: err } });
                                 } else {

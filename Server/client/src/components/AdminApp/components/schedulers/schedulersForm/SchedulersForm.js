@@ -7,6 +7,7 @@ import { addFlashMessages } from '../../../../../actions/flashMessages';
 import { saveEvent, fetchEvent, updateEvent } from '../../../../../actions/eventsSchedulersAction';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import '../common.css';
 
 class SchedulersForm extends Component {
     state = {
@@ -33,7 +34,6 @@ class SchedulersForm extends Component {
     }
 
     componentWillReceiveProps = (nextProps) => {
-        debugger
         this.setState({
             _id: nextProps.event._id,
             title: nextProps.event.title,
@@ -53,8 +53,6 @@ class SchedulersForm extends Component {
     }
 
     handleChange = (e) => {
-
-        console.log(e.target.value)
         if(!!this.state.errors[e.target.name]) {
 
             let errors = Object.assign({}, this.state.errors);
@@ -146,7 +144,6 @@ class SchedulersForm extends Component {
 
         const form = (
             <div className="schedulers-form-container">
-                {/* <div className="ui container"> */}
                 <div className="schedulers-form-wrapper">
 
                     <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
@@ -158,7 +155,7 @@ class SchedulersForm extends Component {
                             <h4 className="ui dividing header">New Events Information</h4>
 
                             <div className={classnames('field', { error: !!this.state.errors.title })}>
-                                <label htmlFor="firstname">Title *</label>
+                                <label htmlFor="title">Title *</label>
                                 <input
                                     id="title"
                                     value={this.state.title}
@@ -253,7 +250,7 @@ class SchedulersForm extends Component {
                             /> */}
 
                             <div className={classnames('field', { error: !!this.state.errors.desc })}>
-                                <label htmlFor="firstname">Description *</label>
+                                <label htmlFor="desc">Description *</label>
                                 <textarea
                                     id="desc"
                                     value={this.state.desc}
@@ -263,7 +260,7 @@ class SchedulersForm extends Component {
                                 <span className="error-msg">{this.state.errors.desc}</span>
                             </div>
 
-                            <div className="field">
+                            <div className="conform-btn">
                                 <button className="ui primary button">Save</button>
                             </div>
 
@@ -281,7 +278,8 @@ class SchedulersForm extends Component {
 }
 
 SchedulersForm.propTypes = {
-    saveEvent: PropTypes.func
+    saveEvent: PropTypes.func,
+    addFlashMessages: PropTypes.func
 }
 
 const mapStateToProps = (state, props) => {

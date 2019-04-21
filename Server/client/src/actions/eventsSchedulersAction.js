@@ -3,6 +3,7 @@ export const EVENT_SAVED = 'event_saved';
 export const EVENT_FETCHED = 'event_fetched';
 export const EVENT_UPDATED = 'event_updated';
 export const EVENT_DELETED = 'event_deleted';
+export const FETCH_DISPLAY_EVENT = 'event_fetched_display';
 
 function handleResponse(response) {
     if(response.ok) {
@@ -41,9 +42,23 @@ export function setEvents(events) {
 export function fetchEvents() {
     return dispatch => {
         fetch('/api/events')
-
         .then(res => res.json())
         .then(data => dispatch(setEvents(data.events)));
+    }
+}
+
+export function setFetchDisplayEvents(events) {
+    return {
+        type: FETCH_DISPLAY_EVENT,
+        events
+    }
+}
+
+export function fetchDisplayEvents() {
+    return dispatch => {
+        fetch('/api/fetchAndDisplay')
+        .then(res => res.json())
+        .then(data => dispatch(setFetchDisplayEvents(data.events)));
     }
 }
 

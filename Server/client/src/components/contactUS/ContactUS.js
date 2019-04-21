@@ -173,12 +173,12 @@ class ContactUS extends Component {
                                         </div>
 
                                         <div className={classNames('field', {error: !!this.state.errors.phoneNum })}>
-                                            <label htmlFor="phone">Phone number</label>
+                                            <label htmlFor="phoneNum">Phone number</label>
                                             <input
-                                                name="phone"
+                                                name="phoneNum"
                                                 value={this.state.phoneNum || ''}
                                                 onChange={this.handleChange}
-                                                id="phone"
+                                                id="phoneNum"
                                                 placeholder="xxx-xxx-xxxx"
                                             />
 

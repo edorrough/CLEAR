@@ -3,12 +3,16 @@ import {
     EVENT_SAVED,
     EVENT_FETCHED,
     EVENT_UPDATED,
-    EVENT_DELETED
+    EVENT_DELETED,
+    FETCH_DISPLAY_EVENT
 } from '../../actions/eventsSchedulersAction';
 
 export default function( state = [], action = {}) {
     switch(action.type) {
         case SET_EVENTS:
+            return action.events;
+
+        case FETCH_DISPLAY_EVENT:
             return action.events;
 
         case EVENT_SAVED:

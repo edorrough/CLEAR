@@ -38,6 +38,7 @@ require('./routes/contactEmaily')(app);
 require('./routes/userLogin')(app, db);
 require('./routes/usersList')(app, db);
 require('./routes/eventsScheduler')(app, db);
+require('./routes/visitorScheduler')(app, db);
 
 
 require('./routes/emailyScheduler')(app, db);
@@ -56,14 +57,6 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT);
-
-// Sign up page and add user page
-// # department
-// # firstnma
-// # lastname
-// # emailadrre
-
-// # optional : phone
 
 
 // "engines": {

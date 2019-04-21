@@ -24,11 +24,8 @@ const sideDrawer = props => {
 
             <ul>
                 <li><Link to="/">Home</Link></li>
-                {/* <li><Link to="/artists">artists</Link></li> */}
                 <li><Link to="/people">People</Link></li>
-                {/* <li><Link to="/environmentalOrg">Projects</Link></li> */}
                 <li><Link to="/projects">Projects</Link></li>
-                <li><Link to="/faqs">FAQs</Link></li>
                 <li><Link to="/education">Education</Link></li>
                 <li><Link to="/contact-us">Contact us</Link></li>
                 <li><Link to="/user/login">Login</Link></li>

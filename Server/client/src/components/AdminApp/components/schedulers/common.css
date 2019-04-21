@@ -15,6 +15,13 @@
   .scheduler-page .schedulers-form .schedulers-form-container .schedulers-form-wrapper {
     width: 85%;
     margin: 0 auto; }
+  .scheduler-page .schedulers-form .conform-btn {
+    text-align: end; }
+  .scheduler-page .visitor-scheduler-form .visitor-schedulers-form-container .visitor-schedulers-form-wrapper {
+    width: 85%;
+    margin: 0 auto; }
+  .scheduler-page .visitor-scheduler-form .conform-btn {
+    text-align: end; }
   .scheduler-page .react-datepicker__time-container {
     width: 80px; }
     .scheduler-page .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {

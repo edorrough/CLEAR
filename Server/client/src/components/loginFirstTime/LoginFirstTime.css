@@ -6,7 +6,7 @@
     background-color: lightgreen; }
     .loginFirstTime-page .loginFirstTime-container .loginFirstTime-wrapper {
       width: 80%;
-      margin: 0 auto;
+      margin: 5% auto;
       padding: 70px 0; }
   .loginFirstTime-page .error-msg {
     color: red; }
