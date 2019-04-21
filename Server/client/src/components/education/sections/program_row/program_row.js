@@ -7,13 +7,13 @@ const ContentLeft = ( props ) => (
         <p>{props.content}</p>
     </div>
 )
-    
+
 const ImgCard = ({ preview }) => (
     <div className="card">
         <div className="image">
             <img src={preview.preview_img} alt={preview.preview_alt}/>
             <div className="ui bottom attached button">
-                {preview.preview_footer}
+                <a href={preview.preview_link}>{preview.preview_footer}</a>
             </div>
         </div>
     </div>
@@ -33,8 +33,8 @@ const ProgramRow = ({ education }) => {
                 <div className="education-imgs-right">  {/* Right side Image Grid */}
                     <div className="ui container">  {/* Image grid col */}
                         <div className={education.previews.length === 1 ? 'ui large image' : 'ui two cards'}>
-                            {education.previews.map(preview => 
-                                <ImgCard 
+                            {education.previews.map(preview =>
+                                <ImgCard
                                     key={preview.preview_link}
                                     preview={preview}
                                 />)}
