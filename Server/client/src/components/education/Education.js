@@ -16,7 +16,7 @@ class Education extends Component {
                 <div className="programRows">
                     {this.props.educations.map(education => 
                         <ProgramRow
-                            key={education.content_header_link}
+                            key={education.content_header}
                             education={education}
                     />)}
                 </div>
