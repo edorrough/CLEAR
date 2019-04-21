@@ -37,7 +37,7 @@ class LoginFirstTime extends Component {
     }
 
     renderRecaptcha = value => {
-        console.log("value: ", value)
+        // console.log("value: ", value)
         this.setState({ recaptcha: value })
     }
 
@@ -128,7 +128,6 @@ class LoginFirstTime extends Component {
                                 <span className="error-msg">{this.state.errors.passwordRequirement}</span>                                
 
                                 <ReCAPTCHA
-                                    // style={{ display: "inline-block" }}
                                     sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                                     name="recaptcha" 
                                     onChange={this.renderRecaptcha}

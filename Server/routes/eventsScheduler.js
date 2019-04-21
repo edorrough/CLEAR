@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 
-
 const validate = (data) => {
     let errors = {};
 
     if(data.title === '') errors.title = 'Title cannot be empty';
     if(data.note === '') errors.note = 'Note cannot be empty';
+    if(data.startDate === '') errors.startDate = "Start date cannot be empty";
+    if(data.endDate === '') errors.endDate = "End date cannot be empty";
 
     const isValid = Object.keys(errors).length === 0;
     return { errors, isValid};
@@ -33,19 +34,54 @@ module.exports = (app, db) => {
     app.put('/api/events/:_id', (req, res) => {
         const { errors, isValid } = validate(req.body);
         if(isValid) {
-            let { title, note, eventDone } = req.body;
+            let { 
+                title,
+                desc,
+                eventDone,
+                startDate,
+                endDate,
+                allDay,
+                location
+            } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
             } else {
                 eventDone = false
             }
+            if(allDay === 'false') {
+                allDay = false
+            } else {
+                allDay = true
+            }
+
+            let startDateParse = new Date(startDate)
+            let theStartDate = startDateParse.getFullYear() + '-' + (startDateParse.getMonth()+1) +'-'+ startDateParse.getDate();
+            let theStartTime = startDateParse.getHours() + ':' + (startDateParse.getMinutes() < 10 ? '0': '') + startDateParse.getMinutes();
+            let ampm = startDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theStartDateTime = theStartDate + ' & ' + theStartTime + ' ' + ampm;
+
+            let endDateParse = new Date(endDate)
+            let theEndDate = endDateParse.getFullYear() + '-' + (endDateParse.getMonth() + 1) + '-' + endDateParse.getDate();
+            let theEndTime = endDateParse.getHours() + ':' + (endDateParse.getMinutes() < 10 ? '0' : '' ) + endDateParse.getMinutes();
+            let AMPM = endDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theEndDateTime = theEndDate + ' & ' + theEndTime + ' ' + AMPM;
+        
+            const today = new Date();
+            const compareDate = today.setDate(today.getDate());
 
             db.collection('events').findOneAndUpdate(
                 { _id: new mongoose.Types.ObjectId(req.params._id) },
                 { $set: {
                     title,
-                    note,
-                    eventDone
+                    desc,
+                    eventDone,
+                    showStartTime: theStartDateTime,
+                    showEndTime: theEndDateTime,
+                    start: startDate,
+                    end: endDate,
+                    allDay,
+                    location,
+                    comparedDate: compareDate
                     },
                 },
                 { returnOriginal: false }, // This is important
@@ -67,30 +103,54 @@ module.exports = (app, db) => {
     });
 
     app.post('/api/events', (req, res) => {
-
         const { errors, isValid } = validate(req.body);            
         if(isValid) {
             let {
                 title,
-                note,
-                eventDone
+                desc,
+                eventDone,
+                startDate,
+                endDate,
+                allDay,
+                location
             } = req.body;
             if(eventDone === 'true') {
                 eventDone = true
             } else {
                 eventDone = false
             }
+            if(allDay === 'false') {
+                allDay = false
+            } else {
+                allDay = true
+            }
 
+            let startDateParse = new Date(startDate)
+            let theStartDate = startDateParse.getFullYear() + '-' + (startDateParse.getMonth()+1) +'-'+ startDateParse.getDate();
+            let theStartTime = startDateParse.getHours() + ':' + (startDateParse.getMinutes() < 10 ? '0': '') + startDateParse.getMinutes();
+            let ampm = startDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theStartDateTime = theStartDate + ' & ' + theStartTime + ' ' + ampm;
+
+            let endDateParse = new Date(endDate)
+            let theEndDate = endDateParse.getFullYear() + '-' + (endDateParse.getMonth() + 1) + '-' + endDateParse.getDate();
+            let theEndTime = endDateParse.getHours() + ':' + (endDateParse.getMinutes() < 10 ? '0' : '' ) + endDateParse.getMinutes();
+            let AMPM = endDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theEndDateTime = theEndDate + ' & ' + theEndTime + ' ' + AMPM;
+        
             const today = new Date();
-            const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            const dateTime = date+' '+time;
+            const compareDate = today.setDate(today.getDate());
 
             db.collection('events').insertOne({
                 title,
-                note,
+                desc,
                 eventDone,
-                createDate: dateTime
+                showStartTime: theStartDateTime,
+                showEndTime: theEndDateTime,
+                start: startDate,
+                end: endDate,
+                allDay,
+                location,
+                comparedDate: compareDate
             }, (err, result) => {
                 if(err) {
                     return res.status(500).json({ errors: { global: 'Something went wrong in database' }});

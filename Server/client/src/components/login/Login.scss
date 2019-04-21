@@ -29,6 +29,10 @@
                 margin: 0 auto;
                 background-color: lightcyan;
                 padding: 5% 0 5% 0;
+                
+                .error-msg-color {
+                    color: red;
+                }
 
                 .ui.form {
 
@@ -41,7 +45,7 @@
                         justify-content: space-evenly;
                     }
                     a {
-                        color: #FFF;
+                        color: black;
                     }
                 }
 

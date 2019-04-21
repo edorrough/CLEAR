@@ -1,7 +1,7 @@
 .users-page {
   height: 100%; }
   .users-page .navbar-container {
-    padding-top: 5%; }
+    padding: 5% 0; }
   .users-page .usersForm-page .userForm-page-container {
     height: 100%;
     width: 70%;

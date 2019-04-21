@@ -8,9 +8,30 @@
   .scheduler-page .scheduler-list-page i.icon {
     font-size: 20px;
     margin: 0 1rem; }
+  .scheduler-page .scheduler-list-page .rbc-month-view {
+    height: 700px; }
   .scheduler-page .error-msg {
     color: red; }
+  .scheduler-page .schedulers-form .schedulers-form-container .schedulers-form-wrapper {
+    width: 85%;
+    margin: 0 auto; }
+  .scheduler-page .react-datepicker__time-container {
+    width: 80px; }
+    .scheduler-page .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+      width: 80px; }
+
+a {
+  color: #FFFFFF; }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .scheduler-page .scheduler-list-page .rbc-btn-group {
+    white-space: unset; }
   .scheduler-page .scheduler-list-page i.icon {
-    font-size: 30px; } }
+    font-size: 30px; }
+  .scheduler-page .react-datepicker__time-container {
+    width: 70px; }
+    .scheduler-page .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+      width: 70px; }
+  .scheduler-page .schedulers-form .schedulers-form-container .schedulers-form-wrapper {
+    width: 90%;
+    margin: 0 auto; } }

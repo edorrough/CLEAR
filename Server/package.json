@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.14.0",
     "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
     "create-react-app": "^2.1.8",
     "express": "^4.16.4",
     "express-rate-limit": "^3.4.0",

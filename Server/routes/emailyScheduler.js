@@ -2,6 +2,7 @@ const cron = require('node-cron');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
+const emailsListTemplate = require('../services/emailListTemplate');
 
 function validate(data) {
     let errors = {};
@@ -17,73 +18,98 @@ function validate(data) {
 
 module.exports = (app, db) => {
     // second(optional), minute, hour, day of month, month, day of week
-    cron.schedule('0 */1 * * * *', () => {
-    // cron.schedule('* * * * * *', () => {
-    // cron.schedule("* * * * Sunday", () => {
-        console.log("Every 1 minutes");
+    // Every second
+    // cron.schedule("* * * * * *", () => {
+    // Every Minute
+    // cron.schedule('0 */1 * * * *', () => {
+    // Every 3 seconds
+    // cron.schedule('*/3 * * * * *', () => {
+    // Every 1 PM on Sunday, Note: I coded as 1PM but it send emails at 7 AM but I think it's fine
+    cron.schedule("0 13 * * Sunday", () => {
+        // console.log("Every 1 minutes");
+        let today = new Date();
 
-        // db.collection('users').find({}).toArray((err, users) => {
-        //     if(err) {
-        //         console.log("err in emailyScheduler of users collection: ", users)
-        //     } else {
+        db.collection('events').find({ comparedDate: { $gt: today.getSeconds() + 7 }}).toArray((err, events) => {
+            console.log(events)
+            if(err) {
+                console.log("err in emailyScheduler of event collection: ", users)
+            } else {
 
-        //         if(users.length === 0) {
-        //             const smtpTransport = nodemailer.createTransport({
-        //                 service: 'Gmail', 
-        //                 auth: {
-        //                     type: 'OAuth2',
-        //                     user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
-        //                     clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
-        //                     clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
-        //                     refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
-        //                     accessToken: keys.GOOGLE_EMAIL_ACCESS_TOKEN,
-        //                 },
-        //             });
-    
-        //             const mailOptions = {
-        //                 // from: keys.KEVIN_EMAIL,
-        //                 from: 'chch6597@colorado.edu',
-        //                 // to: keys.KEVIN_EMAIL,
-        //                 to: 'chch6597@colorado.edu',
-        //                 subject: 'The Clear: you have no pending user',
-        //                 text: 'This email is to inform you that there is no user to inform.'
-        //             };
-    
-        //             smtpTransport.sendMail(mailOptions, (err, success) => {
-        //                 if (err) {
-        //                     console.log("err: ", err)
-        //                     return res.status(500).json({ errors: { global: 'Something went wrong' }});
-        //                 } else {
-        //                     res.json({ success })
-        //                     console.log("send email to Kevin")
-        //                     done('done');
-        //                 }
-        //             })
+                db.collection('users').find({}).toArray((err, users) => {
+                    if(err) {
+                        console.log("err in emailyScheduler of users collention")
+                    } else {
+                        // No user in collection
+                        if(users.length === 0) {
+                            const smtpTransport = nodemailer.createTransport({
+                                service: 'Gmail', 
+                                auth: {
+                                    type: 'OAuth2',
+                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
+                                    clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
+                                    clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
+                                    refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
+                                    accessToken: keys.GOOGLE_EMAIL_ACCESS_TOKEN,
+                                },
+                            });
 
-        //         } else {
-        //             const emailList = users.map(user => user.email);
-        //             console.log(emailList.length)
-        //             var today = new Date();
+                            const mailOptions = {
+                                from: keys.KEVIN_GMAIL,
+                                to: keys.KEVIN_GMAIL,
+                                subject: 'The Clear: you have no users in the collection to send events',
+                                text: 'This email is to inform you that there is no user to inform events for next 7 days.'
+                            };
 
-        //             db.collection('events').find({}).toArray((err, events) => {
-        //                 if(err) {
-        //                     console.log("err in event scheduler of users collection in emailyScheduler: ", users)
-    
-        //                 } else {
-        //                     // res.json({ success })
-        //                     console.log("send")
-        //                     // done(err, 'done');
-        //                 }
-    
-        //             });
+                            smtpTransport.sendMail(mailOptions, (err, success) => {
+                                if (err) {
+                                    console.log("err: ", err)
+                                    return res.status(500).json({ errors: { global: 'Something went wrong' }});
+                                } else {
+                                    res.json({ success })
+                                    console.log("send email to Kevin")
+                                    done('done');
+                                }
+                            })
 
+                        } else {
+                            const emailsList = users.map(user => user.email)
+                            console.log(emailsList)
 
-        //         }
+                            // There are users in collectino
+                            const smtpTransport = nodemailer.createTransport({
+                                service: 'Gmail', 
+                                auth: {
+                                    type: 'OAuth2',
+                                    user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
+                                    clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
+                                    clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
+                                    refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
+                                    accessToken: keys.GOOGLE_EMAIL_ACCESS_TOKEN,
+                                },
+                            });
 
-        //     }
-        // })
+                            const mailOptions = {
+                                from: keys.KEVIN_GMAIL,
+                                to: emailsList,
+                                subject: 'The Clear, Re: The next coming up events in next 7 days!',
+                                html: emailsListTemplate(users, events)
+                            };
 
-        
+                            smtpTransport.sendMail(mailOptions, (err, success) => {
+                                if (err) {
+                                    console.log("err: ", err)
+                                    return res.status(500).json({ errors: { global: 'Something went wrong' }});
+                                } else {
+                                    res.json({ success })
+                                    console.log("send email to Kevin")
+                                    done('done');
+                                }
+                            })
+                        }
+                    }
+                });
+            }
+        });
     });
 
 

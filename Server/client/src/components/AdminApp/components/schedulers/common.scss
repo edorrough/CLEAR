@@ -17,11 +17,39 @@
             // padding: 0 10px;
             margin: 0 1rem;
         }
+
+        .rbc-month-view {
+            height: 700px;
+        }
     }
 
     .error-msg {
         color: red;
     }
+    
+    .schedulers-form {
+
+        .schedulers-form-container {
+
+            .schedulers-form-wrapper {
+                width: 85%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .react-datepicker__time-container {
+        width: 80px;
+
+        .react-datepicker__time .react-datepicker__time-box {
+            width: 80px;
+        }
+    }
+
+}
+
+a {
+    color: #FFFFFF;
 }
 
 
@@ -29,9 +57,31 @@
     .scheduler-page {
 
         .scheduler-list-page {
+            .rbc-btn-group {
+                white-space: unset;
+            }
 
             i.icon {
                 font-size: 30px; 
+            }
+        }
+
+        .react-datepicker__time-container {
+            width: 70px;
+    
+            .react-datepicker__time .react-datepicker__time-box {
+                width: 70px;
+            }
+        }
+
+        .schedulers-form {
+
+            .schedulers-form-container {
+
+                .schedulers-form-wrapper {
+                    width: 90%;
+                    margin: 0 auto;
+                }
             }
         }
     }

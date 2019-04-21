@@ -136,7 +136,7 @@ module.exports = (app, db) => {
                                             service: 'Gmail', 
                                             auth: {
                                                 type: 'OAuth2',
-                                                user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                                user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                                 clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                                 clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                                 refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -146,14 +146,12 @@ module.exports = (app, db) => {
         
                                         const mailOptions = {
                                             from: keys.KEVIN_EMAIL,
-                                            to: 'chch6597@colorado.edu',
+                                            to: email,
                                             subject: 'Re: Finish up setting password',
                                             text: 'Dear ' + firstname + ' ' + lastname + ',\n\n' +
                                                 'Thank you for joining The Clear,\n\n' +
                                             'You account: \n\n' + email + '\n\n' +
                                             'Please click on the follwoing link, or paste this into your browser to complete the process: \n\n' +
-        
-                                            // keys.HTTP_NAME + req.headers.host + '/admins/firsttime-login/' + token + '\n\n',
                                             keys.HTTP_NAME + req.headers.host + '/user/first-login/' + token + '\n\n',
                                         };
         
@@ -213,7 +211,7 @@ module.exports = (app, db) => {
                     } else {
 
                         const token = jwt.sign({
-                            email: admin.email
+                            email: email
                         },
                         keys.JWT_KEY,
                             {
@@ -249,7 +247,7 @@ module.exports = (app, db) => {
                                     service: 'Gmail', 
                                     auth: {
                                         type: 'OAuth2',
-                                        user: 'chch6597@colorado.edu', // This should be the email addr with the enable API
+                                        user: keys.KEVIN_GMAIL, // This should be the email addr with the enable API
                                         clientId: keys.GOOGLE_EMAIL_CLIENT_ID,
                                         clientSecret: keys.GOOGLE_EMAIL_CLIENT_SECRET,
                                         refreshToken: keys.GOOGLE_EMAIL_REFRESH_TOKEN,
@@ -258,21 +256,20 @@ module.exports = (app, db) => {
                                 });
 
                                 const mailOptions = {
-                                    from: keys.KEVIN_EMAIL,
-                                    to: 'chch6597@colorado.edu',
+                                    from: keys.KEVIN_GMAIL,
+                                    to: email,
                                     subject: 'Re: Finish up setting password',
                                     text: 'Dear ' + firstname + ' ' + lastname + ',\n\n' +
                                         'Thank you for joining The Clear,\n\n' +
                                     'You account: \n\n' + email + '\n\n' +
                                     'Please click on the follwoing link, or paste this into your browser to complete the process: \n\n' +
-
                                     keys.HTTP_NAME + req.headers.host + '/user/first-login/' + token + '\n\n',
                                 };
 
                                 smtpTransport.sendMail(mailOptions, (err, info) => {
                                     if (err) {
                                         console.log('err: ', err)
-                                        return res.status(500).json({ errors: { global: 'something wrong' }});
+                                        return res.status(500).json({ errors: { global: err }});
                                     }
                                     else {
                                         // console.log('Message sent: %s', JSON.stringify(info, null, 4));

@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 const navPaths = [
     {   path: '/people/faculty', main: "People" },
     {   path: '/projects', main: "Projects" },
-    {   path: '/our-educational-programs', main: "Education" },
+    {   path: '/education', main: "Education" },
     {   path: '/media-and-current-events', main: "Media and Current Events" },
     {   path: '/user/login', main: "Login" },
     {   path: '/contact-us', main: "Contact us" }

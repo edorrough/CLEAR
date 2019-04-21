@@ -48,7 +48,6 @@ export function fetchEvents() {
 }
 
 export function eventSaved(event) {
-
     return {
         type: EVENT_SAVED,
         event
@@ -56,7 +55,6 @@ export function eventSaved(event) {
 }
 
 export function saveEvent(event) {
-
     return dispatch => {
         return fetch('/api/events', {
             method: 'post',
@@ -71,7 +69,6 @@ export function saveEvent(event) {
 }
 
 export function eventUpdated(event) {
-
     return {
         type: EVENT_UPDATED,
         event

@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import WelcomeSection from './sections/welcome/welcome';
 import Projects from './sections/projects/Projects';
 import MeetPeople from './sections/meetPeople/MeetPeople';
-// import Navbar from '../customNavbar/CustomNavbar';
+import CalendarPage from './sections/calendar/calendarPage';
+import { fetchEvents } from '../../actions/eventsSchedulersAction';
+import PropTypes from 'prop-types';
 import './Home.css';
 
 const TransitionPart = () => {
@@ -37,6 +39,19 @@ const TransitionPart = () => {
 }
 
 class Home extends Component {
+    state = {
+        showStartTime: '',
+        showEndTime: '',
+        currentEventTitle: '',
+        currentEventBody: '',
+        currentEventId: '',
+        currentLocation: '',
+        modal: false
+    }
+
+    componentDidMount() {
+        this.props.fetchEvents();
+    }
 
     renderContent = () => {
         // console.log("auth.user: ", this.props.auth.user);
@@ -66,9 +81,40 @@ class Home extends Component {
         }
     }
 
+    emptyMessage = () => (
+        <p>There is no event in collection</p>
+    )
+
+    toggleModal = event => {
+        this.setState(prevState => ({
+            modal: !prevState.modal,
+            showStartTime: event.showStartTime,
+            showEndTime: event.showEndTime,
+            currentEventTitle: event.title,
+            currentEventBody: event.desc,
+            currentLocation: event.location
+        }));
+    };
+
+    eventsList = (events) => {
+        return (
+            <CalendarPage
+                modal={this.state.modal}
+                showStartTime={this.state.showStartTime}
+                showEndTime={this.state.showEndTime}
+                currentEventTitle={this.state.currentEventTitle}
+                currentEventBody={this.state.currentEventBody}
+                currentLocation={this.state.currentLocation}
+                events={events}
+                toggleModal={this.toggleModal}
+            />
+        )
+    }
+
     render() {
 
         return (
+<<<<<<< HEAD
             // <div>
                 <div id="homepage-wrapper">
                     <div className="homepage">
@@ -80,6 +126,20 @@ class Home extends Component {
 
 
                     </div>
+=======
+            <div id="homepage-wrapper">
+                <div className="homepage">
+
+                    <WelcomeSection />
+                    <TransitionPart />
+                    <Projects />
+                    <MeetPeople />
+
+                    {this.props.events.length === 0 ?
+                        this.emptyMessage() :
+                        this.eventsList(this.props.events)}
+
+>>>>>>> 0b593b77feb2295b2ea88a6173a5dbd4d142a7dc
                 </div>
 
             // </div>
@@ -88,14 +148,24 @@ class Home extends Component {
     }
 }
 
+Home.propTypes = {
+    auth: PropTypes.object,
+    events: PropTypes.func,
+    fetchEvents: PropTypes.func
+}
+
 function mapStateToProps(state) {
+<<<<<<< HEAD
     // debugger
     return {
+=======
+    return {
+>>>>>>> 0b593b77feb2295b2ea88a6173a5dbd4d142a7dc
         auth: state.auth,
-        // usersList: state.users
+        events: state.events
     }
 }
 
-
-// export default connect(mapStateToProps, actions )(Home);
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, {
+    fetchEvents
+})(Home);
