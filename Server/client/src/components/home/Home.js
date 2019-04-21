@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Button } from 'react-bootstrap';
+
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import WelcomeSection from './sections/welcome/welcome';
@@ -114,19 +114,6 @@ class Home extends Component {
     render() {
 
         return (
-<<<<<<< HEAD
-            // <div>
-                <div id="homepage-wrapper">
-                    <div className="homepage">
-
-                        <WelcomeSection />
-                        <TransitionPart />
-                        <Projects />
-                        <MeetPeople />
-
-
-                    </div>
-=======
             <div id="homepage-wrapper">
                 <div className="homepage">
 
@@ -139,10 +126,8 @@ class Home extends Component {
                         this.emptyMessage() :
                         this.eventsList(this.props.events)}
 
->>>>>>> 0b593b77feb2295b2ea88a6173a5dbd4d142a7dc
                 </div>
-
-            // </div>
+            </div>
 
         )
     }
@@ -155,12 +140,7 @@ Home.propTypes = {
 }
 
 function mapStateToProps(state) {
-<<<<<<< HEAD
-    // debugger
     return {
-=======
-    return {
->>>>>>> 0b593b77feb2295b2ea88a6173a5dbd4d142a7dc
         auth: state.auth,
         events: state.events
     }
