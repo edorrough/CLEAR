@@ -5,7 +5,8 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  height: 100%;
+  height: 590px;
+  height: 80vh;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -15,26 +16,6 @@
   -webkit-transition: background-image 0.2s ease-in-out;
   transition: background-image 0.5s ease-in-out;
   -webkit-transition: -webkit-transform .5s linear; }
-  .page1-container .arrows-navigation {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between; }
-    .page1-container .arrows-navigation .left-arrow {
-      width: 5%;
-      background-color: transparent;
-      border: none; }
-      .page1-container .arrows-navigation .left-arrow img {
-        width: 100%;
-        height: 50px; }
-    .page1-container .arrows-navigation .right-arrow {
-      width: 5%;
-      background-color: transparent;
-      border: none; }
-      .page1-container .arrows-navigation .right-arrow img {
-        width: 100%;
-        height: 50px; }
   .page1-container .content {
     height: 100%;
     display: flex; }
@@ -49,37 +30,15 @@
       padding: 2%;
       margin-right: 8%;
       width: 50%;
+      font-family: Open sans-serif;
       text-align: center; }
       .page1-container .content .page1-right-content h1 {
         font-size: 5rem;
         padding-bottom: 10%; }
-      .page1-container .content .page1-right-content h2 {
-        padding-top: 15%;
-        font-family: "Arvo", "Times New Roman", Times, serif;
-        font-weight: 700;
-        color: #FFF; }
       .page1-container .content .page1-right-content h3 {
         padding-top: 15%; }
-      .page1-container .content .page1-right-content .ui.teal.button {
-        font-size: 3rem;
-        border-radius: 25px;
-        box-shadow: 20px 20px 10px #888888; }
 
 @media (max-width: 768px) {
-  .page1-container .arrows-navigation {
-    top: 60%; }
-    .page1-container .arrows-navigation .left-arrow {
-      width: 10%;
-      position: relative; }
-      .page1-container .arrows-navigation .left-arrow img {
-        width: 100%;
-        height: 50px; }
-    .page1-container .arrows-navigation .right-arrow {
-      width: 10%;
-      position: relative; }
-      .page1-container .arrows-navigation .right-arrow img {
-        width: 100%;
-        height: 50px; }
   .page1-container .content {
     display: flex;
     flex-direction: column; }
@@ -96,28 +55,14 @@
       .page1-container .content .page1-right-content h1 {
         font-size: 5rem;
         padding-bottom: 10%;
-        color: #652aed; }
+        color: white; }
       .page1-container .content .page1-right-content h3 {
         padding-top: 15%;
-        color: #652aed; }
+        color: white; }
       .page1-container .content .page1-right-content .ui.teal.button {
         font-size: 3rem; } }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .page1-container .arrows-navigation {
-    top: 80%; }
-    .page1-container .arrows-navigation .left-arrow {
-      width: 20%;
-      position: relative; }
-      .page1-container .arrows-navigation .left-arrow img {
-        width: 100%;
-        height: 50px; }
-    .page1-container .arrows-navigation .right-arrow {
-      width: 20%;
-      position: relative; }
-      .page1-container .arrows-navigation .right-arrow img {
-        width: 100%;
-        height: 50px; }
   .page1-container .content .page1-left-content {
     width: 100%;
     padding: unset;
@@ -131,9 +76,9 @@
     .page1-container .content .page1-right-content h1 {
       font-size: 5rem;
       padding-bottom: 10%;
-      color: #652aed; }
+      color: white; }
     .page1-container .content .page1-right-content h3 {
       padding-top: 15%;
-      color: #652aed; }
+      color: white; }
     .page1-container .content .page1-right-content .ui.teal.button {
       font-size: 3rem; } }

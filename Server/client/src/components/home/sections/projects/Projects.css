@@ -1,6 +1,6 @@
 .projects-container {
-  padding-top: 96px;
-  padding-bottom: 66px;
+  padding-top: 3em;
+  padding-bottom: 3em;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,12 +8,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #dee9fc; }
+  background-color: #FFF; }
   .projects-container h1 {
     text-align: center;
     font-family: Open sans-serif;
-    font-weight: 700;
-    color: #989ba0; }
+    text-decoration: underline;
+    text-decoration-color: #CFB87C; }
   .projects-container .projects-wrapper {
     padding: 64px 2rem; }
     .projects-container .projects-wrapper .ui.cards > .card > .image .again:hover {
@@ -36,13 +36,40 @@
         width: 100%; }
       .projects-container .projects-wrapper .ui.cards > .card .meta span:hover {
         max-height: 100%; }
+  .projects-container .project-about p {
+    margin: 4em;
+    width: 80%;
+    border-left: 5px solid #CFB87C;
+    background-color: #F6F6F6;
+    padding: 1em;
+    margin-bottom: 1em;
+    font-size: 1.5rem; }
   .projects-container .project-learn-more {
     text-align: center;
-    padding-top: 6%; }
+    padding-top: 3em; }
     .projects-container .project-learn-more .ui.teal.button {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       border-radius: 25px;
-      box-shadow: 20px 20px 10px #888888; }
+      background-color: #000;
+      display: inline-block;
+      vertical-align: middle;
+      transform: translateZ(0);
+      -moz-osx-font-smoothing: grayscale;
+      transition-duration: 0.3s;
+      transition-property: transform;
+      -moz-transition: all .2s ease-in;
+      -o-transition: all .2s ease-in;
+      -webkit-transition: all .2s ease-in;
+      transition: all .2s ease-in; }
+    .projects-container .project-learn-more .ui.teal.button:hover,
+    .projects-container .project-learn-more .ui.teal.button:focus,
+    .projects-container .project-learn-more .ui.teal.button:active {
+      transform: scale(1.04);
+      background-color: #565A5C; }
+
+@media (min-width: 0px) and (max-width: 455px) {
+  .project-about {
+    width: 100%; } }
 
 @keyframes bounce {
   0%, 20%, 60%, 100% {

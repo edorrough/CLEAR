@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import WelcomeSection from './sections/welcome/welcome';
@@ -14,24 +15,22 @@ const TransitionPart = () => {
         <div className="transition-container">
             <div className="trans-wrapper">
                 <div className="trans-content">
-                    <div className="trans-title">
-                        <p>
-                            <b>Linguistics </b>
-                            is the perfect major of your school years
-                        </p>
-                    </div>
                     <div className="trans-subtitle">
+                        <h1>About</h1>
                         <p>
-                            The Department of Linguistics Strategic Plan provides more detailed information about who we are, 
-                            what we do, and our vision for the future.
+                            The Center for Computational Language and Education Research (CLEAR) is dedicated to advancing Human Language Technology and applying it to Personalized Learning for broad and diverse populations with varying language backgrounds and cognitive profiles. Personalized Learning augments or replaces traditional modes of learning with emerging, and often interactive, technologies that adapt to suit individual preferences. Personalized learning is such an important problem that it has recently been named by the National Academy of Engineering as one of the 14 grand challenges for the 21st century.
+                            <br/>
+                            <br/>
+                            CLEAR conducts research and development which informs theoretical questions in personalized learning and leads to effective and scalable solutions in schools, on the web and in the work place. Advancing personalized learning involves a multi-disciplinary effort that leverages innovations in human language technology that span computer science, linguistics, education, cognition, psychology, and speech and language.
                         </p>
+                        <div className="about-learn-more">
+                            <Link to="/Education">
+                                <button className="ui teal button">
+                                    Education Paths
+                                </button>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            
-                <div className="register-button">
-                    <button className="ui teal button">
-                        Register Now
-                    </button>
                 </div>
 
             </div>
@@ -99,7 +98,7 @@ class Home extends Component {
 
     eventsList = (events) => {
         return (
-            <CalendarPage 
+            <CalendarPage
                 modal={this.state.modal}
                 showStartTime={this.state.showStartTime}
                 showEndTime={this.state.showEndTime}
@@ -113,21 +112,23 @@ class Home extends Component {
     }
 
     render() {
+
         return (
             <div id="homepage-wrapper">
                 <div className="homepage">
-                    
+
                     <WelcomeSection />
                     <TransitionPart />
                     <Projects />
                     <MeetPeople />
-                    
-                    {this.props.events.length === 0 ? 
-                        this.emptyMessage() : 
+
+                    {this.props.events.length === 0 ?
+                        this.emptyMessage() :
                         this.eventsList(this.props.events)}
 
                 </div>
             </div>
+
         )
     }
 }
@@ -139,7 +140,7 @@ Home.propTypes = {
 }
 
 function mapStateToProps(state) {
-    return { 
+    return {
         auth: state.auth,
         events: state.events
     }

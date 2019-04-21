@@ -33,42 +33,42 @@ class Projects extends Component {
             isCARLAHovering: !prevState.isCARLAHovering
         }))
     }
-    
+
     render() {
 
 
         return (
             <div className="projects-container">
                 <h1>Projects</h1>
-                <div className="projects-wrapper">                
+
+                <div className="projects-wrapper">
 
                     <div className="ui three stackable cards">
                         <div className="card">
                             <div className="image">
-                                <img 
-                                    src={icare_icon} 
+                                <img
+                                    src={icare_icon}
                                     alt="icare_icon"
                                     className="again"
                                     data-tip data-for='ICARE'
-                                    
                                 />
 
-                                <ReactTooltip 
-                                    id='ICARE' 
+                                <ReactTooltip
+                                    id='ICARE'
                                     type='success'>
                                     <span>ICARE: Independent Adaptive Comprehensive Reading Evaluation</span>
-                                </ReactTooltip>          
+                                </ReactTooltip>
                             </div>
 
                             <div className="content">
                                 <Link className="header" to="#">ICARE</Link>
                                 <div className="meta">
                                     <span style={{ textOverflow: 'ellipsis'}}>
-                                    Funded by the Institute of Educational Sciences 
-                                    (PI: Barbara Wise, coI Sarel Van Vuuren), 
-                                    ICARE aims to create theoretically-grounded computerized assessments 
-                                    which provide initial instructional profiles for poor readers from 2nd to 5th grade, 
-                                    and indicate whether they have difficulties relating to word reading, 
+                                    Funded by the Institute of Educational Sciences
+                                    (PI: Barbara Wise, coI Sarel Van Vuuren),
+                                    ICARE aims to create theoretically-grounded computerized assessments
+                                    which provide initial instructional profiles for poor readers from 2nd to 5th grade,
+                                    and indicate whether they have difficulties relating to word reading,
                                     to language comprehension or both.
                                     </span>
                                 </div>
@@ -81,20 +81,20 @@ class Projects extends Component {
                             </div>
                         </div>
 
-                        
+
                         <div className="card">
                             <div className="image">
-                                <img 
-                                    src={earlyicare_icon} 
+                                <img
+                                    src={earlyicare_icon}
                                     alt="earlyicare_icon"
                                     className="again"
                                     data-tip data-for="Early-ICARE"
-                                />       
-                                <ReactTooltip 
-                                    id='Early-ICARE' 
+                                />
+                                <ReactTooltip
+                                    id='Early-ICARE'
                                     type='info'>
                                     <span>Early-ICARE: E-Independent Comprehensive Adaptive Reading Evaluation</span>
-                                </ReactTooltip>                              
+                                </ReactTooltip>
                             </div>
 
 
@@ -102,9 +102,9 @@ class Projects extends Component {
                                 <Link className="header" to="#">Early-ICARE</Link>
                                 <div className="meta">
                                     <span>
-                                        Funded by the Institute of Educational Sciences 
-                                        (PI: Barbara Wise, co-Is Lynn Snyder, Sarel Van Vuuren, Ed Wiley), 
-                                        E-ICARE extends ICARE down to KG, adds dynamic repeated assessment of word reading K-5, 
+                                        Funded by the Institute of Educational Sciences
+                                        (PI: Barbara Wise, co-Is Lynn Snyder, Sarel Van Vuuren, Ed Wiley),
+                                        E-ICARE extends ICARE down to KG, adds dynamic repeated assessment of word reading K-5,
                                         and also studies what predicts who will become a struggling reader.
                                     </span>
                                 </div>
@@ -120,19 +120,19 @@ class Projects extends Component {
 
                         <div className="card">
                             <div className="image">
-                                <img 
-                                    src={carti_icon} 
+                                <img
+                                    src={carti_icon}
                                     alt="carti_icon"
                                     data-tip data-for="CARLA"
                                     className="again"
-                                />                                    
+                                />
                             </div>
 
-                            <ReactTooltip 
-                                id='CARLA' 
+                            <ReactTooltip
+                                id='CARLA'
                                 type='light'>
                                 <span>CARLA: Comprehensive Adaptive Reading & Learning Assistance</span>
-                            </ReactTooltip>  
+                            </ReactTooltip>
 
 
 
@@ -140,12 +140,12 @@ class Projects extends Component {
                                 <Link className="header" to="#">CARLA</Link>
                                 <div className="meta">
                                     <span>
-                                        CARLA is a comprehensive personalized reading intervention system 
-                                        (B Wise, S Van Vuuren, N Ngampatipatpong, with funding from NIH; grounded on earlier programs 
-                                        (ROSS and FtL) funded by NIH, IES, & an IERI). CARLA integrates all 5 domains of 
-                                        evidence-based reading instruction, gradually changing its balance of thoughtful 
-                                        instruction from more time in engaging activities for earlier readers to more time in books 
-                                        as readers progress. Its fidelity of treatment makes it a great platform for studying 
+                                        CARLA is a comprehensive personalized reading intervention system
+                                        (B Wise, S Van Vuuren, N Ngampatipatpong, with funding from NIH; grounded on earlier programs
+                                        (ROSS and FtL) funded by NIH, IES, & an IERI). CARLA integrates all 5 domains of
+                                        evidence-based reading instruction, gradually changing its balance of thoughtful
+                                        instruction from more time in engaging activities for earlier readers to more time in books
+                                        as readers progress. Its fidelity of treatment makes it a great platform for studying
                                         what works best for children with different cognitive profiles.
                                     </span>
                                 </div>
@@ -160,10 +160,19 @@ class Projects extends Component {
 
                     </div>
 
+                    <div className="project-about">
+                        <p>
+                            These projects have led to a wide variety of systems including some for language acquisition skills, tutoring and therapy, tools for question answering and navigating the web, and for learning and presentation of science topics ranging from plate tectonics to acoustics.
+                            <br/>
+                            <br/>
+                            <b>Center projects include:</b> Adaptive assessment and intervention for reading difficulties, The development of increasingly rich linguistic annotation schemes that can serve as training and evaluation data for machine learning, Information extraction and natural language understanding using semantic role labeling and co-reference resolution, Spoken language processing and dialog understanding, and Human-computer interaction using animated agents or customizable interfaces.
+                        </p>
+                    </div>
+
                     <div className="project-learn-more">
                         <Link to="/projects">
                             <button className="ui teal button">
-                                Learn more projects
+                                More Projects
                             </button>
                         </Link>
                     </div>
@@ -176,4 +185,3 @@ class Projects extends Component {
 }
 
 export default Projects
-
