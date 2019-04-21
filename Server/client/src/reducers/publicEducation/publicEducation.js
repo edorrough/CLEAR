@@ -18,7 +18,7 @@ export default () => {
         },
         {
             content_header: 'Institute of Cognitive Science (ICS) Graduate Certificate Programs',
-            content_header_link: '',
+            content_header_link: 'https://www.colorado.edu/ics/',
             content_content: "The Institute of Cognitive Science (ICS) sponsors Graduate Certificate Programs and Combined PhD Programs that provide exceptional breadth and depth of interdisciplinary training in the cognitive sciences. Successful completion of an ICS program is acknowledged by a Certificate of Completion on the student’s transcript. The PhD programs are noted on the student’s diploma. NOTE: We are not an admitting department. Please email or call the department of interest to apply for graduate school. Upon acceptance into a department or unit's graduate program, then follow the instructions below to apply for an ICS program. Four ICS Graduate Programs are available: Cognitive Science Graduate Certificate, Human Language Technology Certificate, Cognitive Science Combined PhD, and Cognitive Neuroscience Combined Triple PhD.",
             previews: [
                 {
