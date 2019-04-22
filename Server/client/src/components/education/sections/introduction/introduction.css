@@ -14,3 +14,7 @@
 .introduction-content h1 {
   text-decoration: underline;
   text-decoration-color: black; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .introduction-content h1 {
+    font-size: 1.4em; } }

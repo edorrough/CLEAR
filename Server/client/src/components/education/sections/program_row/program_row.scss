@@ -66,7 +66,6 @@
   }
   .education-imgs-right {
     //border: 2px solid red;
-    min-width: 50%;
     display: flex;
   }
 .image a {
@@ -74,4 +73,17 @@
 }
 .image a:hover {
   color: steelblue;
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+  .left-content {
+    text-align: left;
+    .content-header {
+      font-size: 1.3em;
+    }
+  }
+
+  .education-imgs-right {
+    display: block;
+  }
 }

@@ -19,7 +19,6 @@
   padding: 16px; }
 
 .education-imgs-right {
-  min-width: 50%;
   display: flex; }
 
 .image a {
@@ -27,3 +26,11 @@
 
 .image a:hover {
   color: steelblue; }
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .left-content {
+    text-align: left; }
+    .left-content .content-header {
+      font-size: 1.3em; }
+  .education-imgs-right {
+    display: block; } }
