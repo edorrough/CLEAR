@@ -67,9 +67,11 @@
       transform: scale(1.04);
       background-color: #565A5C; }
 
-@media (min-width: 0px) and (max-width: 455px) {
-  .project-about {
-    width: 100%; } }
+@media (min-width: 320px) and (max-width: 767px) {
+  .projects-container .project-about p {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1.2em; } }
 
 @keyframes bounce {
   0%, 20%, 60%, 100% {
