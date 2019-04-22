@@ -87,7 +87,8 @@
     #homepage-wrapper .homepage .transition-container .trans-wrapper .trans-content {
       width: 100%; }
       #homepage-wrapper .homepage .transition-container .trans-wrapper .trans-content .trans-subtitle p {
-        text-align: center;
+        text-align: left;
+        font-size: 1.2em;
         padding-bottom: 10%; }
     #homepage-wrapper .homepage .transition-container .trans-wrapper .register-button {
       margin: 0 auto; }
