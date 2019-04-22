@@ -15,8 +15,7 @@ class Page1 extends Component {
                     <div className="page1-left-content">
                     </div>
                     <div className="page1-right-content">
-                        <h3>CU Boulder&#39;s</h3>
-                        <h1>CLEAR</h1>
+
                     </div>
 
                 </div>

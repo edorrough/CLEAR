@@ -37,7 +37,7 @@
                         width: 65px;
                         height: auto;
                     }
-                    
+
                 }
 
                 span {
@@ -52,7 +52,7 @@
                     width: 100%;
                     color: #fff;
                     text-decoration: none;
-                    
+
                     div {
                         font-size: 25px;
                         padding: 1% 0;
@@ -61,7 +61,7 @@
                     p {
                         font-size: 12px;
                         text-transform: uppercase;
-                        
+
                     }
                     font-size: 100%;
                     font: inherit;
@@ -73,6 +73,8 @@
         .search-section {
             width: 33.33%;
             display: flex;
+            //Hide search until implemented
+            visibility: hidden;
             align-items: center;
             flex-direction: row-reverse;
 
@@ -93,7 +95,7 @@
         font-size: 18px;
     }
 
-    .header-wrapper .header-container-max 
+    .header-wrapper .header-container-max
         .branding {
             width: 80%;
 
@@ -124,13 +126,13 @@
         p {
             font-size: 10px;
         }
-        
+
     }
     .header-wrapper .header-container-max .search-section {
         width: 15%;
     }
 
-    .header-wrapper .header-container-max 
+    .header-wrapper .header-container-max
         .branding {
             width: 80%;
 
@@ -138,11 +140,11 @@
 
                 span {
                     div {
-    
+
                         font-size: 15px;
                     }
                 }
             }
         }
-        
+
 }
