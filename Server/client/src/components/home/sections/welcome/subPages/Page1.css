@@ -2,13 +2,13 @@
   background-image: url("../../../../../assets/home-landing.jpg");
   padding-top: 90px;
   padding-bottom: 66px;
-  -webkit-background-size: auto;
-  -moz-background-size: auto;
-  -o-background-size: auto;
-  height: 590px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 600px;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   position: relative;
   transition: background-color 1s ease-out;
   -webkit-transition: background-image 0.2s ease-in-out;

@@ -4,17 +4,17 @@
 
     padding-top: 90px;
     padding-bottom: 66px;
-    -webkit-background-size: auto;
-    -moz-background-size: auto;
-    -o-background-size: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 
-    height: 590px;
-    //height: 80vh;
+    height: 600px;
+    //height: 50vh;
 
     /* Center and scale the image nicely */
     //background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
 
     // opacity: 0.3;
     position: relative;
