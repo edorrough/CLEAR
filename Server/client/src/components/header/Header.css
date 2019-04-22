@@ -49,6 +49,7 @@
     .header-wrapper .header-container-max .search-section {
       width: 33.33%;
       display: flex;
+      visibility: hidden;
       align-items: center;
       flex-direction: row-reverse; }
       .header-wrapper .header-container-max .search-section img {
