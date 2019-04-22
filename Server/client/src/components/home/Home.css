@@ -4,8 +4,7 @@
     height: 100%; }
     #homepage-wrapper .homepage .top-content-wrapper {
       height: 100%;
-      padding-top: 20px;
-      background-image: url("../../assets/linkguistic-contact.jpg"); }
+      padding-top: 20px; }
       #homepage-wrapper .homepage .top-content-wrapper .content {
         height: inherit;
         width: 95%;
