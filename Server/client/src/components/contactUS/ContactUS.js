@@ -20,13 +20,13 @@ class ContactUS extends Component {
         if(!!this.state.errors[e.target.name]) {
             let errors = Object.assign({}, this.state.errors);
             delete errors[e.target.name];
-    
-            this.setState({ 
+
+            this.setState({
                 [e.target.name]: e.target.value,
                 errors
             });
         } else {
-            this.setState({ 
+            this.setState({
                 [e.target.name]: e.target.value,
             });
         }
@@ -60,15 +60,15 @@ class ContactUS extends Component {
             })
             .then(
                 () => {
-                    window.alert("You have successfully sent message. Click OK to go back to home page.")
+                    window.alert("Your message has been sent! Click 'OK' to go back to home page.")
                     this.setState({ done: true })
                 },
                 (err) => {
                     console.log("err in contact page: ", err);
                     if(err.response.status === 429) {
-                        this.setState({ 
+                        this.setState({
                             // request: err.response.statusText + ', please try again later',
-                            loading: false 
+                            loading: false
                         })
                     } else {
                         err.response.json().then(({errors}) => this.setState({ errors, loading: false }))
@@ -78,7 +78,7 @@ class ContactUS extends Component {
         }
     }
 
-    render() {    
+    render() {
 
         const form = (
             <div className="contact-page-container">
@@ -91,7 +91,7 @@ class ContactUS extends Component {
 
                                 <div className="address-info">
                                     <i className="location arrow icon"></i>
-                                    Address
+                                    Mailing Address
                                 </div>
                                 <div className="address-content">
 
@@ -106,27 +106,20 @@ class ContactUS extends Component {
                                     </p>
                                 </div>
                             </div>
-                            <div className="phone-info-wrapper">
-                                <div className="phone-info">
-                                    <i className="phone square icon"></i>
-                                    Phone number
-                                </div>
-                                <p>+1 123-345-6789</p>
-                            </div>
-                            
+
                             <div className="email-info-wrapper">
                                 <div className="email-info">
                                     <i className="envelope outline icon"></i>
-                                    General support
+                                    Martha Palmer
                                 </div>
-                                <p>Contact@email.com</p>
+                                <p>martha.palmer@colorado.edu</p>
                             </div>
 
                         </div>
 
                         <div className="centeredRight">
                             <div className="form-wrapper">
-                                <h2 style={{paddingBottom: '10%'}}>Send us massage</h2>
+                                <h2 style={{paddingBottom: '10%'}}>Send us a message!</h2>
 
                                 <form className={classNames('ui', 'form', {loading: this.state.loading})} onSubmit={this.handleSubmit}>
 
