@@ -1,20 +1,20 @@
 .page1-container {
     // The landing page background image
-    background-image: url('../../../../../assets/linguistic-home.gif');
+    background-image: url('../../../../../assets/home-landing.jpg');
 
     padding-top: 90px;
     padding-bottom: 66px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
 
     height: 590px;
-    height: 80vh;
+    //height: 80vh;
 
     /* Center and scale the image nicely */
-    background-position: center;
+    //background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 
     // opacity: 0.3;
     position: relative;
@@ -58,53 +58,10 @@
 
 }
 
-@media(max-width: 768px) {
-    .page1-container {
-
-        .content {
-            display: flex;
-            flex-direction: column;
-
-
-            .page1-left-content {
-                width: 100%;
-                padding: unset;
-
-                padding-left: 5%;
-                padding-right: 5%;
-
-            }
-
-
-            .page1-right-content {
-                padding: 2%;
-                margin-right: 8%;
-                width: 100%;
-                text-align: center;
-
-                h1 {
-                    font-size: 5rem;
-                    padding-bottom: 10%;
-                    color: white;
-                }
-                h3 {
-                    padding-top: 15%;
-                    color: white;
-                }
-
-                .ui.teal.button {
-                    font-size: 3rem;
-                }
-            }
-
-        }
-
-    }
-}
-
 @media(min-width: 320px) and (max-width: 767px) {
     .page1-container {
-
+      background-image: url('../../../../../assets/home-landing-mobile.jpg');
+      background-size: cover;
         .content {
 
             .page1-left-content {
