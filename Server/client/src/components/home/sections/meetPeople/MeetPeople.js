@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-
 import acowell_1 from '../../../../assets/acowell_1.jpg';
 import mthomas_ruzic from '../../../../assets/mthomas-ruzic.jpg';
 import laura_michaelis from '../../../../assets/laura_michaelis.jpg';
 import { Link } from 'react-router-dom';
-
 import './MeetPeople.css';
-// import { Image } from 'semantic-react';
-
 
 class MeetPeople extends Component {
     render() {
@@ -19,7 +15,6 @@ class MeetPeople extends Component {
                     <div className="ui three stackable cards">
 
                         <div className="card">
-
                             <div className="card-header">
                                 <div className="image">
                                     <img
@@ -56,7 +51,6 @@ class MeetPeople extends Component {
                         </div>
 
                         <div className="card">
-
                             <div className="card-header">
                                 <div className="image">
                                     <img
@@ -95,7 +89,6 @@ class MeetPeople extends Component {
                         </div>
 
                         <div className="card">
-
                             <div className="card-header">
                                 <div className="image">
                                     <img
@@ -137,14 +130,12 @@ class MeetPeople extends Component {
                     </div>
 
                     <div className="register-button">
-                        <Link to="/people/faculty">
-
+                        <Link to="/people">
                             <button className="ui teal button">
                                 More People
                             </button>
                         </Link>
                     </div>
-
 
                 </div>
             </div>

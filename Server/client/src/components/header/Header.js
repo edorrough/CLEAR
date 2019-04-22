@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import searchIcon from '../../assets/search-icon.png';
 import './Header.css';
 
 class Header extends Component {
@@ -25,9 +24,6 @@ class Header extends Component {
                         </div>
                     </div>
 
-                    <div className="search-section">
-                        <img src={searchIcon} alt="search" />
-                    </div>
                 </div>
             </div>
         )

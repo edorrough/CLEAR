@@ -73,7 +73,7 @@ module.exports = (app, db) => {
 
                         } else {
                             const emailsList = users.map(user => user.email)
-                            console.log(emailsList)
+                            // console.log(emailsList)
 
                             // There are users in collectino
                             const smtpTransport = nodemailer.createTransport({

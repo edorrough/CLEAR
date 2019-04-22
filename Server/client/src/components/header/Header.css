@@ -46,15 +46,6 @@
           .header-wrapper .header-container-max .branding .branding-row span p {
             font-size: 12px;
             text-transform: uppercase; }
-    .header-wrapper .header-container-max .search-section {
-      width: 33.33%;
-      display: flex;
-      visibility: hidden;
-      align-items: center;
-      flex-direction: row-reverse; }
-      .header-wrapper .header-container-max .search-section img {
-        width: 25px;
-        height: auto; }
 
 @media (min-width: 480px) and (max-width: 959px) {
   .header-wrapper .header-container-max .branding .branding-row span div {

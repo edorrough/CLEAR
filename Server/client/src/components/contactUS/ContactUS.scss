@@ -2,10 +2,7 @@
     height: 100%;
     width: 100%;
 
-
     .contact-page {
-        // display: flex;
-        // flex-direction: row;
         height: 100%;
 
         .contact {
@@ -19,11 +16,10 @@
                 text-align: center;
                 width: 50%;
 
-                background-image: url(../../assets/contact.jpg);
+                background-image: url('https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555968039/background_in_frontend/contact-background/contact.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
-                // position: relative;
                 padding: 30px 15px 0px 15px;
                 z-index: 1;
 
@@ -106,12 +102,8 @@
         height: 100%;
         width: 100%;
 
-
         .contact-page {
-            // display: flex;
-            // flex-direction: row;
             height: 100%;
-
 
             .contact {
                 display: flex;

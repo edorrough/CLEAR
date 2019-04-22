@@ -2,8 +2,6 @@
 .header-wrapper {
     background: black;
     color: #ffffff;
-    // height: 140px;
-
     display: flex;
     align-items: center;
 
@@ -70,19 +68,6 @@
             }
         }
 
-        .search-section {
-            width: 33.33%;
-            display: flex;
-            //Hide search until implemented
-            visibility: hidden;
-            align-items: center;
-            flex-direction: row-reverse;
-
-            img {
-                width: 25px;
-                height: auto;
-            }
-        }
     }
 
 }
