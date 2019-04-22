@@ -22,13 +22,13 @@ class userLogin extends Component {
         if(!!this.state.errors[e.target.name]) {
             let errors = Object.assign({}, this.state.errors);
             delete errors[e.target.name];
-    
-            this.setState({ 
+
+            this.setState({
                 [e.target.name]: e.target.value,
                 errors
             });
         } else {
-            this.setState({ 
+            this.setState({
                 [e.target.name]: e.target.value,
             });
         }
@@ -51,9 +51,9 @@ class userLogin extends Component {
         if(isValid) {
             const { email, password } = this.state;
 
-            this.props.userSubmitSignin({ 
-                email, 
-                password 
+            this.props.userSubmitSignin({
+                email,
+                password
             })
             .then(
                 () => {
@@ -61,7 +61,7 @@ class userLogin extends Component {
                         type: 'success',
                         text: 'You have successfully logged in, welcome.'
                     });
-                    this.setState({ 
+                    this.setState({
                         done: true,
                     })
                 },
@@ -69,9 +69,9 @@ class userLogin extends Component {
                     console.log("err in userLogin: ", err.response);
                     debugger
                     if(err.response.status === 429) {
-                        this.setState({ 
+                        this.setState({
                             request: err.response.statusText + ', please try again later',
-                            loading: false 
+                            loading: false
                         })
                     } else {
                         err.response.json().then(({ errors }) => this.setState({ errors, loading: false }))
@@ -89,12 +89,12 @@ class userLogin extends Component {
                     <div className="userLoginContentWrapper">
                         <div className="userLoginFormWrapper">
 
-                            <h1>Department of Linguistic</h1>
+                            <h1>CLEAR Admin</h1>
                             {this.props.user === this.state.loginTooOften ? <p className="error-msg-color">{this.props.user}</p> : ''}
 
                             <span className="error-msg-color">{this.state.request ? this.state.request : ''}</span>
                             {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
-                                {this.props.user.errors ? 
+                                {this.props.user.errors ?
                                 <div className="ui negative message">
                                     <p>{this.props.user.errors.global}</p>
                                 </div> : ''}
@@ -129,7 +129,7 @@ class userLogin extends Component {
 
                                     <div className="forgotPW">
                                         <Link to="/user/passwd-forgot">
-                                            Forgot password
+                                            Forgot password?
                                         </Link>
                                     </div>
 
@@ -147,7 +147,7 @@ class userLogin extends Component {
                                     </div>
 
                                 </form>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
