@@ -25,7 +25,7 @@ import Events from './events/EventsPage';
 import './App.css';
 
 import Projects from './projects/Projects';
-
+import People from '../components/people/People';
 
 import { connect } from 'react-redux';
 import { addFlashMessages } from '../actions/flashMessages';
@@ -127,7 +127,7 @@ class App extends Component {
 
                         <Switch>
                             <Route exact path="/" component={Home}/>
-
+							<Route path="/people" component={People} />
 
 
                             {/* new2: working */}
