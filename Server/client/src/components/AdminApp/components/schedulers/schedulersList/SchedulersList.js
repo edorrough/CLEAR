@@ -8,7 +8,6 @@ import { deleteVisitorEvent } from '../../../../../actions/visitorSchedulerActio
 import { Link } from 'react-router-dom';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-// import EventsTable from '../eventsTable/EventsTable';
 
 moment.locale('en-GB');
 const allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
@@ -48,7 +47,7 @@ class SchedulersList extends Component {
     eventsList = (events, allViews, deleteEvent) => {
         return (
             <div className="ui container">
-
+                <h1>Event Scheduler</h1>
                 <BigCalendar
                     events={events}
                     localizer={this.state.localizer}
@@ -91,9 +90,9 @@ class SchedulersList extends Component {
     }
 
     schedulesList = (schedules, allViews, deleteVisitorEvent) => {
-        debugger
         return (
             <div className="ui container">
+                <h1>Visitor Scheduler</h1>
 
                 <BigCalendar
                     events={schedules}
@@ -144,12 +143,10 @@ class SchedulersList extends Component {
 
         return (
             <div className="scheduler-list-page">
-                <h1>Events Scheduler</h1>
                 { this.props.events.length === 0 ? 
                     this.emptyMessage() : 
                     this.eventsList(this.props.events, allViews, this.props.deleteEvent)}
 
-                <h1>Visitor Scheduler</h1>
                 { this.props.schedules.length === 0 ?
                     this.emptyMessage() :
                     this.schedulesList(this.props.schedules, allViews, this.props.deleteVisitorEvent)}
@@ -165,7 +162,6 @@ SchedulersList.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         events: state.events,
         schedules: state.schedules

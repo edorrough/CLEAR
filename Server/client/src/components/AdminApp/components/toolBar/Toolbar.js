@@ -6,7 +6,6 @@ import { logout } from '../../../../actions/authAction';
 import './Toolbar.css';
 
 class Toolbar extends Component {
-// const toolbar = props => (
     logout = (e) => {
         e.preventDefault();
         this.props.logout(); 
@@ -25,7 +24,6 @@ class Toolbar extends Component {
                     <div className="spacer" />
                     <div className="toolbar_navigation-items">
                         <ul>
-                            <li><Link to="/admins">Dashboard</Link></li>
                             <li><Link to="/admins/users">Users and Images</Link></li>
                             <li><Link to="/admins/emailyList">Email List</Link></li>
                             <li><Link to="/admins/scheduler">Scheduler</Link></li>
