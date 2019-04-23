@@ -51,9 +51,8 @@
         position: absolute;
         backface-visibility: hidden; }
       .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .extra {
-        flex-direction: column; }
-        .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card .extra a {
-          color: #CFB87C; }
+        flex-direction: column;
+        color: #CFB87C; }
     .meetPeople-container .meetPeople-wrapper .ui.three.cards > .card:hover {
       transform: rotateY(180deg);
       height: 100%;

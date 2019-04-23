@@ -22,7 +22,7 @@ class MeetPeople extends Component {
                                         alt="icare_icon"
                                     />
                                 </div>
-                                <Link className="header" to="#"><h2>Andrew Cowell</h2> <br/> (Relation to Program)</Link>
+                                <div className="header"><h2>Andrew Cowell</h2> <br/> (Relation to Program)</div>
                             </div>
 
                             <div className="content">
@@ -37,14 +37,14 @@ class MeetPeople extends Component {
                                     </span>
                                 </div>
                                 <div className="extra">
-                                    <Link to="#" style={{ paddingRight:'1rem'}}>
+                                    <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
                                         cowellj@colorado.edu
-                                    </Link>
-                                    <Link to="">
+                                    </div>
+                                    <div>
                                         <i className="phone volume icon"></i>
                                         303 - 735 - 4194
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@ class MeetPeople extends Component {
                                         className="image"
                                     />
                                 </div>
-                                <Link className="header" to="#"><h2>Maria Thomas-Ruzic</h2> <br/> Senior Instructor and Director of the Program for TESOL Professionals</Link>
+                                <div className="header"><h2>Maria Thomas-Ruzic</h2> <br/> Senior Instructor and Director of the Program for TESOL Professionals</div>
                             </div>
 
                             <div className="content">
@@ -75,14 +75,14 @@ class MeetPeople extends Component {
                                     </span>
                                 </div>
                                 <div className="extra">
-                                    <Link to="#" style={{ paddingRight:'1rem'}}>
+                                    <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
                                         maria.thomas-ruzic@colorado.edu
-                                    </Link>
-                                    <Link to="">
+                                    </div>
+                                    <div>
                                         <i className="phone volume icon"></i>
                                         303 - 735 - 4194
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
 
@@ -99,7 +99,7 @@ class MeetPeople extends Component {
                                         className="image"
                                     />
                                 </div>
-                                <Link className="header" to="#"><h2>Laura Michaelis</h2> <br/> Professor and Department Chair</Link>
+                                <div className="header"><h2>Laura Michaelis</h2> <br/> Professor and Department Chair</div>
                             </div>
 
                             <div className="content">
@@ -114,14 +114,14 @@ class MeetPeople extends Component {
                                     </span>
                                 </div>
                                 <div className="extra">
-                                    <Link to="#" style={{ paddingRight:'1rem'}}>
+                                    <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
                                         maria.thomas-ruzic@colorado.edu
-                                    </Link>
-                                    <Link to="">
+                                    </div>
+                                    <div>
                                         <i className="phone volume icon"></i>
                                         303 - 735 - 4194
-                                    </Link>
+                                    </div>
                                 </div>
                             </div>
 
