@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Person from './PersonBio.js';
 import { faculty, admins, researchStaff, formerResearchStaff, students, alumni, postDocs } from './PeopleList.js';
-
 import './people.css';
 
 class People extends Component {
@@ -12,7 +11,7 @@ class People extends Component {
     }
 
     //Function that governs opening tabs when a tab is clicked.
-    openTab(evt, tab, sibling, mob=false) {
+    openTab(evt, tab, sibling, mob = false) {
         let i, contents, links;
 
         //Set all tabs to closed.
@@ -99,14 +98,12 @@ class People extends Component {
                 {/* The inline style in this section is necessary to open this tab when the page first loads.*/}
                 <div id="faculty-section" className="tab-details" style={{display : 'block'}}>
                     <div className="people-list-wrapper-teaser">
-                    
                         {faculty.map(individual => 
-                        <Person
-                            key={individual.name}
-                            individual={individual}
-                        />)}
-                        
-                    </div>  
+                            <Person
+                                key={individual.name}
+                                individual={individual}
+                            />)}
+                    </div>
                 </div>
 
                 {/* Admins */}

@@ -1,5 +1,6 @@
 
 //This is a list of all individuals displayed on the people page.
+// The team that takes over should make this as API file so you can save more space to host
 
 //==========================
 //         Faculty
@@ -879,4 +880,4 @@ const postDocs = [
     }
 ]
 
-export {faculty,admins,researchStaff,formerResearchStaff,students,alumni,postDocs};
+export { faculty,admins,researchStaff,formerResearchStaff,students,alumni,postDocs };

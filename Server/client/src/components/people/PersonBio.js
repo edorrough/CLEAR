@@ -1,7 +1,6 @@
 import React from 'react';
-
 //formats the information about a person into html.
-const Person = ({individual}) => {
+const Person = ({ individual }) => {
     let avatar, iwidth, iheight, contact_email, contact_phone;
     
     //Display style of contact information sections.
@@ -44,7 +43,6 @@ const Person = ({individual}) => {
         contact_phone = <div style={lineblock}><span className="person-contact-info-item person-contact-info-phone"><i className="fa fa-phone"></i><a href={"tel:"+individual.phone}>{individual.phone}</a></span></div>;
     }
     
-    //Output
     return(
         <div className="person-view-mode-teaser clearfix">
             <div className="person-view-mode-teaser-content node-view-mode-teaser-content">
@@ -61,13 +59,10 @@ const Person = ({individual}) => {
                     {contact_email}
                     {contact_phone}
                 </div>
-                
             </div>
         </div>
     )
-    
 }   
-
 
 export default Person;
 
