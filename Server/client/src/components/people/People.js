@@ -13,30 +13,30 @@ class People extends Component {
 
     //Function that governs opening tabs when a tab is clicked.
     openTab(evt, tab, sibling, mob=false) {
-      var i, contents, links;
+        let i, contents, links;
 
-      //Set all tabs to closed.
-      contents = document.getElementsByClassName("tab-details");
-      for (i = 0; i < contents.length; i++) {
-        contents[i].style.display = "none";
-      }
+        //Set all tabs to closed.
+        contents = document.getElementsByClassName("tab-details");
+        for (i = 0; i < contents.length; i++) {
+            contents[i].style.display = "none";
+        }
 
-      //Set all tabs to inactive.
-      links = document.getElementsByClassName("tab-button");
-      for (i = 0; i < links.length; i++) {
-        links[i].className = links[i].className.replace(" active", "");
-      }
-      
-      //Open the tab we want, scroll it to the top (if not in mobile mode, and set it and the corresponding mobile tab to active.)
-      document.getElementById(tab).style.display = "block";
-      document.getElementById(tab).scrollTop = 0;
-      document.getElementById(evt).className += " active";
-      document.getElementById(sibling).className += " active";
-      
-      //If this is a mobile tab, scroll the page to the top of the current list.
-      if (mob){
-        this.pageTop.scrollIntoView({ behavior: "smooth" });
-      }
+        //Set all tabs to inactive.
+        links = document.getElementsByClassName("tab-button");
+        for (i = 0; i < links.length; i++) {
+            links[i].className = links[i].className.replace(" active", "");
+        }
+        
+        //Open the tab we want, scroll it to the top (if not in mobile mode, and set it and the corresponding mobile tab to active.)
+        document.getElementById(tab).style.display = "block";
+        document.getElementById(tab).scrollTop = 0;
+        document.getElementById(evt).className += " active";
+        document.getElementById(sibling).className += " active";
+        
+        //If this is a mobile tab, scroll the page to the top of the current list.
+        if (mob){
+            this.pageTop.scrollIntoView({ behavior: "smooth" });
+        }
     } 
 
     
@@ -102,6 +102,7 @@ class People extends Component {
                     
                         {faculty.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                         
@@ -115,6 +116,7 @@ class People extends Component {
                         
                        {admins.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                             
@@ -128,6 +130,7 @@ class People extends Component {
                     
                     {researchStaff.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                         
@@ -141,6 +144,7 @@ class People extends Component {
                     
                     {formerResearchStaff.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                         
@@ -154,6 +158,7 @@ class People extends Component {
                     
                         {students.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                         
@@ -167,6 +172,7 @@ class People extends Component {
                     
                         {alumni.map(individual => 
                         <Person
+                            key={individual.name}
                             individual={individual}
                         />)}
                         
@@ -177,12 +183,11 @@ class People extends Component {
 
                 <div id="post-section" className="tab-details">
                     <div className="people-list-wrapper-teaser">
-                    
                         {postDocs.map(individual => 
                             <Person
+                                key={individual.name}
                                 individual={individual}
                             />)}
-                        
                     </div>
                 </div> 
             
@@ -190,10 +195,7 @@ class People extends Component {
             <div className="padding"></div>
             
             </div>
-            
-            
-            
-            )
+        )
     }
 }
 

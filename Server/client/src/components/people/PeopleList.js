@@ -7,7 +7,7 @@
 const faculty = [
     {  
         name:"Susan Brown" ,
-        img: require("../../assets/people/susan_brown.png"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367281/staff_in_frontend/susan_brown.png",
         imgx:"",
         imgy:"",
         title:"Adjunct Assistant Professor",
@@ -73,7 +73,7 @@ const faculty = [
     },
     {
         name:"Sarel Van Vuuren",
-        img:require("../../assets/people/sarel_van_vuuren.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367271/staff_in_frontend/sarel_van_vuuren.jpg",
         imgx:"100",
         imgy:"134",
         title:"Associate Research Professor",
@@ -84,7 +84,7 @@ const faculty = [
     },
     {
         name:"Wayne Ward",
-        img:require("../../assets/people/wayne_ward.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367303/staff_in_frontend/wayne_ward.jpg",
         imgx:"",
         imgy:"",
         title:"Research Professor",
@@ -361,7 +361,7 @@ const students =  [
     },
     {
         name:"James Gung",
-        img:require("../../assets/people/james_gung.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367342/students_in_frontend/james_gung.jpg",
         imgx:"",
         imgy:"",
         title:"",
@@ -372,7 +372,7 @@ const students =  [
     },
     {
         name:"Ghazaleh Kazeminejad",
-        img:require("../../assets/people/ghazelah_kazeminejad.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367333/students_in_frontend/ghazelah_kazeminejad.jpg",
         imgx:"100",
         imgy:"134",
         title:"",
@@ -383,7 +383,7 @@ const students =  [
     },
     {
         name:"Ling Liu",
-        img:require("../../assets/people/ling_liu.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367357/students_in_frontend/ling_liu.jpg",
         imgx:"100",
         imgy:"134",
         title:"",
@@ -394,7 +394,7 @@ const students =  [
     },
     {
         name:"Skatje Myers",
-        img:require("../../assets/people/skatje_myers.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367364/students_in_frontend/skatje_myers.jpg",
         imgx:"100",
         imgy:"129",
         title:"",
@@ -405,7 +405,7 @@ const students =  [
     },
     {
         name:"Tim O'Gorman",
-        img:require("../../assets/people/tim_ogorman.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367386/students_in_frontend/tim_ogorman.jpg",
         imgx:"100",
         imgy:"133",
         title:"",
@@ -416,7 +416,7 @@ const students =  [
     },
     {
         name:"Daniel Peterson",
-        img:require("../../assets/people/daniel_peterson.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367322/students_in_frontend/daniel_peterson.jpg",
         imgx:"",
         imgy:"",
         title:"" ,
@@ -427,7 +427,7 @@ const students =  [
     },
     {
         name:"Kevin Stowe",
-        img:require("../../assets/people/kevin_stowe.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367348/students_in_frontend/kevin_stowe.jpg",
         imgx:"100",
         imgy:"133",
         title:"",
@@ -438,7 +438,7 @@ const students =  [
     },
     {
         name:"Abhijit Suresh",
-        img:require("../../assets/people/abhijit_suresh.jpg"),
+        img: "https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555367317/students_in_frontend/abhijit_suresh.jpg",
         imgx:"",
         imgy:"",
         title:"", 
