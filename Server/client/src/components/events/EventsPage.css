@@ -5,16 +5,35 @@
     margin: 0 auto; }
     .events-page .events-page-wrapper h1 {
       text-align: center;
-      padding: 3rem 0; }
+      padding: 3rem;
+      font-family: "Helvetica Neue", Helvetica; }
+    .events-page .events-page-wrapper h3 {
+      font-size: 2rem;
+      font-family: "Helvetica Neue", Helvetica;
+      padding: 10px; }
+    .events-page .events-page-wrapper h4 {
+      font-size: 1.4rem;
+      font-family: "Helvetica Neue", Helvetica; }
+    .events-page .events-page-wrapper h5 {
+      padding: 5px 20px;
+      font-family: Arial,Helvetica,sans-serif;
+      text-transform: uppercase;
+      font-size: 1rem; }
   .events-page .events-sections {
     text-align: center;
     padding: 5% 0; }
 
 @media (min-width: 401px) and (max-width: 767px) {
   .events-page .events-page-wrapper h3 {
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    font-family: "Helvetica Neue", Helvetica; }
   .events-page .events-page-wrapper h4 {
-    font-size: 1rem; }
+    font-size: 1rem;
+    font-family: "Helvetica Neue", Helvetica; }
+  .events-page .events-page-wrapper h5 {
+    font-family: Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem; }
   .events-page .events-sections {
     text-align: center;
     padding: 5% 0; }
@@ -23,8 +42,14 @@
 
 @media (min-width: 320px) and (max-width: 400px) {
   .events-page .events-page-wrapper h3 {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    font-family: "Helvetica Neue", Helvetica; }
   .events-page .events-page-wrapper h4 {
+    font-size: 0.8rem;
+    font-family: "Helvetica Neue", Helvetica; }
+  .events-page .events-page-wrapper h5 {
+    font-family: Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
     font-size: 0.7rem; }
   .events-page .events-sections .ui.pagination.menu .item {
     min-width: 2em; }
