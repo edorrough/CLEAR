@@ -37,11 +37,11 @@ const Person = ({individual}) => {
     }
     
     if(individual.email != ""){ //if an email is specified, display it.
-        contact_email = <div style={lineblock}><span className="person-contact-info-item person-contact-info-email"><i className="fa fa-envelope"></i><a href={"mailto:"+individual.email}>{individual.email}</a></span> <span className="person-contact-separator">&nbsp;&nbsp;&nbsp;</span></div>;
+        contact_email = <div style={lineblock}><span className="person-contact-info-item person-contact-info-email"><i className="fa fa-envelope"></i> <a className="contact-link" href={"mailto:"+individual.email}>{individual.email}</a></span> <span className="person-contact-separator">&nbsp;&nbsp;&nbsp;</span></div>;
     }
     
     if(individual.phone != ""){ //if a phone number is specified, display it.
-        contact_phone = <div style={lineblock}><span className="person-contact-info-item person-contact-info-phone"><i className="fa fa-phone"></i><a href={"tel:"+individual.phone}>{individual.phone}</a></span></div>;
+        contact_phone = <div style={lineblock}><span className="person-contact-info-item person-contact-info-phone"><i className="fa fa-phone"></i> <a className="contact-link" href={"tel:"+individual.phone}>{individual.phone}</a></span></div>;
     }
     
     //Output
