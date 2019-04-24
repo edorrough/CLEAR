@@ -7,8 +7,27 @@
 
         h1 {
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem;
+            font-family: "Helvetica Neue", Helvetica;
         }
+        h3 {
+            font-size: 2rem;
+            font-family: "Helvetica Neue", Helvetica;
+            padding: 10px;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            font-family: "Helvetica Neue", Helvetica;
+        }
+
+        h5 {
+            padding: 5px 20px;
+            font-family: Arial,Helvetica,sans-serif;
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
     }
 
     .events-sections {
@@ -24,10 +43,18 @@
         .events-page-wrapper {
             h3 {
                 font-size: 1.4rem;
+                font-family: "Helvetica Neue", Helvetica;
             }
 
             h4 {
                 font-size: 1rem;
+                font-family: "Helvetica Neue", Helvetica;
+            }
+
+            h5 {
+                font-family: Arial,Helvetica,sans-serif;
+                text-transform: uppercase;
+                font-size: 0.8rem;
             }
         }
 
@@ -51,9 +78,17 @@
         .events-page-wrapper {
             h3 {
                 font-size: 1.2rem;
+                font-family: "Helvetica Neue", Helvetica;
             }
 
             h4 {
+                font-size: 0.8rem;
+                font-family: "Helvetica Neue", Helvetica;
+            }
+
+            h5 {
+                font-family: Arial,Helvetica,sans-serif;
+                text-transform: uppercase;
                 font-size: 0.7rem;
             }
         }

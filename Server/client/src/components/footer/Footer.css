@@ -32,7 +32,7 @@
           .footer .site-infor-wrapper .site-info .cu-footer span a {
             color: #cfb87c; }
           .footer .site-infor-wrapper .site-info .cu-footer span li {
-            padding-right: 10px; }
+            padding-right: 15px; }
           .footer .site-infor-wrapper .site-info .cu-footer span li:first-child {
             list-style-type: none; }
 
@@ -52,6 +52,6 @@
           display: flex;
           font-size: 85%; }
           .footer .site-infor-wrapper .site-info .cu-footer span li {
-            padding-right: 5px; }
+            padding-right: 15px; }
           .footer .site-infor-wrapper .site-info .cu-footer span li:first-child {
             list-style-type: none; } }

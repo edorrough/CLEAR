@@ -69,13 +69,13 @@ class EventsPage extends Component {
 
                     {this.state.pageOfEvents.map(event => 
                         <div key={event.id}>
-                            <h3><b>Title: {event.title}</b></h3>
+                            <h3><b>{event.title}</b></h3>
                             <h4>{event.description}</h4>
-                            <ul>
+                            <ul><h5>
                                 <li>Location: {event.location}</li>
-                                <li>Start: {event.showStartTime}</li>
-                                <li>End: {event.showEndTime}</li>
-                            </ul>
+                                <li>Started: {event.showStartTime}</li>
+                                <li>Ended: {event.showEndTime}</li>
+                            </h5></ul>
                             <hr/>
                         </div>
                     )}
