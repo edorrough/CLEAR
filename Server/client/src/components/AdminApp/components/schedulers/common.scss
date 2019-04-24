@@ -7,6 +7,10 @@
 
     .scheduler-list-page {
 
+        .rbc-calendar {
+            min-height: 700px;
+        }
+
         .finished {
             text-decoration: line-through;
             color: red;

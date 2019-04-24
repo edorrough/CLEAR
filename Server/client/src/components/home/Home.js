@@ -97,16 +97,18 @@ class Home extends Component {
 
     eventsList = (events) => {
         return (
-            <CalendarPage
-                modal={this.state.modal}
-                showStartTime={this.state.showStartTime}
-                showEndTime={this.state.showEndTime}
-                currentEventTitle={this.state.currentEventTitle}
-                currentEventBody={this.state.currentEventBody}
-                currentLocation={this.state.currentLocation}
-                events={events}
-                toggleModal={this.toggleModal}
-            />
+            <div className="rbc-calendar">
+                <CalendarPage
+                    modal={this.state.modal}
+                    showStartTime={this.state.showStartTime}
+                    showEndTime={this.state.showEndTime}
+                    currentEventTitle={this.state.currentEventTitle}
+                    currentEventBody={this.state.currentEventBody}
+                    currentLocation={this.state.currentLocation}
+                    events={events}
+                    toggleModal={this.toggleModal}
+                />
+            </div>
         )
     }
 

@@ -85,7 +85,7 @@ class UsersForm extends Component {
             this.setState({ loading: true })
 
             if(_id) {
-                debugger
+
                 this.props.updateAdmin({
                     _id,
                     firstname,

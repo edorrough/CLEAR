@@ -7,28 +7,16 @@ import './EventsPage.css';
 
 class EventsPage extends Component {
     state = {
-        allEvents: [...Array(150).keys()].map(i => 
+        allEvents: this.props.events.map(event => 
             ({ 
-                id: (i+1), 
-                title: 'Item ' + (i+1),
-                description: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116)",
-                location: "home",
-                showStartTime: "2019-4-21 / 11:30 AM",
-                showEndTime: "2019-4-21 / 15:00 PM"
-            })),
-
-        // allEvents: this.props.events.map(event => {
-        //     // debugger
-        //     return (
-        //     ({ 
-        //         id: event._id, 
-        //         title: event.title,
-        //         description: event.desc,
-        //         location: event.location,
-        //         showStartTime: event.showStartTime,
-        //         showEndTime: event.showEndTime
+                id: event._id, 
+                title: event.title,
+                description: event.desc,
+                location: event.location,
+                showStartTime: event.showStartTime,
+                showEndTime: event.showEndTime
                 
-        //     })  )} ) ,
+            })),
 
         pageOfEvents: [],
         mobileVersion: false,
@@ -45,20 +33,20 @@ class EventsPage extends Component {
         this.resize();
     }
 
-    // componentWillReceiveProps = (nextProps) => {
-    //     this.setState({
-    //         allEvents: nextProps.events.map(event => 
-    //             ({ 
-    //                 id: event._id, 
-    //                 title: event.title,
-    //                 description: event.desc,
-    //                 location: event.location,
-    //                 showStartTime: event.showStartTime,
-    //                 showEndTime: event.showEndTime
+    componentWillReceiveProps = (nextProps) => {
+        this.setState({
+            allEvents: nextProps.events.map(event => 
+                ({ 
+                    id: event._id, 
+                    title: event.title,
+                    description: event.desc,
+                    location: event.location,
+                    showStartTime: event.showStartTime,
+                    showEndTime: event.showEndTime
                     
-    //             }))
-    //     })
-    // }
+                }))
+        })
+    }
 
     resize() {
         let mobileVersion = (window.innerWidth <= 600);
@@ -73,7 +61,7 @@ class EventsPage extends Component {
     }
 
     render() {
-        console.log(this.state.allEvents)
+
         return (
             <div className="events-page">
                 <div className="events-page-wrapper">
@@ -100,7 +88,6 @@ class EventsPage extends Component {
                     />
                 </div>
             </div>
-
         )
     }
 }

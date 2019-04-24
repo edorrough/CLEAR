@@ -38,7 +38,7 @@ class Pages extends Component {
         // call change page function in parent component
         this.props.onChangePage(pageOfItems);
     }
-
+    
     getPager = (totalItems, currentPage, pageSize) => {
         // default to first page
         currentPage = currentPage || 1;
@@ -79,7 +79,6 @@ class Pages extends Component {
         let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
         let pages = [...Array((endPage + 1) - startPage).keys()].map(i => startPage + i);
 
-        // return object with all pager properties required by the view
         return {
             totalItems: totalItems,
             currentPage: currentPage,

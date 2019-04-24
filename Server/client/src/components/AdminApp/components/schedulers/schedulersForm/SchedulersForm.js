@@ -18,8 +18,6 @@ class SchedulersForm extends Component {
         eventErrorMsg: '',
         month: '',
         day: '',
-        // startDateTime: '',
-        // endDateTime: '',
         startDate: new Date(),
         endDate: new Date(),
         showMonthDropdown: true,
@@ -242,12 +240,6 @@ class SchedulersForm extends Component {
                                 </select>
                                 <span className="error-msg">{this.state.errors.eventErrorMsg}</span>
                             </div>
-
-
-
-                            {/* <Calendar
-                                onDayClick={this.onDayClick(this.state.month, this.state.day)}
-                            /> */}
 
                             <div className={classnames('field', { error: !!this.state.errors.desc })}>
                                 <label htmlFor="desc">Description *</label>

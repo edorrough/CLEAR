@@ -2,6 +2,8 @@
   height: 100%; }
   #homepage-wrapper .homepage {
     height: 100%; }
+    #homepage-wrapper .homepage .rbc-calendar {
+      min-height: 700px; }
     #homepage-wrapper .homepage .top-content-wrapper {
       height: 100%;
       padding-top: 20px; }
