@@ -15,7 +15,6 @@ class EventsPage extends Component {
                 location: event.location,
                 showStartTime: event.showStartTime,
                 showEndTime: event.showEndTime
-                
             })),
 
         pageOfEvents: [],
