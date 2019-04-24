@@ -19,7 +19,7 @@ class Toolbar extends Component {
                         <DrawerToggleButton click={this.props.drawerToggleClickHandler} />
                     </div>
                     <div className="toolbar_logo">
-                        <Link to="/">The Clear</Link>
+                        <Link to="/">Clear</Link>
                     </div>
                     <div className="spacer" />
                     <div className="toolbar_navigation-items">
