@@ -47,7 +47,7 @@ class SchedulersList extends Component {
     eventsList = (events, allViews, deleteEvent) => {
         return (
             <div className="ui container">
-                <h1>Event Scheduler</h1>
+                <h1>Public Scheduler</h1>
                 <BigCalendar
                     events={events}
                     localizer={this.state.localizer}
@@ -92,7 +92,7 @@ class SchedulersList extends Component {
     schedulesList = (schedules, allViews, deleteVisitorEvent) => {
         return (
             <div className="ui container">
-                <h1>Visitor Scheduler</h1>
+                <h1>Private Scheduler</h1>
 
                 <BigCalendar
                     events={schedules}
@@ -147,6 +147,7 @@ class SchedulersList extends Component {
                     this.emptyMessage() : 
                     this.eventsList(this.props.events, allViews, this.props.deleteEvent)}
 
+                <br/><br/>
                 { this.props.schedules.length === 0 ?
                     this.emptyMessage() :
                     this.schedulesList(this.props.schedules, allViews, this.props.deleteVisitorEvent)}
