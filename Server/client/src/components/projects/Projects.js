@@ -19,20 +19,12 @@ class Projects extends Component {
 
   render() {
     return (
-      <div class="Projects-container">
+      <div className="Projects-container">
       
-        <ul class="breadcrumb">
-          <li>
-            <Link to="/">Home </Link>
-          </li>
-          <li>Projects</li>
-        </ul>
-
-        <div class="intro_paragraph">
+        <div className="intro_paragraph">
           <h1>Projects</h1>
-          <p>
-            CLEAR conducts research in linguistics, education, and computer
-            science. Center projects include:
+          <p> CLEAR conducts research in linguistics, education, and computer
+            science. Center projects include: </p>
             <ul>
               <li>
                 Adaptive assessment and intervention for reading difficulties
@@ -52,6 +44,7 @@ class Projects extends Component {
                 interfaces.
               </li>
             </ul>
+          <p>
             These projects have led to a wide variety of systems including some
             for language acquisition skills, tutoring and therapy, tools for
             question answering and navigating the web, and for learning and
@@ -60,7 +53,7 @@ class Projects extends Component {
           </p>
         </div>
 
-        <div class="buttonContainer">
+        <div className="buttonContainer">
           {/* 
                 ========================
                 Project Filter Buttons 
@@ -73,22 +66,22 @@ class Projects extends Component {
 
           <button
             className="button"
-            onclick={() => this.selectFilterCategory("reading-projects")}>Reading Projects
+            onClick={() => this.selectFilterCategory("reading-projects")}>Reading Projects
           </button>
 
           <button
             className="button"
-            onclick={() => this.selectFilterCategory("interactive-systems")}>Interactive Systems
+            onClick={() => this.selectFilterCategory("interactive-systems")}>Interactive Systems
           </button>
 
           <button
             className="button"
-            onclick={() => this.selectFilterCategory("computational-semantics")}>Computational Semantics
+            onClick={() => this.selectFilterCategory("computational-semantics")}>Computational Semantics
           </button>
 
           <button
             className="button"
-            onclick={() =>
+            onClick={() =>
               this.selectFilterCategory("digital-learning-sciences")}>Digital Learning Sciences
           </button>
         </div>
