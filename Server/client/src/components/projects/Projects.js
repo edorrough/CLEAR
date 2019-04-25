@@ -16,6 +16,13 @@ class Projects extends Component {
     document.getElementById(filter_category).style.display = "inline-block";
   }
 
+  showAllCards() {
+    var x = document.getElementById("row-box").querySelectorAll(".column");
+    for(var i=0; i<x.length; i++){
+    x[i].style.display="block";
+    }
+  }
+
   render() {
     return (
       <div className="Projects-container">
@@ -65,6 +72,11 @@ class Projects extends Component {
 
           <button
             className="button"
+            onClick={() => this.showAllCards()}>All Projects
+          </button>
+
+          <button
+            className="button"
             onClick={() => this.selectFilterCategory("reading-projects")}>Reading Projects
           </button>
 
@@ -90,7 +102,7 @@ class Projects extends Component {
                 Project Card Grid
                 =================
                 */}
-        <div className="row">
+        <div className="row" id="row-box">
           <div id="reading-projects" className="column">
             <div className="content">
               <img 
