@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-
 import './Projects.css';
 
 class Projects extends Component {
@@ -103,7 +101,11 @@ class Projects extends Component {
         <div className="row">
           <div id="reading-projects" className="column">
             <div className="content">
-              <img src={readingprojects_placeholder_image} alt="CARLA" style={{ width: "100%" }} />
+              <img 
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
+                alt="CARLA" 
+                style={{ width: "100%" }} 
+              />
               <h4>CARLA</h4>
               <p>
                 CARLA is a comprehensive personalized reading intervention
@@ -122,7 +124,11 @@ class Projects extends Component {
 
           <div id="reading-projects" className="column">
             <div className="content">
-              <img src={readingprojects_placeholder_image} alt="CARTI" style={{ width: "100%" }} />
+              <img 
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
+                alt="CARTI" s
+                tyle={{ width: "100%" }} 
+              />
               <h4>CARTI</h4>
               <p>
                 Funded by a grant from the NIH to Barbara Wise, Sarel Van
@@ -137,7 +143,11 @@ class Projects extends Component {
 
           <div id="reading-projects" className="column">
             <div className="content">
-              <img src={readingprojects_placeholder_image} alt="Early-ICARE" style={{ width: "100%" }} />
+              <img 
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
+                alt="Early-ICARE" 
+                style={{ width: "100%" }} 
+              />
               <h4>Early-ICARE</h4>
               <p>
                 unded by the Institute of Educational Sciences (PI: Barbara
@@ -151,7 +161,11 @@ class Projects extends Component {
 
           <div id="reading-projects" className="column">
             <div className="content">
-              <img src={readingprojects_placeholder_image} alt="ICARE" style={{ width: "100%" }} />
+              <img 
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
+                alt="ICARE" 
+                style={{ width: "100%" }} 
+              />
               <h4>ICARE</h4>
               <p>
                 Funded by the Institute of Educational Sciences (PI: Barbara
@@ -167,7 +181,7 @@ class Projects extends Component {
           <div id="interactive-systems" className="column">
             <div className="content">
               <img
-                src={interactive_systems_placeholder}
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145906/projects_in_frontend/interactive_systems_placeholder.jpg"
                 alt="Interactive Prompting Platform (IPP)"
                 style={{ width: "100%" }}
               />
@@ -185,7 +199,7 @@ class Projects extends Component {
           <div id="interactive-systems" className="column">
             <div className="content">
               <img
-                src={interactive_systems_placeholder}
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145906/projects_in_frontend/interactive_systems_placeholder.jpg"
                 alt="Interactive Prompting Platform (IPP)"
                 style={{ width: "100%" }}
               />
@@ -203,7 +217,7 @@ class Projects extends Component {
           <div id="computational-semantics" className="column">
             <div className="content">
               <img
-                src={computational_semantics_placeholder}
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145896/projects_in_frontend/computational_semantics_placeholder.jpg"
                 alt="ICARE"
                 style={{ width: "100%" }}
               />
@@ -226,7 +240,7 @@ class Projects extends Component {
           <div id="digital-learning-sciences" className="column">
             <div className="content">
               <img
-                src={dls_project_image}
+                src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145930/projects_in_frontend/dls_project_image.jpg"
                 alt="DLS"
                 style={{ width: "100%" }}
               />
