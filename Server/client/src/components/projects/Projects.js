@@ -126,8 +126,8 @@ class Projects extends Component {
             <div className="content">
               <img 
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
-                alt="CARTI" s
-                tyle={{ width: "100%" }} 
+                alt="CARTI" 
+                style={{ width: "100%" }} 
               />
               <h4>CARTI</h4>
               <p>
