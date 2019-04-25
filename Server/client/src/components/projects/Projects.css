@@ -38,7 +38,7 @@
     clear: both;
   }
   
-  .content {
+  .project-content {
     background-color: grey;
     padding: 20px;
     border-top-left-radius: 10px;
@@ -50,7 +50,7 @@
     transform-style: preserve-3d;
   }
   
-  .column:hover .content {
+  .column:hover .project-content {
     transform: rotateY(180deg);
   }
   

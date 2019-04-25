@@ -19,7 +19,7 @@ class Projects extends Component {
   showAllCards() {
     var x = document.getElementById("row-box").querySelectorAll(".column");
     for(var i=0; i<x.length; i++){
-    x[i].style.display="block";
+      x[i].style.display="block";
     }
   }
 
@@ -104,7 +104,7 @@ class Projects extends Component {
                 */}
         <div className="row" id="row-box">
           <div id="reading-projects" className="column">
-            <div className="content">
+            <div className="project-content">
               <img 
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
                 alt="CARLA" 
@@ -127,7 +127,7 @@ class Projects extends Component {
           </div>
 
           <div id="reading-projects" className="column">
-            <div className="content">
+            <div className="project-content">
               <img 
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
                 alt="CARTI" 
@@ -146,7 +146,7 @@ class Projects extends Component {
           </div>
 
           <div id="reading-projects" className="column">
-            <div className="content">
+            <div className="project-content">
               <img 
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
                 alt="Early-ICARE" 
@@ -164,7 +164,7 @@ class Projects extends Component {
           </div>
 
           <div id="reading-projects" className="column">
-            <div className="content">
+            <div className="project-content">
               <img 
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145919/projects_in_frontend/readingprojects_placeholder_image.jpg" 
                 alt="ICARE" 
@@ -183,7 +183,7 @@ class Projects extends Component {
           </div>
 
           <div id="interactive-systems" className="column">
-            <div className="content">
+            <div className="project-content">
               <img
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145906/projects_in_frontend/interactive_systems_placeholder.jpg"
                 alt="Interactive Prompting Platform (IPP)"
@@ -201,7 +201,7 @@ class Projects extends Component {
           </div>
 
           <div id="interactive-systems" className="column">
-            <div className="content">
+            <div className="project-content">
               <img
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145906/projects_in_frontend/interactive_systems_placeholder.jpg"
                 alt="Interactive Prompting Platform (IPP)"
@@ -219,7 +219,7 @@ class Projects extends Component {
           </div>
 
           <div id="computational-semantics" className="column">
-            <div className="content">
+            <div className="project-content">
               <img
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145896/projects_in_frontend/computational_semantics_placeholder.jpg"
                 alt="ICARE"
@@ -242,7 +242,7 @@ class Projects extends Component {
           </div>
 
           <div id="digital-learning-sciences" className="column">
-            <div className="content">
+            <div className="project-content">
               <img
                 src="https://res.cloudinary.com/dtf7zeh9v/image/upload/v1556145930/projects_in_frontend/dls_project_image.jpg"
                 alt="DLS"

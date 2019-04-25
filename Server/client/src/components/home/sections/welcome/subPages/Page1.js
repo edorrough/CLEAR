@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-// import { Button } from 'react-bootstrap';
-// import ReactPlayer from 'react-player'
-
-// import ReactTooltip from 'react-tooltip'
-
 import './Page1.css';
 
 class Page1 extends Component {
@@ -17,9 +12,7 @@ class Page1 extends Component {
                     <div className="page1-right-content">
 
                     </div>
-
                 </div>
-
             </div>
         )
     }
