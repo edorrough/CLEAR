@@ -31,6 +31,78 @@ module.exports = (app, db) => {
         })
     });
 
+    app.put('/api/visitor-events/:_id', (req, res) => {
+        const { errors, isValid } = validate(req.body);
+        if(isValid) {
+            let { 
+                title,
+                desc,
+                eventDone,
+                startDate,
+                endDate,
+                allDay,
+                location
+            } = req.body;
+            if(eventDone === 'true') {
+                eventDone = true
+            } else {
+                eventDone = false
+            }
+            if(allDay === 'false') {
+                allDay = false
+            } else {
+                allDay = true
+            }
+
+            let startDateParse = new Date(startDate)
+            let theStartDate = startDateParse.getFullYear() + '-' + (startDateParse.getMonth()+1) +'-'+ startDateParse.getDate();
+            let theStartTime = startDateParse.getHours() + ':' + (startDateParse.getMinutes() < 10 ? '0': '') + startDateParse.getMinutes();
+            let ampm = startDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theStartDateTime = theStartDate + ' / ' + theStartTime + ' ' + ampm;
+
+            let endDateParse = new Date(endDate)
+            let theEndDate = endDateParse.getFullYear() + '-' + (endDateParse.getMonth() + 1) + '-' + endDateParse.getDate();
+            let theEndTime = endDateParse.getHours() + ':' + (endDateParse.getMinutes() < 10 ? '0' : '' ) + endDateParse.getMinutes();
+            let AMPM = endDateParse.getHours() >= 12 ? 'PM' : 'AM';
+            let theEndDateTime = theEndDate + ' / ' + theEndTime + ' ' + AMPM;
+        
+            const today = new Date();
+            const compareDate = today.setDate(today.getDate());
+
+            db.collection('visitorSchedule').findOneAndUpdate(
+                { _id: new mongoose.Types.ObjectId(req.params._id) },
+                { $set: {
+                    title,
+                    desc,
+                    eventDone,
+                    showStartTime: theStartDateTime,
+                    showEndTime: theEndDateTime,
+                    start: startDate,
+                    end: endDate,
+                    allDay,
+                    location,
+                    comparedDate: compareDate, // This compares emaily to send emails weekly
+                    eventsShowDateCompared: new Date(theEndDate) // This compares and displays in public page
+                    },
+                },
+                { returnOriginal: false }, // This is important
+                ( err, newScheduler ) => {
+                    // console.log("result in db.collection: ", result)
+                    if(err) {
+                        return res.status(500).json({ errors: { global: err } });
+                    } else {
+                        res.status(200).json({
+                            schedule: newScheduler.value
+                        })
+                    }
+                }
+            )
+
+        } else {
+            return res.status(400).json({ errors })
+        }
+    });
+
     app.post('/api/visitor-events', (req, res) => {
         const { errors, isValid } = validate(req.body);            
         if(isValid) {

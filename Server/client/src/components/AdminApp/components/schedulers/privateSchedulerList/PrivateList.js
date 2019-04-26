@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
-import { connect } from 'react-redux';
-import { deleteEvent } from '../../../../../actions/eventsSchedulersAction';
-import { Link } from 'react-router-dom';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { deleteVisitorEvent } from '../../../../../actions/visitorSchedulerAction';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 moment.locale('en-GB');
 const allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
-class SchedulersList extends Component {
+class PrivateList extends Component {
     constructor(props) {
         super(props);
 
@@ -32,6 +32,7 @@ class SchedulersList extends Component {
     )
 
     toggleModal = event => {
+
         this.setState(prevState => ({
             modal: !prevState.modal,
             showStarttime: event.showStartTime,
@@ -43,12 +44,13 @@ class SchedulersList extends Component {
         }));
     };
 
-    eventsList = (events, allViews, deleteEvent) => {
+    schedulesList = (schedules, allViews, deleteVisitorEvent) => {
         return (
             <div className="ui container">
-                <h1>Public Scheduler</h1>
+                <h1>Private Scheduler</h1>
+
                 <BigCalendar
-                    events={events}
+                    events={schedules}
                     localizer={this.state.localizer}
                     views={allViews}
                     step={30}
@@ -78,9 +80,9 @@ class SchedulersList extends Component {
                         </ModalBody>
                         <ModalFooter>
                             <Button color="info">
-                                <Link to={`/admins/events/add-new-event/${this.state.currentEventId}`}>Edit</Link>
+                                <Link to={`/admins/events/add-new-visitor-event/${this.state.currentEventId}`}>Edit</Link>
                             </Button>
-                            <Button color="primary" onClick={() => deleteEvent(this.state.currentEventId)}  >Delete event</Button>
+                            <Button color="primary" onClick={() => deleteVisitorEvent(this.state.currentEventId)}  >Delete event</Button>
                             <Button color="secondary" onClick={this.toggleModal}>Cancel</Button>
                         </ModalFooter>
                 </Modal>
@@ -89,30 +91,30 @@ class SchedulersList extends Component {
     }
 
     render() {
-        this.props.events.forEach(event => event.start = moment(event.start).toDate())
-        this.props.events.forEach(event => event.end = moment(event.end).toDate())
+        this.props.schedules.forEach(schedules => schedules.start = moment(schedules.start).toDate())
+        this.props.schedules.forEach(schedules => schedules.end = moment(schedules.end).toDate())
 
         return (
-            <div className="scheduler-list-page">
-                { this.props.events.length === 0 ? 
-                    this.emptyMessage() : 
-                    this.eventsList(this.props.events, allViews, this.props.deleteEvent)}
+            <div className="private-scheduler-page">
+                { this.props.schedules.length === 0 ?
+                    this.emptyMessage() :
+                    this.schedulesList(this.props.schedules, allViews, this.props.deleteVisitorEvent)}
             </div>
         )
     }
 }
 
-SchedulersList.propTypes = {
-    events: PropTypes.array,
-    deleteEvent: PropTypes.func
+PrivateList.propTypes = {
+    schedules: PropTypes.array,
+    deleteVisitorEvent: PropTypes.func
 }
 
 const mapStateToProps = (state) => {
     return {
-        events: state.events,
+        schedules: state.schedules
     }
 }
 
 export default connect(mapStateToProps, {
-    deleteEvent
-})(SchedulersList);
+    deleteVisitorEvent
+})(PrivateList);

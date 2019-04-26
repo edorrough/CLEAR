@@ -143,7 +143,7 @@ class VisitorSchedulerForm extends Component {
                 <div className="visitor-schedulers-form-wrapper">
                     <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
                         <div className="ui raised segment">
-                            <div className="ui orange right ribbon label">Visitor Events</div>
+                            <div className="ui orange right ribbon label">Private Events</div>
 
                             {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
 
@@ -260,7 +260,7 @@ class VisitorSchedulerForm extends Component {
         )
         return (
             <div className="visitor-scheduler-form">
-                {this.state.done ? <Redirect to="/admins/events/current-events"/> : form}
+                {this.state.done ? <Redirect to="/admins/events/private"/> : form}
             </div>
         )
     }

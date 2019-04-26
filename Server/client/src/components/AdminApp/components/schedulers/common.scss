@@ -69,6 +69,18 @@
         }
     }
 
+    .private-scheduler-page {
+
+        .rbc-calendar {
+            min-height: 700px;
+
+            .rbc-month-view {
+                height: 700px;
+            }
+        }
+
+    }
+
 }
 
 a {

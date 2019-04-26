@@ -146,7 +146,7 @@ class SchedulersForm extends Component {
 
                     <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
                         <div className="ui raised segment">
-                            <div className="ui blue ribbon label">Events</div>
+                            <div className="ui blue ribbon label">Public Event</div>
 
                             {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
 
@@ -275,6 +275,7 @@ SchedulersForm.propTypes = {
 }
 
 const mapStateToProps = (state, props) => {
+    // debugger
     if(props.params) {
         return {
             event: state.events.find(item => item._id === props.params._id)

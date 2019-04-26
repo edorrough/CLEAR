@@ -75,6 +75,7 @@ export function visitorEventUpdated(schedule) {
 }
 
 export function updateVisitorEvent(schedule) {
+    debugger
     return dispatch => {
         return fetch(`/api/visitor-events/${schedule._id}`, {
             method: 'put',
@@ -96,6 +97,7 @@ export function visitorEventDeleted(scheduleId) {
     }
 }
 export function deleteVisitorEvent(id) {
+
     return dispatch => {
         return fetch(`/api/visitor-events/${id}`, {
             method: 'delete',

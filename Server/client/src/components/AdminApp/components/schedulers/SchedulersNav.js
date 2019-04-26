@@ -5,27 +5,34 @@ import './common.css';
 const SchedulersNav = props => (
     <div className="navbar-container">
         <div className="ui container">
-            <div className="ui three item menu">
+            <div className="ui four item menu">
                 <NavLink 
                     className="item" 
-                    activeClassName="active" 
+                    activeClassName="active"
                     to="/admins/events/current-events"
                 >
-                    Current events
+                    Public Events
                 </NavLink>
                 <NavLink 
                     className="item" 
                     activeClassName="active" 
                     to="/admins/events/add-new-event"
                 >
-                    Add New Event
+                    Add Public Event
+                </NavLink>
+                <NavLink
+                    className="item"
+                    activeClassName="active"
+                    to="/admins/events/private"
+                >
+                    Private Events
                 </NavLink>
                 <NavLink
                     className="item" 
                     activeClassName="active" 
                     to="/admins/events/add-new-visitor-event"
                 >
-                    Add New Visitor Event
+                    Add Private Event
                 </NavLink>
             </div>
         </div>

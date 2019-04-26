@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import acowell_1 from '../../../../assets/acowell_1.jpg';
-import mthomas_ruzic from '../../../../assets/mthomas-ruzic.jpg';
-import laura_michaelis from '../../../../assets/laura_michaelis.jpg';
 import { Link } from 'react-router-dom';
 import './MeetPeople.css';
 

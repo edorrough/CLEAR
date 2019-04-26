@@ -28,6 +28,10 @@
     width: 80px; }
     .scheduler-page .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
       width: 80px; }
+  .scheduler-page .private-scheduler-page .rbc-calendar {
+    min-height: 700px; }
+    .scheduler-page .private-scheduler-page .rbc-calendar .rbc-month-view {
+      height: 700px; }
 
 a {
   color: #FFFFFF; }
