@@ -18,32 +18,32 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={acowell_1}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/jim_martin_4.cuphoto.jpg?itok=GIUrH6Ig"
                                         alt="icare_icon"
                                     />
                                 </div>
-                                <div className="header"><h2>Andrew Cowell</h2> <br/> (Relation to Program)</div>
+                                <div className="header"><h2>James Martin</h2> <br/> Professor in Computer Science</div>
                             </div>
 
                             <div className="content">
                                 <div className="meta">
                                     <span style={{ textOverflow: 'ellipsis'}}>
-                                    Andrew Cowell received his PhD from UC Berkeley in 1993.
-                                    He works in the areas of linguistic anthropology and language documentation.
-                                    He has worked primarily on Arapaho, and also Gros Ventre and Miwok,
-                                    and has an interest in Polynesia (Hawaii and Tahiti in particular) as well.
-                                    He has published numerous articles and books, as well as developing curricular material and
-                                    websites for language and culture learning and documentation. His current...
+                                    James Martin is a professor of Computer Science and a fellow in the Institute of Cognitive Science at the University
+                                    of Colorado at Boulder. He earned a B.S. in Computer Science from Columbia University, and a Ph.D. in Computer
+                                    Science from the University of California at Berkeley. He has published two books and numerous articles on a wide
+                                    range of topics related to Artificial Intelligence, Cognitive Science and Computational Linguistics. His primary
+                                    research efforts are focused on how languages convey meaning, both to humans and computers. Within this area, a
+                                    specific focus is on how humans and computers process metaphor and other forms of non-literal language.
                                     </span>
                                 </div>
                                 <div className="extra">
                                     <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
-                                        cowellj@colorado.edu
+                                         james.martin@colorado.edu
                                     </div>
                                     <div>
                                         <i className="phone volume icon"></i>
-                                        303 - 735 - 4194
+                                        303-492-3552
                                     </div>
                                 </div>
                             </div>
@@ -54,34 +54,33 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={mthomas_ruzic}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/martha.jpg?itok=eenS9nts"
                                         alt="icare_icon"
                                         data-tip data-for='ICAndrew CowellARE'
                                         className="image"
                                     />
                                 </div>
-                                <div className="header"><h2>Maria Thomas-Ruzic</h2> <br/> Senior Instructor and Director of the Program for TESOL Professionals</div>
+                                <div className="header"><h2>Martha Palmer</h2> <br/> Professor in Linguistics and Computer Science</div>
                             </div>
 
                             <div className="content">
                                 <div className="meta">
                                     <span style={{ textOverflow: 'ellipsis'}}>
-                                    Maria (Mia) Thomas-Ruzic received her PhD in Linguistics from the University of Colorado in 1998.
-                                    Her career in English language teaching and teacher preparation in the US and
-                                    abroad has spanned four decades. Mia’s research interests include instructional talk,
-                                    uses of discourse tools by teachers, professional and adult development,
-                                    and learning/teaching in higher education. Since 2004 she has been on the
-                                    Linguistics Department faculty at CU-Boulder, establishing, directing, and teaching...
+                                    Martha Palmer is a Professor of Linguistics and Computer Science and an Institute of Cognitive Science Faculty Fellow.
+                                    Her PhD is in Artificial Intelligence from the University of Edinburgh. She is an Association of Computational Linguistics
+                                    (ACL) Fellow, and has won an Outstanding Graduate Advisor 2014 Award, a Boulder Faculty Assembly 2010 Research Award and was the
+                                    Director of the 2011 Linguistics Institute in Boulder. Her research is focused on capturing elements of the meanings of words that
+                                    can comprise automatic representations of complex sentences and documents.
                                     </span>
                                 </div>
                                 <div className="extra">
                                     <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
-                                        maria.thomas-ruzic@colorado.edu
+                                        martha.palmer@colorado.edu
                                     </div>
                                     <div>
                                         <i className="phone volume icon"></i>
-                                        303 - 735 - 4194
+                                         303-492-1300
                                     </div>
                                 </div>
                             </div>
@@ -92,35 +91,36 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={laura_michaelis}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/mans_hulden.png?itok=HG8kUHqS"
                                         alt="Laura Michaelis"
                                         data-tip data-for='ICAndrew CowellARE'
                                         // className="ui medium circular image"
                                         className="image"
                                     />
                                 </div>
-                                <div className="header"><h2>Laura Michaelis</h2> <br/> Professor and Department Chair</div>
+                                <div className="header"><h2>Mans Hulden</h2> <br/> Assistant Professor in Linguistics</div>
                             </div>
 
                             <div className="content">
                                 <div className="meta">
                                     <span style={{ textOverflow: 'ellipsis'}}>
-                                    Laura Michaelis received her PhD in Linguistics in 1993 at the University of California,
-                                    Berkeley. Her thesis, on English past-time reference, was written under the direction of
-                                    Charles J. Fillmore. She has been a CU Linguistics faculty member since 1993, as well
-                                    as a Faculty Fellow in the Institute of Cognitive Science. Her research specializations
-                                    include the tense-aspect interface, corpus syntax, syntactic innovation, aspectual meaning
-                                    in typological perspective, the discourse-syntax...
+                                    Mans Hulden received his PhD in Linguistics from the University of Arizona in 2009. He joined the CU linguistics
+                                    faculty in 2014 after postdoctoral research as a Marie Curie fellow at the University of Helsinki and a stint as visiting
+                                    professor in Computer Science at the University of the Basque Country. His research focuses on developing computational
+                                    methods to infer and model linguistic structure using varying degrees of prior linguistic knowledge, particularly in the
+                                    domains of phonology and morphology. Dr. Hulden has worked extensively with linguistic applications of finite state technology,
+                                    modeling of linguistic theory, grammatical inference, and the development of language resources, and is the author of several
+                                    open-source tools for finite-state language modeling. He teaches courses in computational linguistics, phonology, and phonetics.
                                     </span>
                                 </div>
                                 <div className="extra">
                                     <div style={{ paddingRight:'1rem'}}>
                                         <i className="envelope outline icon" ></i>
-                                        maria.thomas-ruzic@colorado.edu
+                                        mans.hulden@colorado.edu
                                     </div>
                                     <div>
                                         <i className="phone volume icon"></i>
-                                        303 - 735 - 4194
+                                         303-492-2589
                                     </div>
                                 </div>
                             </div>

@@ -1,101 +1,23 @@
+
 .page1-container {
     // The landing page background image
-    background-image: url('https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555968130/background_in_frontend/home-landing/desktop/home-landing.jpg');
-
-    padding-top: 90px;
-    padding-bottom: 66px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-
-    height: 600px;
-    //height: 50vh;
-
-    /* Center and scale the image nicely */
-    //background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    // opacity: 0.3;
-    position: relative;
-
-    transition: background-color 1s ease-out;
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.5s ease-in-out;
-    -webkit-transition: -webkit-transform .5s linear;
-
-    .content {
-        height: 100%;
-        display: flex;
-
-        .page1-left-content {
-            width: 100%;
-            padding: 2%;
-            padding-left: 8%;
-
-            .player-wrapper {
-                padding: 3%;
-                background-color: #FFF;
-            }
-        }
-
-        .page1-right-content {
-            padding: 2%;
-            margin-right: 8%;
-            width: 50%;
-            font-family: Open sans-serif;
-            text-align: center;
-
-            h1 {
-                font-size: 5rem;
-                padding-bottom: 10%;
-            }
-            h3 {
-                padding-top: 15%;
-            }
-        }
+    .home-banner {
+      width: 100%;
+      max-width: 1920px;
     }
-
 }
 
 @media(min-width: 320px) and (max-width: 767px) {
     .page1-container {
+      .home-banner {
+        visibility: hidden;
+      }
+      height: 75vh;
       background-image: url('https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555968157/background_in_frontend/home-landing/mobile/home-landing-mobile.jpg');
       background-size: cover;
-        .content {
-
-            .page1-left-content {
-                width: 100%;
-                padding: unset;
-
-                padding-left: 5%;
-                padding-right: 5%;
-
-            }
-
-
-            .page1-right-content {
-                padding: 2%;
-                margin-right: 8%;
-                width: 100%;
-                text-align: center;
-
-                h1 {
-                    font-size: 5rem;
-                    padding-bottom: 10%;
-                    color: white;
-                }
-                h3 {
-                    padding-top: 15%;
-                    color: white;
-                }
-
-                .ui.teal.button {
-                    font-size: 3rem;
-                }
-            }
-
-        }
-
+      background-repeat: no-repeat;
+      //background-color: green;
+      background-position: center;
+      //background-size: auto 100%;
     }
 }
