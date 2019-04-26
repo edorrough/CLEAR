@@ -18,11 +18,11 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={acowell_1}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/jim_martin_4.cuphoto.jpg?itok=GIUrH6Ig"
                                         alt="icare_icon"
                                     />
                                 </div>
-                                <div className="header"><h2>Andrew Cowell</h2> <br/> (Relation to Program)</div>
+                                <div className="header"><h2>James Martin</h2> <br/> Professor in Computer Science</div>
                             </div>
 
                             <div className="content">
@@ -54,13 +54,13 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={mthomas_ruzic}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/martha.jpg?itok=eenS9nts"
                                         alt="icare_icon"
                                         data-tip data-for='ICAndrew CowellARE'
                                         className="image"
                                     />
                                 </div>
-                                <div className="header"><h2>Maria Thomas-Ruzic</h2> <br/> Senior Instructor and Director of the Program for TESOL Professionals</div>
+                                <div className="header"><h2>Martha Palmer</h2> <br/> Professor in Linguistics and Computer Science</div>
                             </div>
 
                             <div className="content">
@@ -92,14 +92,14 @@ class MeetPeople extends Component {
                             <div className="card-header">
                                 <div className="image">
                                     <img
-                                        src={laura_michaelis}
+                                        src="https://www.colorado.edu/lab/clear/sites/default/files/styles/small_thumbnail/public/people/mans_hulden.png?itok=HG8kUHqS"
                                         alt="Laura Michaelis"
                                         data-tip data-for='ICAndrew CowellARE'
                                         // className="ui medium circular image"
                                         className="image"
                                     />
                                 </div>
-                                <div className="header"><h2>Laura Michaelis</h2> <br/> Professor and Department Chair</div>
+                                <div className="header"><h2>Mans Hulden</h2> <br/> Assistant Professor in Linguistics</div>
                             </div>
 
                             <div className="content">
