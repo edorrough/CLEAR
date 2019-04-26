@@ -4,6 +4,9 @@
 .emaily-page .emaily-container .error-msg {
   color: red; }
 
+.emaily-page .ui.celled.table tr td a {
+  color: black; }
+
 @media (min-width: 320px) and (max-width: 767px) {
   .emaily-page .emaily-container .error-msg {
     color: red; } }
