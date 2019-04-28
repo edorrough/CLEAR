@@ -38,9 +38,9 @@ Run `npm install` within the Server directory and the client directory of your c
 
 Remove this section `"REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf"` from the line starting with `"start-js:"` from `/clearrepo/Server/client/package.json`.  
 
->* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
+* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
 
->* *After the edit: `"start-js": "react-scripts start",`*
+* *After the edit: `"start-js": "react-scripts start",`*
 
 Run `npm start` from the client directory.
 
