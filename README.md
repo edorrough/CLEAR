@@ -16,13 +16,14 @@
 * **[6. Deployment](#deployment)**
 * **[7. License/Copyright](#licensecopyright)**
 
+
 ******************************************************************************************
 
 
 ## **Introduction:**
 The CLEAR (Computational Language and EducAtion Research) Lab is a research organization at the University of Colordao at Boulder working to advance the field of Human Language Technology through the collaboration of the following departments: Computer Science, Linguistics, Education, Cognition, Psychology, and Speech and Language.  
 
-The goal of our project was to redesign the user-interface and rebuild the original CLEAR website.  The web app for this new site was built using the MERN stack (MongoDB, Express.js, React.js/Redux.js, Node.js).
+The goal of our project was to rebuild the original CLEAR website.  Our new site provides redesigned pages and a dynamic scheduler.  The web app for this new site was built using the MERN stack (MongoDB, Express.js, React.js/Redux.js, Node.js).
 
 ## **Getting Started:**
 Install MongoDB, Node.js, and git.
@@ -37,8 +38,9 @@ Run `npm install` within the Server directory and the client directory of your c
 
 Remove this section `"REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf"` from the line starting with `"start-js:"` from `/clearrepo/Server/client/package.json`.  
 
-* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
-* *After the edit: `"start-js": "react-scripts start",`*
+>* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
+
+>* *After the edit: `"start-js": "react-scripts start",`*
 
 Run `npm start` from the client directory.
 
