@@ -19,7 +19,6 @@
 ******************************************************************************************
 
 
-
 ## **Introduction:**
 The CLEAR (Computational Language and EducAtion Research) Lab is a research organization at the University of Colordao at Boulder working to advance the field of Human Language Technology through the collaboration of the following departments: Computer Science, Linguistics, Education, Cognition, Psychology, and Speech and Language.  
 
@@ -31,9 +30,13 @@ Install MongoDB, Node.js, and git.
 ## **Prerequisites:**
 ## **Installation/Setup:**
 To setup a local development environment of this web app:
-Run 'git clone https://rj218@bitbucket.org/rj218/clearrepo.git' in local directory
-Run 'npm install' within the Server directory and the client directory.
-Run 'npm start' from the client directory.
-## **Deployement:**
+
+Run `git clone https://rj218@bitbucket.org/rj218/clearrepo.git` in a local directory.
+
+Run `npm install` within the Server directory and the client directory of your cloned repo.
+
+Run `npm start` from the client directory.
+
+## **Deployment:**
 ## **License/Copyright:**
-This repository is licensed under the ![MIT License](#LICENSE.TXT).
+This repository is licensed under the terms of the [MIT License](LICENSE.md).
