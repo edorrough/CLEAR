@@ -8,13 +8,13 @@
 
 ## **Table of Contents:**
 
-* **1. [Introduction](#introduction)**
-* **2. [Getting Started](#getting-started)**
-* **3. [Documentation](#documentation)**
-* **4. [Prerequisites](#prerequisites)**
-* **5. [Installation/Setup](#installationsetup)**
-* **6. [Deployment](#deployment)**
-* **7. [License/Copyright](#licensecopyright)**
+* **[1. Introduction](#introduction)**
+* **[2. Getting Started](#getting-started)**
+* **[3. Documentation](#documentation)**
+* **[4. Prerequisites](#prerequisites)**
+* **[5. Installation/Setup](#installationsetup)**
+* **[6. Deployment](#deployment)**
+* **[7. License/Copyright](#licensecopyright)**
 
 ******************************************************************************************
 
