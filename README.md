@@ -1,4 +1,7 @@
 # Project: **CLEAR Website Application Development**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 #### [CLEAR Website Link	](https://lit-wave-46253.herokuapp.com/)
 
 ![](https://res.cloudinary.com/dtf7zeh9v/image/upload/v1555968130/background_in_frontend/home-landing/desktop/home-landing.jpg)
