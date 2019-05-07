@@ -135,9 +135,23 @@ To edit the People section navigate to [MeetPeople.js](https://bitbucket.org/rj2
 
 ---
 ### People Page
-To edit the list of people(updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
-The list is organized into listst matching the people categories on the live site(Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or upate people's information.   
+To edit the list of people (updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
+The list is organized into lists corresponding to the people categories on the live site (Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or updated. Each entry in a list is organized into the following nine fields:
+
+- name - The name of the person.
+- img - The avatar to use, leaving this blank (that is, an empty string) uses the placeholder avatar instead. The placeholder avatar can be set to a different image by editing [PersonBio.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PersonBio.js)
+- imgx - width of the avatar, in pixels. Defaults to 100px if left blank. This default value can be changed by editing [PersonBio.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PersonBio.js)
+- imgy - height of the avatar, in pixels. Defaults to 100px if left blank. As with the width, the default value can be changed in [PersonBio.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PersonBio.js)
+- title - The person's title/occupation, if applicable.
+- dept - The person's department, if applicable.
+- info - Miscellaneous information, can be a description of specialization/interests, current position, a brief bio, etc.
+- email - person's email address, if applicable.
+- phone - person's phone number, if applicable.
+
+To edit how the information of a person is presented, that is, the actual layout of the person profile, navigate to [PersonBio.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PersonBio.js)
+
 Navigate to [people.css](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/people.css) to edit the styling.
+
 ---
 ### Projects Page
 
