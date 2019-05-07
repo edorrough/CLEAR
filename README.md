@@ -3,6 +3,7 @@
 ## Table of Contents
 - Custom Navbar
 - Home Page
+- People Page
 - Education Page
 
 ---
@@ -15,15 +16,15 @@ Here you can customize the design using css-like syntax.
 ---
 ### Home Page
 #### Landing Banner
-To change the homepage landing image navigate to Page1.js [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/welcome/subPages/Page1.js).    
+To edit the homepage landing image navigate to Page1.js [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/welcome/subPages/Page1.js).    
 Edit the src of the ```<img></img>``` src to your new image.    
 
 #### About Section
-To change the About section content navigate to [Home.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.js) and 
+To edit the About section content navigate to [Home.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.js) and 
 [Home.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.scss) to change styling.    
 
 #### Projects Section
-To change the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) and edit
+To edit the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) and change
 the ```<div className="card">``` divs with updated information:    
 
 - images: ```<div className="image">```
@@ -34,7 +35,7 @@ the ```<div className="card">``` divs with updated information:
 Navigate to [Project.scss]((https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.scss)) to edit the style.
 
 #### People Section
-To change the People section navigate to [MeetPeople.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/meetPeople/MeetPeople.js) to edit the content. Each person is represented as a card: ``` <div className="card">```    
+To edit the People section navigate to [MeetPeople.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/meetPeople/MeetPeople.js) to change the content. Each person is represented as a card: ``` <div className="card">```    
 
 - Name/association for the person: ```<div className="header">```
 - Bio: ```<div className="content">```
@@ -42,6 +43,11 @@ To change the People section navigate to [MeetPeople.js](https://bitbucket.org/r
 - image: ```<div className="image">```
 - phone number: ```<i className="phone volume icon"></i>```
 
+---
+### People Page
+To edit the list people(updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
+The list is organized into listst matching the people categories on the live site(Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or upate people's information.   
+Navigate to [people.css](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/people.css) to edit the styling.
 ---
 ### Education Page
 To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js).    
@@ -76,7 +82,7 @@ This file contains a list of objects that are representative of the content on t
 
 
 You can create more objects with information including the Header of the section along with a link to attach to it(not required.) 
-The content you want to dispaly as 'content_content'. The 'preview' section represents the image card. Here you can attach an image, a title, 
+The content you want to dispaly as ```content_content:```. The ```previews:``` section represents the image card. Here you can attach an image, a title, 
 alt text, a header under the image, hoveer text, and finally a link.
     
 The order of the list reflects the order on the live site. You can rearrange the ordering in the list, add items by copying the above code, 
