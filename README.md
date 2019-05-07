@@ -14,9 +14,9 @@
 
 * **[1. Introduction](#introduction)**
 * **[2. Getting Started](#getting-started)**
-* **[3. Documentation](#documentation)**
-* **[4. Prerequisites](#prerequisites)**
-* **[5. Installation/Setup](#installationsetup)**
+* **[3. Prerequisites](#prerequisites)**
+* **[4. Installation/Setup](#installationsetup)**
+* **[5. Documentation](#documentation)**
 * **[6. Deployment](#deployment)**
 * **[7. License/Copyright](#licensecopyright)**
 
@@ -28,6 +28,8 @@
 The CLEAR (Computational Language and EducAtion Research) Lab is a research organization at the University of Colordao at Boulder working to advance the field of Human Language Technology through the collaboration of the following departments: Computer Science, Linguistics, Education, Cognition, Psychology, and Speech and Language.  
 
 The goal of our project was to rebuild the original CLEAR website.  Our new site provides redesigned pages and a dynamic scheduler.  The web app for this new site was built using the MERN stack (MongoDB, Express.js, React.js/Redux.js, Node.js).
+
+---
 
 ## **Getting Started:**
 This project requires the following dependencies to run (MongoDB, Node.js, and git).  These instructions have been categorized by operating system.
@@ -59,9 +61,31 @@ After installing nvm, run `nvm install node` to install the latest version of no
 
 #### **Linux:**
 
-## **Documentation:**
 ---
-## Documentation - Table of Contents
+
+## **Installation/Setup:**
+To setup a local development environment of this web app:
+
+Run `git clone https://rj218@bitbucket.org/rj218/clearrepo.git` in a local directory.
+
+Run `npm install` within the Server directory and the client directory of your cloned repo.
+
+Temporarily comment out this section to run the development version `"REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf"` from the line starting with `"start-js:"` from `/clearrepo/Server/client/package.json`.  
+
+* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
+
+* *After the edit: `"start-js": "react-scripts start",`*
+
+Uncomment the above section before testing the production version.
+
+Run `npm start` from the client directory.
+
+---
+
+## **Documentation:**
+
+
+## Table of Contents
 *   Custom Navbar
 *   Home Page
 *   People Page
@@ -162,25 +186,8 @@ To edit the Login Page navigate to [Login.scss](https://bitbucket.org/rj218/clea
 #### Contact Us Page
 To edit the Contact Page navigate to [ContactUS.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.js) to edit the content. Here you will find a form ```<div className="contact-page-container">```.    
 You can edit the contact information displayed here. To edit the styling navigate to [ContactUS.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.scss).
-
-## **Prerequisites:**
-## **Installation/Setup:**
-To setup a local development environment of this web app:
-
-Run `git clone https://rj218@bitbucket.org/rj218/clearrepo.git` in a local directory.
-
-Run `npm install` within the Server directory and the client directory of your cloned repo.
-
-Temporarily comment out this section to run the development version `"REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf"` from the line starting with `"start-js:"` from `/clearrepo/Server/client/package.json`.  
-
-* *Before the edit: `"start-js": "REACT_APP_RECAPTCHA_SITE_KEY=6LfQjXgUAAAAALYizu_VXiWriP_7FcXgwlmhrFwf react-scripts start",`*
-
-* *After the edit: `"start-js": "react-scripts start",`*
-
-Uncomment the above section before testing the production version.
-
-Run `npm start` from the client directory.
-
+---
 ## **Deployment:**
+---
 ## **License/Copyright:**
 This repository is licensed under the terms of the [MIT License](LICENSE.md).
