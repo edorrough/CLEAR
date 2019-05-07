@@ -3,7 +3,7 @@
 ## Table of Contents
 - Custom Navbar
 - Home Page
-- Education Content
+- Education Page
 
 ---
 ### Custom Navbar
@@ -23,14 +23,27 @@ To change the About section content navigate to [Home.js](https://bitbucket.org/
 [Home.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.scss) to change styling.    
 
 #### Projects Section
-To change the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) to edit
-the ```<div className="card">``` divs with updated information unwanted    
-divs(such as the number of members) can be removed by deleting or commenting out the appropriate divs.    
-You can also edit the images: ```<div className="image">```, image description: ```<div className="content">```,the tooltip text: ```<ReactTooltip```,    
-and the about projects section: ```<div className="project-about">```.
+To change the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) and edit
+the ```<div className="card">``` divs with updated information:    
+
+- images: ```<div className="image">```
+- image description: ```<div className="content">```
+- the tooltip text: ```<ReactTooltip```
+- projects section: ```<div className="project-about">```.
+
+Navigate to [Project.scss]((https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.scss)) to edit the style.
+
+#### People Section
+To change the People section navigate to [MeetPeople.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/meetPeople/MeetPeople.js) to edit the content. Each person is represented as a card: ``` <div className="card">```    
+
+- Name/association for the person: ```<div className="header">```
+- Bio: ```<div className="content">```
+- email: ```<i className="envelope outline icon" ></i>``` 
+- image: ```<div className="image">```
+- phone number: ```<i className="phone volume icon"></i>```
 
 ---
-### Education Content
+### Education Page
 To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js).    
 Simply add html paragraph blocks: ```<p>Your words here!</p>```    
     
