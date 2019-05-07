@@ -6,5 +6,5 @@
 - People Page Content
 - Projects Page Content?
 
-### Education Content
+### r[Education Content](#Education)
 
