@@ -5,6 +5,7 @@
 - Home Page
 - People Page
 - Education Page
+- Login Page
 
 ---
 ### Custom Navbar
@@ -45,7 +46,7 @@ To edit the People section navigate to [MeetPeople.js](https://bitbucket.org/rj2
 
 ---
 ### People Page
-To edit the list people(updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
+To edit the list of people(updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
 The list is organized into listst matching the people categories on the live site(Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or upate people's information.   
 Navigate to [people.css](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/people.css) to edit the styling.
 ---
@@ -87,4 +88,7 @@ alt text, a header under the image, hoveer text, and finally a link.
     
 The order of the list reflects the order on the live site. You can rearrange the ordering in the list, add items by copying the above code, 
 or remove items by simply deleting them.
+---
+#### Login Page
+To edit the Login Page navigate to [Login.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/login/Login.scss) to edit the styling.
 ---
