@@ -41,6 +41,15 @@ To install MongoDB locally on your Windows machine, follow this link:
 
 #### **MacOS:**
 
+The following link refers to the Homebrew package manager, which is used to install mongo: [Homebrew installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+
+Please follow this link to install MongoDB for MacOS: [MongoDB for MacOS](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+
+Use the following link to install nvm (Node Version Manager), which allows you to install, upgrade, and switch between differnt versions of node: [nvm install link](https://github.com/nvm-sh/nvm)
+
+The installation of node will include npm (Node Package Manager).
+After installing nvm, run `nvm install node` to install the latest version of node.
+
 #### **Linux:**
 
 ## **Documentation:**
