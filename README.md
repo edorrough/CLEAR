@@ -29,8 +29,28 @@ The CLEAR (Computational Language and EducAtion Research) Lab is a research orga
 The goal of our project was to rebuild the original CLEAR website.  Our new site provides redesigned pages and a dynamic scheduler.  The web app for this new site was built using the MERN stack (MongoDB, Express.js, React.js/Redux.js, Node.js).
 
 ## **Getting Started:**
-Install MongoDB, Node.js, and git.
+This project requires the following dependencies to run (MongoDB, Node.js, and git).  These instructions have been categorized by operating system.
+
+In order to install MongoDB, Node.js, and git, follow the instructions by operating system.
+
+#### **Windows:**
+
+To install MongoDB locally on your Windows machine, follow this link: 
+    [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
+
+#### **MacOS:**
+
+#### **Linux:**
+
 ## **Documentation:**
+
+* [Home Page Documentation](Server/client/src/components/projects/home.md)
+* [People Page Documentation](Server/client/src/components/people/people.md)
+* [Projects Page Documentation](Server/client/src/components/projects/projects.md)
+* [Education Page Documentation](Server/client/src/components/education/education.md)
+* [Events Page Documentation](Server/client/src/components/events/projects.md)
+* [Login Page Documentation](Server/client/src/components/login/login.md)
+
 ## **Prerequisites:**
 ## **Installation/Setup:**
 To setup a local development environment of this web app:
