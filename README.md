@@ -4,6 +4,7 @@
 - Custom Navbar
 - Home Page
 - People Page
+- Projects Page
 - Education Page
 - Login Page
 - Contact Page
@@ -50,6 +51,9 @@ To edit the People section navigate to [MeetPeople.js](https://bitbucket.org/rj2
 To edit the list of people(updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
 The list is organized into listst matching the people categories on the live site(Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or upate people's information.   
 Navigate to [people.css](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/people.css) to edit the styling.
+---
+### Projects Page
+
 ---
 ### Education Page
 To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js).    
