@@ -136,7 +136,7 @@ To edit the People section navigate to [MeetPeople.js](https://bitbucket.org/rj2
 ---
 ### People Page
 To edit the list of people (updating information, adding people, removing people, moving people, etc.) navigate to [PeopleList.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PeopleList.js).    
-The list is organized into lists corresponding to the people categories on the live site (Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or updated. Each entry in a list is organized into the following nine fields:
+The file is organized into lists corresponding to the people categories on the live site (Faculty, Admin Staff, Current Research Staff, etc.) and can be rearranged, expanded, downsized, or updated. Each entry in a list is organized into the following nine fields:
 
 - name - The name of the person.
 - img - The avatar to use, leaving this blank (that is, an empty string) uses the placeholder avatar instead. The placeholder avatar can be set to a different image by editing [PersonBio.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/PersonBio.js)
