@@ -6,6 +6,7 @@
 - People Page
 - Education Page
 - Login Page
+- Contact Page
 
 ---
 ### Custom Navbar
@@ -91,4 +92,8 @@ or remove items by simply deleting them.
 ---
 #### Login Page
 To edit the Login Page navigate to [Login.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/login/Login.scss) to edit the styling.
+
 ---
+#### Contact Us Page
+To edit the Contact Page navigate to [ContactUS.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.js) to edit the content. Here you will find a form ```<div className="contact-page-container">```.    
+You can edit the contact information displayed here. To edit the styling navigate to [ContactUS.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.scss).
