@@ -2,31 +2,37 @@
 ---
 ## Table of Contents
 - [Custom Navbar](#navbar)
-- [Education Content](#Education)
+- [Home Page](#home)
+- [Education Content](#education)
 
+---
+### [Home Page](#home)
+#### Landing Banner
+To change the homepage landing image navigate to Page1.js [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/welcome/subPages/Page1.js).    
+Edit the src of the ```<img></img>``` src to your new image.    
+
+#### About Section
+To change the About section content navigate to [Home.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.js) and 
+[Home.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/Home.scss) to change styling.    
+
+#### Projects Section
+To change the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) to edit
+the ```<div className="card">``` divs with updated information
 ---
 ### [Custom Navbar](#navbar)
 To edit the navigation bar at the top of the page you can navigate [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/).
 
-**/Server/client/src/components/customNavbar/**
-
 You will find [CustomNavbar.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.js) where you can edit the text shown and add/remove application routes from the navigation.    
-To change styling such as colors/spacing/etc. edit CustomNavbar.scss found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.scss):    
-    
-**/Server/client/src/components/customNavbar/CustomNavbar.scss**    
-    
+To change styling such as colors/spacing/etc. edit CustomNavbar.scss found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.scss).    
+      
 Here you can customize the design using css-like syntax.
 
 ---
-### [Education Content](#Education)
-To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js)    
+### [Education Content](#education)
+To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js).    
 Simply add html paragraph blocks: ```<p>Your words here!</p>```    
     
-**/Server/client/src/components/education/sections/introduction/introduction.js**
-    
-To edit the blocks of content for each education option edit the publicEducation.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/reducers/publicEducation/publicEducation.js):    
-    
-**/Server/client/src/reducers/publicEducation/publicEducation.js**
+To edit the blocks of content for each education option edit the publicEducation.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/reducers/publicEducation/publicEducation.js).    
      
 This file contains a list of objects that are representative of the content on the live site. This is what they look like:     
      
@@ -36,7 +42,7 @@ This file contains a list of objects that are representative of the content on t
             content_header_link: 'https://www.colorado.edu/ics/',
             content_content: "The Institute of Cognitive Science (ICS) sponsors Graduate Certificate Programs and Combined PhD Programs that provide exceptional 
 			readth and depth of interdisciplinary training in the cognitive sciences. Successful completion of an ICS program is acknowledged by a Certificate of 
-			Completion on the student’s transcript. The PhD programs are noted on the student’s diploma. NOTE: We are not an admitting department. Please email or 
+			Completion on the studentï¿½s transcript. The PhD programs are noted on the studentï¿½s diploma. NOTE: We are not an admitting department. Please email or 
 			call the department of interest to apply for graduate school. Upon acceptance into a department or unit's graduate program, then follow the instructions 
 			below to apply for an ICS program. Four ICS Graduate Programs are available: Cognitive Science Graduate Certificate, Human Language Technology Certificate, 
 			Cognitive Science Combined PhD, and Cognitive Neuroscience Combined Triple PhD.",
