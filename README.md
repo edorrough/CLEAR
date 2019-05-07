@@ -34,6 +34,13 @@ This project requires the following dependencies to run (MongoDB, Node.js, and g
 
 In order to install MongoDB, Node.js, and git, follow the instructions by operating system.
 
+The following tools were used for development:
+
+- Heroku: hosting production version of our web app during development: [Heroku](https://www.heroku.com/)
+- Cloudinary: hosting images used in the CLEAR website: [Cloudinary](https://cloudinary.com/)
+- Bitbucket: repository hosting service used to share CLEAR project source code and documentation: [Bitbucket](https://bitbucket.org/)
+
+
 #### **Windows:**
 
 To install MongoDB locally on your Windows machine, follow this link: 
@@ -55,13 +62,13 @@ After installing nvm, run `nvm install node` to install the latest version of no
 ## **Documentation:**
 ---
 ## Documentation - Table of Contents
-    - Custom Navbar
-    - Home Page
-    - People Page
-    - Projects Page
-    - Education Page
-    - Login Page
-    - Contact Page
+*   Custom Navbar
+*   Home Page
+*   People Page
+*   Projects Page
+*   Education Page
+*   Login Page
+*   Contact Page
 
 ---
 ### Custom Navbar
