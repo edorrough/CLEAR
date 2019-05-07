@@ -1,12 +1,19 @@
 # Documentation
 ---
 ## Table of Contents
-- [Custom Navbar](#navbar)
-- [Home Page](#home)
-- [Education Content](#education)
+- Custom Navbar
+- Home Page
+- Education Content
 
 ---
-### [Home Page](#home)
+### Custom Navbar
+To edit the navigation bar at the top of the page you can navigate [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/).
+
+You will find [CustomNavbar.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.js) where you can edit the text shown and add/remove application routes from the navigation.    
+To change styling such as colors/spacing/etc. edit CustomNavbar.scss found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.scss).    
+Here you can customize the design using css-like syntax.
+---
+### Home Page
 #### Landing Banner
 To change the homepage landing image navigate to Page1.js [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/welcome/subPages/Page1.js).    
 Edit the src of the ```<img></img>``` src to your new image.    
@@ -17,18 +24,13 @@ To change the About section content navigate to [Home.js](https://bitbucket.org/
 
 #### Projects Section
 To change the Projects section navigate to [Projects.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/home/sections/projects/Projects.js) to edit
-the ```<div className="card">``` divs with updated information
----
-### [Custom Navbar](#navbar)
-To edit the navigation bar at the top of the page you can navigate [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/).
-
-You will find [CustomNavbar.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.js) where you can edit the text shown and add/remove application routes from the navigation.    
-To change styling such as colors/spacing/etc. edit CustomNavbar.scss found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/customNavbar/CustomNavbar.scss).    
-      
-Here you can customize the design using css-like syntax.
+the ```<div className="card">``` divs with updated information unwanted    
+divs(such as the number of members) can be removed by deleting or commenting out the appropriate divs.    
+You can also edit the images: ```<div className="image">```, image description: ```<div className="content">```,the tooltip text: ```<ReactTooltip```,    
+and the about projects section: ```<div className="project-about">```.
 
 ---
-### [Education Content](#education)
+### Education Content
 To edit the first block of content edit introduction.js file found [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/education/sections/introduction/introduction.js).    
 Simply add html paragraph blocks: ```<p>Your words here!</p>```    
     
