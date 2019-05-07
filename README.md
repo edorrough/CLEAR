@@ -16,7 +16,7 @@
 * **[2. Getting Started](#getting-started)**
 * **[3. Prerequisites](#prerequisites)**
 * **[4. Installation/Setup](#installationsetup)**
-* **[5. Documentation](#documentation)**
+* **[5. Making Changes](#documentation)**
 * **[6. Deployment](#deployment)**
 * **[7. License/Copyright](#licensecopyright)**
 
@@ -82,7 +82,7 @@ Run `npm start` from the client directory.
 
 ---
 
-## **Documentation:**
+## **Making Changes:**
 
 
 ## Table of Contents
