@@ -17,8 +17,9 @@
 * **[3. Prerequisites](#prerequisites)**
 * **[4. Installation/Setup](#installationsetup)**
 * **[5. Making Changes](#documentation)**
-* **[6. Deployment](#deployment)**
-* **[7. License/Copyright](#licensecopyright)**
+* **[6. Testing](#testing)**
+* **[7. Deployment](#deployment)**
+* **[8. License/Copyright](#licensecopyright)**
 
 
 ******************************************************************************************
@@ -191,6 +192,11 @@ To edit the Admin Panel navigate to the [AdminApp](https://bitbucket.org/rj218/c
 The landing page has been left blank and can be customized in [AdminApp.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/AdminApp/). Within the [/AdminApp/components](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/AdminApp/components/) directory you can customize    
 each page's style such as the navigation bar or user page.
 
+---
+## **Testing:**
+Due to the nature of our task we were not sure how to go about testing. A major aspect of our testing included error handling so as to avoid the site hanging on errors.    
+When developing locally you can expect to revieve error messages when things go wrong, this ensures you know what went wrong and where. When developing we worked with    
+Chrome, Firefox, and Safari. Other browsers are not guranteed to work.
 ---
 ## **Deployment:**
 ---
