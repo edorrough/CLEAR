@@ -171,8 +171,7 @@ This file contains a list of objects that are representative of the content on t
         },
 ```
 
-
-You can create more objects with information including the Header of the section along with a link to attach to it(not required.) 
+You can create more objects with information including the Header of the section along with a link to attach to it.   
 The content you want to dispaly as ```content_content:```. The ```previews:``` section represents the image card. Here you can attach an image, a title, 
 alt text, a header under the image, hoveer text, and finally a link.
     
@@ -186,6 +185,12 @@ To edit the Login Page navigate to [Login.scss](https://bitbucket.org/rj218/clea
 #### Contact Us Page
 To edit the Contact Page navigate to [ContactUS.js](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.js) to edit the content. Here you will find a form ```<div className="contact-page-container">```.    
 You can edit the contact information displayed here. To edit the styling navigate to [ContactUS.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/contactUS/ContactUS.scss).
+---
+#### Admin Panel
+To edit the Admin Panel navigate to the [AdminApp](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/AdminApp/) directory. The Admin panel is based on a login token and verifies with MongoDB [here](https://bitbucket.org/rj218/clearrepo/src/master/Server/routes/userLogin.js).  
+The landing page has been left blank and can be customized in [AdminApp.scss](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/AdminApp/). Within the [/AdminApp/components](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/AdminApp/components/) directory you can customize    
+each page's style such as the navigation bar or user page.
+
 ---
 ## **Deployment:**
 ---
