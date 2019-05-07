@@ -1,6 +1,7 @@
 # Project: **CLEAR Website Application Development**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/npm)
 
 #### [CLEAR Website Link	](https://lit-wave-46253.herokuapp.com/)
 
