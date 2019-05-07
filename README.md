@@ -91,6 +91,7 @@ Run `npm start` from the client directory.
 *   Home Page
 *   People Page
 *   Projects Page
+*   Events Page
 *   Education Page
 *   Login Page
 *   Contact Page
@@ -139,6 +140,11 @@ The list is organized into listst matching the people categories on the live sit
 Navigate to [people.css](https://bitbucket.org/rj218/clearrepo/src/master/Server/client/src/components/people/people.css) to edit the styling.
 ---
 ### Projects Page
+
+---
+### Events Page
+To edit this page, navigate to the admin panel and select the events off of the public scheduler to add, edit or delete.
+The events in the scheduler will not propegate to the events page unless you tick the "Finished" in the editing panel to be yes.
 
 ---
 ### Education Page
